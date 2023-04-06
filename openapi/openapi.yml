@@ -1,0 +1,106 @@
+openapi: '3.1.0'
+info:
+  title: Traceability API
+  description: This API spec defines how you can interact with the iov42 traceability system.
+  version: '0.0.2'
+tags:
+  - name: Certificates
+    description: Apis for the creation and retrieval of Certificates  
+  - name: Checks
+    description: Apis for the creation and retrieval of Checks
+  - name: Connections
+    description: Apis for the creation and retrieval of Connections  
+  - name: CustomFields
+    description: Apis for the creation and retrieval of CustomFields  
+  - name: Documents
+    description: Apis for the creation and retrieval of Documents  
+  - name: Items
+    description: Apis for the creation and retrieval of Items  
+  - name: Links
+    description: Apis for the creation and retrieval of Links  
+  - name: Locations
+    description: Apis for the creation and retrieval of Locations  
+  - name: Mappings
+    description: Apis for the creation and retrieval of Mapping  
+  - name: Materials
+    description: Apis for the creation and retrieval of Materials  
+  - name: Organisation
+    description: Apis for the creation and retrieval of Organisation
+  - name: Products
+    description: Apis for the creation and retrieval of Products
+  - name: Public
+    description: Apis for organisational information that is 'public'. By public this information is available to any registered user.
+  - name: Tags
+    description: Apis for the creation and retrieval of tags.
+  - name: Shared
+    description: Apis with information shared across all organisations.
+paths:
+  /organisations:
+    $ref: './paths/organisations.yml'
+  /organisations/{orgId}:
+    $ref: './paths/organisation.yml'
+  /organisations/{orgId}/certificates:
+    $ref: './paths/certificates.yml'
+  /organisations/{orgId}/certificates/{certId}:
+    $ref: './paths/certificate.yml'
+  /organisations/{orgId}/checks:
+    $ref: './paths/checks.yml'
+  /organisations/{orgId}/checks/{checkId}:
+    $ref: './paths/check.yml'
+  /organisations/{orgId}/connections:
+    $ref: './paths/connections.yml'
+  /organisations/{orgId}/connections/{conId}:
+    $ref: './paths/connection.yml'
+  /organisations/{orgId}/customFields:
+    $ref: './paths/customFields.yml'
+  /organisations/{orgId}/customFields/{cfId}:
+    $ref: './paths/customField.yml'
+  /organisations/{orgId}/customFieldTemplates:
+    $ref: './paths/customFieldTemplates.yml'
+  /organisations/{orgId}/customFieldTemplates/{cftId}:
+    $ref: './paths/customFieldTemplate.yml'    
+  /organisations/{orgId}/documents:
+    $ref: './paths/documents.yml'
+  /organisations/{orgId}/documents/{docId}:
+    $ref: './paths/document.yml'
+  /organisations/{orgId}/locations:
+    $ref: './paths/locations.yml'
+  /organisations/{orgId}/locations/{locId}:
+    $ref: './paths/location.yml'
+  /organisations/{orgId}/locations/{locId}/links:
+    $ref: './paths/links.yml'
+  /organisations/{orgId}/locations/{locId}/links/{linkId}:
+    $ref: './paths/link.yml'
+  /organisations/{orgId}/items:
+    $ref: './paths/items.yml'
+  /organisations/{orgId}/items/{itemId}:
+    $ref: './paths/item.yml'
+  /organisations/{orgId}/mappings:
+    $ref: './paths/mappings.yml'
+  /organisations/{orgId}/mappings/{mapId}:
+    $ref: './paths/mapping.yml'
+  /organisations/{orgId}/materials:
+    $ref: './paths/materials.yml'
+  /organisations/{orgId}/materials/{matId}:
+    $ref: './paths/material.yml'
+  /organisations/{orgId}/products:
+    $ref: './paths/products.yml'
+  /organisations/{orgId}/products/{prodId}:
+    $ref: './paths/product.yml'
+  /organisations/{orgId}/public:
+    $ref: './paths/public.yml'
+  /organisations/{orgId}/tags:
+    $ref: './paths/tags.yml'
+  /organisations/{orgId}/tags/{tagId}:
+    $ref: './paths/tag.yml'
+  /units:
+    $ref: './paths/units.yml'
+  /units/{unitId}:
+    $ref: './paths/unit.yml'
+components:
+  parameters:
+    $ref: './components/parameters/_index.yml'
+  schemas:
+    $ref: './components/schemas/_index.yml'
+  responses:
+    $ref: './components/responses/_index.yml'

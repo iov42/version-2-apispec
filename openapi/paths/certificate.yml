@@ -1,0 +1,55 @@
+put:
+  tags:
+    - Certificates
+  summary: Update certificate
+  operationId: updateCertificate
+  description: Update certificate by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/certId.yml'
+  requestBody:
+    description: Update certificate information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/certificate.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/certificate.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Certificates
+  summary: Get certificate
+  operationId: getCertificate
+  description: Get the certificate details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/certId.yml'
+  responses:
+    '200':
+      description: Certificate info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/certificate.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

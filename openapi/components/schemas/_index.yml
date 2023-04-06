@@ -1,0 +1,57 @@
+Certificate:
+  $ref: "./certificate.yml"
+Check:
+  $ref: "./check.yml"
+Connection:
+  $ref: "./connection.yml"
+CustomField:
+  $ref: "./customField.yml"
+CustomFieldTemplate:
+  $ref: "./customFieldTemplate.yml"
+Document:
+  $ref: "./document.yml"
+Error:
+  $ref: "./error.yml"
+Item:
+  $ref: "./item.yml"
+Link:
+  $ref: "./link.yml"
+Location:
+  $ref: "./location.yml"
+Mapping:
+  $ref: "./mapping.yml"
+Material:
+  $ref: "./material.yml"
+Organisation:
+  $ref: "./organisation.yml"
+Product:
+  $ref: "./product.yml"
+Public:
+  $ref: "./public.yml"
+Tag:
+  $ref: "./tag.yml"
+Unit:
+  $ref: "./unit.yml"
+
+GeoFeature:
+  $ref: "./geoJson/feature.yml"
+GeoFeatureCollection:
+  $ref: "./geoJson/featureCollection.yml"
+GeoGeometry:
+  $ref: "./geoJson/geometry.yml"
+GeoGeometryCollection:
+  $ref: "./geoJson/geometryCollection.yml"
+GeoLineString:
+  $ref: "./geoJson/lineString.yml"
+GeoMultiLineString:
+  $ref: "./geoJson/multiLineString.yml"
+GeoMultiPoint:
+  $ref: "./geoJson/multiPoint.yml"
+GeoMultiPolygon:
+  $ref: "./geoJson/multiPolygon.yml"
+GeoPoint:
+  $ref: "./geoJson/point.yml"
+GeoPoint3D:
+  $ref: "./geoJson/point3D.yml"
+GeoPolygon:
+  $ref: "./geoJson/polygon.yml"

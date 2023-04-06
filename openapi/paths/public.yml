@@ -1,0 +1,81 @@
+post:
+  tags:
+    - Public
+  summary: Add Public Info
+  operationId: addPublicInfo
+  description: Add Public Info
+  requestBody:
+    description: Update Public information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/public.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/public.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+put:
+  tags:
+    - Public
+  summary: Update Public Info
+  operationId: updatePublicInfo
+  description: Update Public Info by id
+  requestBody:
+    description: Update Public information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/public.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/public.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  summary: Get Public Info
+  operationId: getPublicInfo
+  description: Get and organisations public info
+  responses:
+    '200':
+      description: Public info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/public.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

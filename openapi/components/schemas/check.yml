@@ -1,0 +1,22 @@
+type: object
+required:
+  - target
+  - when
+  - by
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  target:
+    description: The target resource url for the check
+    type: string
+  when:
+    description: When the check was added
+    type: string
+    format: date-time
+  by:
+    description: Who the check was from
+    type: string
+  note:
+    description: Any note attached to the check.
+    type: string

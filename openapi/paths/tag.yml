@@ -1,0 +1,55 @@
+put:
+  tags:
+    - Tags
+  summary: Update tag
+  operationId: updateTag
+  description: Update tag by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/tagId.yml'
+  requestBody:
+    description: Update tag information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/tag.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/tag.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Tags
+  summary: Get Tag
+  operationId: getTag
+  description: Get the Tag details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/tagId.yml'
+  responses:
+    '200':
+      description: Tag info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/tag.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

@@ -1,0 +1,6 @@
+allOf:
+  - $ref: './customField.yml'
+  - type: object
+    properties:
+      value:
+        type: number

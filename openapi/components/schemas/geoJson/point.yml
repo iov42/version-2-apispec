@@ -1,0 +1,9 @@
+type: object
+description: GeoJSon geometry
+externalDocs:
+  url: http://geojson.org/geojson-spec.html#id2
+allOf:
+  - $ref: "./geometry.yml"
+  - properties:
+      coordinates:
+        $ref: './point3D.yml'

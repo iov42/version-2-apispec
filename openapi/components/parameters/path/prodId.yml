@@ -1,0 +1,6 @@
+name: prodId
+in: path
+required: true
+description: The system provided id of a product
+schema:
+  type: string

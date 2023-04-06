@@ -1,0 +1,18 @@
+type: object
+description: This is a link between two locations.
+required:
+  - locationIdFrom
+  - locationIdTo
+  - date
+properties:
+  id:
+    type: string
+  locationIdFrom:
+    type: string
+  locationIdTo:
+    type: string
+  date:
+    type: string
+    format: date-time
+  status:
+    $ref: './enums/status.yml'

@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Tags
+  summary: List Tags
+  operationId: listTags
+  description: List all the Tags
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  responses:
+    '200':
+      description: Array of Tags
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/tag.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Tags
+  summary: Add Tag
+  operationId: addTag
+  description: Add a new Tag
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  requestBody:
+    description: Tag information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/tag.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/tag.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

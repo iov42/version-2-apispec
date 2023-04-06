@@ -1,0 +1,55 @@
+put:
+  tags:
+    - Mappings
+  summary: Update mapping
+  operationId: updateMapping
+  description: Update mapping by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/mapId.yml'
+  requestBody:
+    description: Update mapping information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/mapping.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/mapping.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Mappings
+  summary: Get Mapping
+  operationId: getMapping
+  description: Get the Mapping details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/mapId.yml'
+  responses:
+    '200':
+      description: Mapping info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/mapping.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

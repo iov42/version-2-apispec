@@ -1,0 +1,25 @@
+type: object
+description: This is a definition of an organisation
+properties:
+  id:
+    type: string
+  status:
+    $ref: './enums/status.yml'
+  name:
+    type: string
+  address:
+    $ref: './address.yml'
+  # role:
+  #  $ref: './enums/role.yml'
+  type:
+    type: string
+  website:
+    type: string
+  certificateIds:
+    type: array
+    items:
+      type: string
+  documentIds:
+    type: array
+    items:
+      type: string

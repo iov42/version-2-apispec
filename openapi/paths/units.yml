@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Shared
+  summary: List Units
+  operationId: listUnits
+  description: List all the Units
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  responses:
+    '200':
+      description: Array of Units
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/unit.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Shared
+  summary: Add Unit
+  operationId: addUnit
+  description: Add a new Unit
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  requestBody:
+    description: Unit information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/unit.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/unit.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

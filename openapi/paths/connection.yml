@@ -1,0 +1,55 @@
+put:
+  tags:
+    - Connections
+  summary: Update connection
+  operationId: updateConnection
+  description: Update connection by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/conId.yml'
+  requestBody:
+    description: Update connection information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/connection.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/connection.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Connections
+  summary: Get Connection
+  operationId: getConnection
+  description: Get the Connection details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/conId.yml'
+  responses:
+    '200':
+      description: Connection info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/connection.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

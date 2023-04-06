@@ -1,0 +1,14 @@
+{
+    "docsRoot": "docs",
+    "defaultBranch": "master",
+    "branchPathBase": "preview",
+    "redocTheme": "default",
+    "buildPages": [
+        {
+            "apiSpecPath": "openapi/openapi.yml",
+            "htmlOutfile": "index.html",
+            "yamlOutfile": "openapi.yaml",
+            "jsonOutfile": "openapi.json"
+        }
+    ]
+}

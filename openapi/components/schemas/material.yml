@@ -1,0 +1,12 @@
+type: object
+description: Definition of a material
+required:
+  - name
+  - category
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  category:
+    type: string

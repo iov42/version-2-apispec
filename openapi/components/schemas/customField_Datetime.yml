@@ -1,0 +1,7 @@
+allOf:
+  - $ref: './customField.yml'
+  - type: object
+    properties:
+      value:
+        type: string
+        format: date-time

@@ -1,0 +1,2570 @@
+openapi: 3.1.0
+info:
+  title: Traceability API
+  description: This API spec defines how you can interact with the iov42 traceability system.
+  version: 0.0.2
+tags:
+  - name: Certificates
+    description: Apis for the creation and retrieval of Certificates
+  - name: Checks
+    description: Apis for the creation and retrieval of Checks
+  - name: Connections
+    description: Apis for the creation and retrieval of Connections
+  - name: CustomFields
+    description: Apis for the creation and retrieval of CustomFields
+  - name: Documents
+    description: Apis for the creation and retrieval of Documents
+  - name: Items
+    description: Apis for the creation and retrieval of Items
+  - name: Links
+    description: Apis for the creation and retrieval of Links
+  - name: Locations
+    description: Apis for the creation and retrieval of Locations
+  - name: Mappings
+    description: Apis for the creation and retrieval of Mapping
+  - name: Materials
+    description: Apis for the creation and retrieval of Materials
+  - name: Organisation
+    description: Apis for the creation and retrieval of Organisation
+  - name: Products
+    description: Apis for the creation and retrieval of Products
+  - name: Public
+    description: Apis for organisational information that is 'public'. By public this information is available to any registered user.
+  - name: Tags
+    description: Apis for the creation and retrieval of tags.
+  - name: Shared
+    description: Apis with information shared across all organisations.
+paths:
+  /organisations:
+    get:
+      tags:
+        - Organisation
+      summary: List Organisations
+      operationId: listOrganisations
+      description: List all the organisations that user has access to
+      responses:
+        '200':
+          description: Array of organisations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/organisation'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Organisation
+      summary: Add a new organisation
+      operationId: addOrganisation
+      description: Add a new organisation
+      requestBody:
+        description: Organisation information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/organisation'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organisation'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}:
+    put:
+      tags:
+        - Organisation
+      summary: Update organisation
+      operationId: updateOrganisation
+      description: Update organisation by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Update organisation information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/organisation'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organisation'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Organisation
+      summary: Get Organisation
+      operationId: getOrganisation
+      description: Get the Organisation details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Organisation info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organisation'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/certificates:
+    get:
+      tags:
+        - Certificates
+      summary: List Certificates
+      operationId: listCertificates
+      description: List all the certificates
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of certificates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/certificate'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Certificates
+      summary: Add a new certificate
+      operationId: addCertificate
+      description: Add a new certificate
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Certificate information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/certificate'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/certificate'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/certificates/{certId}:
+    put:
+      tags:
+        - Certificates
+      summary: Update certificate
+      operationId: updateCertificate
+      description: Update certificate by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/certId'
+      requestBody:
+        description: Update certificate information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/certificate'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/certificate'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Certificates
+      summary: Get certificate
+      operationId: getCertificate
+      description: Get the certificate details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/certId'
+      responses:
+        '200':
+          description: Certificate info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/certificate'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/checks:
+    get:
+      tags:
+        - Checks
+      summary: List Checks
+      operationId: listChecks
+      description: List all the Checks
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Checks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/check'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Checks
+      summary: Add a new check
+      operationId: addCheck
+      description: Add a new check
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Check information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/check'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/check'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/checks/{checkId}:
+    put:
+      tags:
+        - Checks
+      summary: Update check
+      operationId: updateCheck
+      description: Update check by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/checkId'
+      requestBody:
+        description: Update check information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/check'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/check'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Checks
+      summary: Get Check
+      operationId: getCheck
+      description: Get the Check details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/checkId'
+      responses:
+        '200':
+          description: Check info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/check'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/connections:
+    get:
+      tags:
+        - Connections
+      summary: List Connections
+      operationId: listConnections
+      description: List all the Connections
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Connections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/connection'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Connections
+      summary: Add a new Connection
+      operationId: addConnection
+      description: Add a new Connection
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/connection'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connection'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/connections/{conId}:
+    put:
+      tags:
+        - Connections
+      summary: Update connection
+      operationId: updateConnection
+      description: Update connection by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/conId'
+      requestBody:
+        description: Update connection information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/connection'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connection'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Connections
+      summary: Get Connection
+      operationId: getConnection
+      description: Get the Connection details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/conId'
+      responses:
+        '200':
+          description: Connection info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connection'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/customFields:
+    get:
+      tags:
+        - CustomFields
+      summary: List Custom Fields
+      operationId: listCustomFields
+      description: List all the Custom Fields
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Custom Fields
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/customField'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - CustomFields
+      summary: Add Custom Field
+      operationId: addCustomField
+      description: Add a new Custom Field
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customField'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customField'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/customFields/{cfId}:
+    put:
+      tags:
+        - CustomFields
+      summary: Update customField
+      operationId: updateCustomField
+      description: Update organisation by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/cfId'
+      requestBody:
+        description: Update customField information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customField'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customField'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - CustomFields
+      summary: Get CustomField
+      operationId: getCustomField
+      description: Get the CustomField details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/cfId'
+      responses:
+        '200':
+          description: CustomField
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customField'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/customFieldTemplates:
+    get:
+      tags:
+        - CustomFields
+      summary: List Custom Field Templates
+      operationId: listCustomFieldTemplates
+      description: List all the Custom Field Templates
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Custom Field Templates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/customFieldTemplate'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - CustomFields
+      summary: Add Custom Field template
+      operationId: addCustomFieldTemplate
+      description: Add a new Custom Field Template
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customFieldTemplate'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customFieldTemplate'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/customFieldTemplates/{cftId}:
+    put:
+      tags:
+        - CustomFields
+      summary: Update customFieldTemplate
+      operationId: updateCustomFieldTemplate
+      description: Update customFieldTemplate by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/cftId'
+      requestBody:
+        description: Update customFieldTemplate information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customFieldTemplate'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customFieldTemplate'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - CustomFields
+      summary: Get Product Info
+      operationId: getProduct
+      description: Get the product details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/cftId'
+      responses:
+        '200':
+          description: Product info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/documents:
+    get:
+      tags:
+        - Documents
+      summary: List Documents
+      operationId: listDocuments
+      description: List all the Documents
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Documents
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/document'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Documents
+      summary: Add document
+      operationId: addDocument
+      description: Add a new Document
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Document information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/documents/{docId}:
+    put:
+      tags:
+        - Documents
+      summary: Update document
+      operationId: updateDocument
+      description: Update document by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/docId'
+      requestBody:
+        description: Update document information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Documents
+      summary: Get Document
+      operationId: getDocument
+      description: Get the document details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/docId'
+      responses:
+        '200':
+          description: Document info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/locations:
+    get:
+      tags:
+        - Locations
+      summary: List Locations
+      operationId: listLocations
+      description: List all the Locations
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Locations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/location'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Locations
+      summary: Add Location
+      operationId: addLocation
+      description: Add a new Location
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Location information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/location'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/location'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/locations/{locId}:
+    put:
+      tags:
+        - Locations
+      summary: Update location
+      operationId: updateLocation
+      description: Update location by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/locId'
+      requestBody:
+        description: Update location information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/location'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/location'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Locations
+      summary: Get Location
+      operationId: getLocation
+      description: Get the Location details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/locId'
+      responses:
+        '200':
+          description: Location info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/location'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/locations/{locId}/links:
+    get:
+      tags:
+        - Links
+      summary: List Links
+      operationId: listLinks
+      description: List all the Links
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Links
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/link'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Links
+      summary: Add Link
+      operationId: addLink
+      description: Add a new Link
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Link information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/link'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/link'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/locations/{locId}/links/{linkId}:
+    put:
+      tags:
+        - Links
+      summary: Update link
+      operationId: updateLink
+      description: Update link by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/linkId'
+      requestBody:
+        description: Update link information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/link'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/link'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Links
+      summary: Get Link
+      operationId: getLink
+      description: Get the link details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/linkId'
+      responses:
+        '200':
+          description: Link info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/link'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/items:
+    get:
+      tags:
+        - Items
+      summary: List Items
+      operationId: listItems
+      description: List all the Items
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/item'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Items
+      summary: Add Item
+      operationId: addItem
+      description: Add a new Item
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Item information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/item'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/item'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/items/{itemId}:
+    put:
+      tags:
+        - Items
+      summary: Update item
+      operationId: updateItem
+      description: Update item by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/itemId'
+      requestBody:
+        description: Update item information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/item'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/item'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Items
+      summary: Get Item
+      operationId: getItem
+      description: Get the item details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/itemId'
+      responses:
+        '200':
+          description: Item info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/item'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/mappings:
+    get:
+      tags:
+        - Mappings
+      summary: List Mappings
+      operationId: listMappings
+      description: List all the Mappings
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Mappings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/mapping'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Mappings
+      summary: Add Mapping
+      operationId: addMapping
+      description: Add a new Mapping
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Mapping information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mapping'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapping'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/mappings/{mapId}:
+    put:
+      tags:
+        - Mappings
+      summary: Update mapping
+      operationId: updateMapping
+      description: Update mapping by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/mapId'
+      requestBody:
+        description: Update mapping information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mapping'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapping'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Mappings
+      summary: Get Mapping
+      operationId: getMapping
+      description: Get the Mapping details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/mapId'
+      responses:
+        '200':
+          description: Mapping info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapping'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/materials:
+    get:
+      tags:
+        - Materials
+      summary: List Materials
+      operationId: listMaterials
+      description: List all the Materials
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Materials
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/material'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Materials
+      summary: Add Material
+      operationId: addMaterial
+      description: Add a new Material
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Material information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/material'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/material'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/materials/{matId}:
+    put:
+      tags:
+        - Materials
+      summary: Update material
+      operationId: updateMaterial
+      description: Update material by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/matId'
+      requestBody:
+        description: Update material information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/material'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/material'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Materials
+      summary: Get Material
+      operationId: getMaterial
+      description: Get the material details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/matId'
+      responses:
+        '200':
+          description: Material info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/material'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/products:
+    get:
+      tags:
+        - Products
+      summary: List Products
+      operationId: listProducts
+      description: List all the Products
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/product'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Products
+      summary: Add Product
+      operationId: addProduct
+      description: Add a new Product
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Product information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/products/{prodId}:
+    put:
+      tags:
+        - Products
+      summary: Update product
+      operationId: updateProduct
+      description: Update product by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/prodId'
+      requestBody:
+        description: Update product information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Products
+      summary: Get Product
+      operationId: getProduct
+      description: Get the product details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/prodId'
+      responses:
+        '200':
+          description: Product info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/public:
+    post:
+      tags:
+        - Public
+      summary: Add Public Info
+      operationId: addPublicInfo
+      description: Add Public Info
+      requestBody:
+        description: Update Public information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/public'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/public'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    put:
+      tags:
+        - Public
+      summary: Update Public Info
+      operationId: updatePublicInfo
+      description: Update Public Info by id
+      requestBody:
+        description: Update Public information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/public'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/public'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      summary: Get Public Info
+      operationId: getPublicInfo
+      description: Get and organisations public info
+      responses:
+        '200':
+          description: Public info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/public'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/tags:
+    get:
+      tags:
+        - Tags
+      summary: List Tags
+      operationId: listTags
+      description: List all the Tags
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tag'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Tags
+      summary: Add Tag
+      operationId: addTag
+      description: Add a new Tag
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Tag information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tag'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /organisations/{orgId}/tags/{tagId}:
+    put:
+      tags:
+        - Tags
+      summary: Update tag
+      operationId: updateTag
+      description: Update tag by id
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/tagId'
+      requestBody:
+        description: Update tag information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tag'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Tags
+      summary: Get Tag
+      operationId: getTag
+      description: Get the Tag details
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/tagId'
+      responses:
+        '200':
+          description: Tag info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /units:
+    get:
+      tags:
+        - Shared
+      summary: List Units
+      operationId: listUnits
+      description: List all the Units
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        '200':
+          description: Array of Units
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/unit'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    post:
+      tags:
+        - Shared
+      summary: Add Unit
+      operationId: addUnit
+      description: Add a new Unit
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Unit information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unit'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unit'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+  /units/{unitId}:
+    put:
+      tags:
+        - Shared
+      summary: Update unit
+      operationId: updateUnit
+      description: Update unit by id
+      parameters:
+        - $ref: '#/components/parameters/unitId'
+      requestBody:
+        description: Update unit information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unit'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unit'
+        '404':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404-notFound'
+        '422':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/422-unprocessable'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+    get:
+      tags:
+        - Shared
+      summary: Get Unit
+      operationId: getUnit
+      description: Get the unit details
+      parameters:
+        - $ref: '#/components/parameters/unitId'
+      responses:
+        '200':
+          description: Unit info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unit'
+        default:
+          $ref: '#/components/responses/400-unexpectedError'
+components:
+  parameters:
+    orgId:
+      name: orgId
+      in: path
+      required: true
+      description: The id of organisation
+      schema:
+        type: string
+    certId:
+      name: certId
+      in: path
+      required: true
+      description: The system provided id of a certificate
+      schema:
+        type: string
+    checkId:
+      name: checkId
+      in: path
+      required: true
+      description: The system provided id of a check
+      schema:
+        type: string
+    conId:
+      name: conId
+      in: path
+      required: true
+      description: The system provided id of a connection
+      schema:
+        type: string
+    cfId:
+      name: cfId
+      in: path
+      required: true
+      description: The system provided id of a customField
+      schema:
+        type: string
+    cftId:
+      name: cftId
+      in: path
+      required: true
+      description: The system provided id of a custom field template
+      schema:
+        type: string
+    docId:
+      name: docId
+      in: path
+      required: true
+      description: The system provided id of a document
+      schema:
+        type: string
+    locId:
+      name: locId
+      in: path
+      required: true
+      description: The system provided id of a location
+      schema:
+        type: string
+    linkId:
+      name: linkId
+      in: path
+      required: true
+      description: The system provided id of a link
+      schema:
+        type: string
+    itemId:
+      name: itemId
+      in: path
+      required: true
+      description: The id of an item
+      schema:
+        type: string
+    mapId:
+      name: mapId
+      in: path
+      required: true
+      description: The system provided id of a mapping
+      schema:
+        type: string
+    matId:
+      name: matId
+      in: path
+      required: true
+      description: The system provided id of a material
+      schema:
+        type: string
+    prodId:
+      name: prodId
+      in: path
+      required: true
+      description: The system provided id of a product
+      schema:
+        type: string
+    tagId:
+      name: tagId
+      in: path
+      required: true
+      description: The system provided id of a tag
+      schema:
+        type: string
+    unitId:
+      name: unitId
+      in: path
+      required: true
+      description: The id of unit of measurement
+      schema:
+        type: string
+  schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    status:
+      type: string
+      enum:
+        - DRAFT
+        - ACTIVE
+        - ARCHIVED
+    countries:
+      type: string
+      enum:
+        - AF
+        - AX
+        - AL
+        - DZ
+        - AS
+        - AD
+        - AO
+        - AI
+        - AQ
+        - AG
+        - AR
+        - AM
+        - AW
+        - AU
+        - AT
+        - AZ
+        - BS
+        - BH
+        - BD
+        - BB
+        - BY
+        - BE
+        - BZ
+        - BJ
+        - BM
+        - BT
+        - BO
+        - BA
+        - BW
+        - BV
+        - BR
+        - VG
+        - IO
+        - BN
+        - BG
+        - BF
+        - BI
+        - KH
+        - CM
+        - CA
+        - CV
+        - KY
+        - CF
+        - TD
+        - CL
+        - CN
+        - HK
+        - MO
+        - CX
+        - CC
+        - CO
+        - KM
+        - CG
+        - CD
+        - CK
+        - CR
+        - CI
+        - HR
+        - CU
+        - CY
+        - CZ
+        - DK
+        - DJ
+        - DM
+        - DO
+        - EC
+        - EG
+        - SV
+        - GQ
+        - ER
+        - EE
+        - ET
+        - FK
+        - FO
+        - FJ
+        - FI
+        - FR
+        - GF
+        - PF
+        - TF
+        - GA
+        - GM
+        - GE
+        - DE
+        - GH
+        - GI
+        - GR
+        - GL
+        - GD
+        - GP
+        - GU
+        - GT
+        - GG
+        - GN
+        - GW
+        - GY
+        - HT
+        - HM
+        - VA
+        - HN
+        - HU
+        - IS
+        - IN
+        - ID
+        - IR
+        - IQ
+        - IE
+        - IM
+        - IL
+        - IT
+        - JM
+        - JP
+        - JE
+        - JO
+        - KZ
+        - KE
+        - KI
+        - KP
+        - KR
+        - KW
+        - KG
+        - LA
+        - LV
+        - LB
+        - LS
+        - LR
+        - LY
+        - LI
+        - LT
+        - LU
+        - MK
+        - MG
+        - MW
+        - MY
+        - MV
+        - ML
+        - MT
+        - MH
+        - MQ
+        - MR
+        - MU
+        - YT
+        - MX
+        - FM
+        - MD
+        - MC
+        - MN
+        - ME
+        - MS
+        - MA
+        - MZ
+        - MM
+        - NA
+        - NR
+        - NP
+        - NL
+        - AN
+        - NC
+        - NZ
+        - NI
+        - NE
+        - NG
+        - NU
+        - NF
+        - MP
+        - 'NO'
+        - OM
+        - PK
+        - PW
+        - PS
+        - PA
+        - PG
+        - PY
+        - PE
+        - PH
+        - PN
+        - PL
+        - PT
+        - PR
+        - QA
+        - RE
+        - RO
+        - RU
+        - RW
+        - BL
+        - SH
+        - KN
+        - LC
+        - MF
+        - PM
+        - VC
+        - WS
+        - SM
+        - ST
+        - SA
+        - SN
+        - RS
+        - SC
+        - SL
+        - SG
+        - SK
+        - SI
+        - SB
+        - SO
+        - ZA
+        - GS
+        - SS
+        - ES
+        - LK
+        - SD
+        - SR
+        - SJ
+        - SZ
+        - SE
+        - CH
+        - SY
+        - TW
+        - TJ
+        - TZ
+        - TH
+        - TL
+        - TG
+        - TK
+        - TO
+        - TT
+        - TN
+        - TR
+        - TM
+        - TC
+        - TV
+        - UG
+        - UA
+        - AE
+        - GB
+        - US
+        - UM
+        - UY
+        - UZ
+        - VU
+        - VE
+        - VN
+        - VI
+        - WF
+        - EH
+        - YE
+        - ZM
+        - ZW
+    address:
+      type: object
+      required:
+        - country
+      properties:
+        id:
+          description: System provided identity field.
+          type: string
+        address:
+          description: The mainline of the address.
+          type: string
+        region:
+          description: Region of the address.
+          type: string
+        zip:
+          description: Zip/postal code for the address.
+          type: string
+        country:
+          description: Alpha-2 code of the ISO 3166 Country Codes specification.
+          $ref: '#/components/schemas/countries'
+    organisation:
+      type: object
+      description: This is a definition of an organisation
+      properties:
+        id:
+          type: string
+        status:
+          $ref: '#/components/schemas/status'
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/address'
+        type:
+          type: string
+        website:
+          type: string
+        certificateIds:
+          type: array
+          items:
+            type: string
+        documentIds:
+          type: array
+          items:
+            type: string
+    422-unprocessable:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    404-notFound:
+      description: Null response
+    certificate:
+      type: object
+      required:
+        - standard
+        - number
+      properties:
+        id:
+          description: System provided identity field.
+          type: string
+        standard:
+          description: What standard that this certificate falls under - e.g. FSC/FM
+          type: string
+        number:
+          description: The official certificate number
+          type: string
+        url:
+          description: The official URL where the certificate can be found (if available)
+          type: string
+        validFrom:
+          description: The starting validity date.
+          type: string
+          fromat: date
+        validTo:
+          description: The ending validity date.
+          type: string
+          fromat: date
+    check:
+      type: object
+      required:
+        - target
+        - when
+        - by
+      properties:
+        id:
+          description: System provided identity field.
+          type: string
+        target:
+          description: The target resource url for the check
+          type: string
+        when:
+          description: When the check was added
+          type: string
+          format: date-time
+        by:
+          description: Who the check was from
+          type: string
+        note:
+          description: Any note attached to the check.
+          type: string
+    connection:
+      type: object
+      properties:
+        id:
+          type: string
+    customField:
+      type: object
+      properties:
+        id:
+          type: string
+        target:
+          type: string
+        key:
+          type: string
+    customFieldTemplate:
+      type: object
+      properties:
+        id:
+          type: string
+        targetType:
+          type: string
+        name:
+          type: string
+        value:
+          type: string
+    product:
+      type: object
+      description: This is a definition of a product
+      required:
+        - locationIdFrom
+        - locationIdTo
+        - date
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    document:
+      type: object
+      properties:
+        id:
+          type: string
+    geometry:
+      type: object
+      description: GeoJSon geometry
+      discriminator: type
+      required:
+        - type
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#geometry-objects
+      properties:
+        type:
+          type: string
+          enum:
+            - Point
+            - LineString
+            - Polygon
+            - MultiPoint
+            - MultiLineString
+            - MultiPolygon
+          description: the geometry type
+    geometryCollection:
+      type: object
+      description: GeoJSon geometry collection
+      required:
+        - type
+        - geometries
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#geometrycollection
+      properties:
+        type:
+          type: string
+          enum:
+            - GeometryCollection
+        geometries:
+          type: array
+          items:
+            $ref: '#/components/schemas/geometry'
+    link:
+      type: object
+      description: This is a link between two locations.
+      required:
+        - locationIdFrom
+        - locationIdTo
+        - date
+      properties:
+        id:
+          type: string
+        locationIdFrom:
+          type: string
+        locationIdTo:
+          type: string
+        date:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/status'
+    location:
+      type: object
+      description: This is a location for an organisation, typically where there will be processing of goods within the supply chain
+      required:
+        - name
+        - type
+      properties:
+        id:
+          type: string
+        orgId:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        address:
+          $ref: '#/components/schemas/address'
+        geoLocation:
+          $ref: '#/components/schemas/geometryCollection'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/link'
+        certificateIds:
+          type: array
+          items:
+            type: string
+        documentIds:
+          type: array
+          items:
+            type: string
+    item:
+      type: object
+      description: This is a definition of an item
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        website:
+          type: string
+        certificateIds:
+          type: array
+          items:
+            type: string
+        documentIds:
+          type: array
+          items:
+            type: string
+    mapping:
+      type: object
+      properties:
+        id:
+          type: string
+    material:
+      type: object
+      description: Definition of a material
+      required:
+        - name
+        - category
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+    public:
+      type: object
+      description: This is the information provide by an organisation that is public
+      required:
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        dltIdentity:
+          type: string
+        website:
+          type: string
+        description:
+          type: string
+    tag:
+      type: object
+      properties:
+        id:
+          type: string
+    unit:
+      type: object
+      description: Definition of a unit of measurement
+      required:
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        precision:
+          type: integer
+    error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    feature:
+      type: object
+      description: GeoJSon Feature
+      required:
+        - type
+        - id
+        - geometry
+      externalDocs:
+        url: https://tools.ietf.org/html/rfc7946#section-3.2
+      properties:
+        type:
+          type: string
+          enum:
+            - Feature
+        id:
+          type: integer
+        geometry:
+          $ref: '#/components/schemas/geometryCollection'
+        properties:
+          type: object
+    featureCollection:
+      type: object
+      description: GeoJSon Feature collection
+      required:
+        - type
+        - features
+      externalDocs:
+        url: https://tools.ietf.org/html/rfc7946#section-3.3
+      properties:
+        type:
+          type: string
+          enum:
+            - FeatureCollection
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/feature'
+    point3D:
+      type: array
+      description: Point in 3D space
+      minItems: 2
+      maxItems: 3
+      items:
+        type: number
+    lineString:
+      type: object
+      description: GeoJSon geometry
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id3
+      allOf:
+        - $ref: '#/components/schemas/geometry'
+        - properties:
+            coordinates:
+              type: array
+              items:
+                $ref: '#/components/schemas/point3D'
+    multiLineString:
+      type: object
+      description: GeoJSon geometry
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id6
+      allOf:
+        - $ref: '#/components/schemas/geometry'
+        - properties:
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/point3D'
+    multiPoint:
+      type: object
+      description: GeoJSon geometry
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id5
+      allOf:
+        - $ref: '#/components/schemas/geometry'
+        - properties:
+            coordinates:
+              type: array
+              items:
+                $ref: '#/components/schemas/point3D'
+    multiPolygon:
+      type: object
+      description: GeoJSon geometry
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id6
+      allOf:
+        - $ref: '#/components/schemas/geometry'
+        - properties:
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/point3D'
+    point:
+      type: object
+      description: GeoJSon geometry
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id2
+      allOf:
+        - $ref: '#/components/schemas/geometry'
+        - properties:
+            coordinates:
+              $ref: '#/components/schemas/point3D'
+    polygon:
+      type: object
+      description: GeoJSon geometry
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id4
+      allOf:
+        - $ref: '#/components/schemas/geometry'
+        - properties:
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/point3D'
+    Certificate:
+      $ref: '#/components/schemas/certificate'
+    Check:
+      $ref: '#/components/schemas/check'
+    Connection:
+      $ref: '#/components/schemas/connection'
+    CustomField:
+      $ref: '#/components/schemas/customField'
+    CustomFieldTemplate:
+      $ref: '#/components/schemas/customFieldTemplate'
+    Document:
+      $ref: '#/components/schemas/document'
+    Item:
+      $ref: '#/components/schemas/item'
+    Link:
+      $ref: '#/components/schemas/link'
+    Location:
+      $ref: '#/components/schemas/location'
+    Mapping:
+      $ref: '#/components/schemas/mapping'
+    Material:
+      $ref: '#/components/schemas/material'
+    Organisation:
+      $ref: '#/components/schemas/organisation'
+    Product:
+      $ref: '#/components/schemas/product'
+    Public:
+      $ref: '#/components/schemas/public'
+    Tag:
+      $ref: '#/components/schemas/tag'
+    Unit:
+      $ref: '#/components/schemas/unit'
+    GeoFeature:
+      $ref: '#/components/schemas/feature'
+    GeoFeatureCollection:
+      $ref: '#/components/schemas/featureCollection'
+    GeoGeometry:
+      $ref: '#/components/schemas/geometry'
+    GeoGeometryCollection:
+      $ref: '#/components/schemas/geometryCollection'
+    GeoLineString:
+      $ref: '#/components/schemas/lineString'
+    GeoMultiLineString:
+      $ref: '#/components/schemas/multiLineString'
+    GeoMultiPoint:
+      $ref: '#/components/schemas/multiPoint'
+    GeoMultiPolygon:
+      $ref: '#/components/schemas/multiPolygon'
+    GeoPoint:
+      $ref: '#/components/schemas/point'
+    GeoPoint3D:
+      $ref: '#/components/schemas/point3D'
+    GeoPolygon:
+      $ref: '#/components/schemas/polygon'
+  responses:
+    400-unexpectedError:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    200-nullResponse:
+      description: Null response
+    422-unprocessable:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    404-notFound:
+      description: Null response
+    NullResponse:
+      $ref: '#/components/responses/200-nullResponse'
+    UnexpectedError:
+      $ref: '#/components/responses/400-unexpectedError'
+    Unprocessable:
+      $ref: '#/components/responses/422-unprocessable'
+    NotFound:
+      $ref: '#/components/responses/404-notFound'

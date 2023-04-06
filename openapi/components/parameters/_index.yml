@@ -1,0 +1,42 @@
+# path
+certId:
+  $ref: './path/certId.yml'
+
+cfId:
+  $ref: './path/cfId.yml'
+
+cftId:
+  $ref: './path/cftId.yml'
+
+conId:
+  $ref: './path/conId.yml'
+
+docId:
+  $ref: './path/docId.yml'
+
+itemId:
+  $ref: './path/itemId.yml'
+
+linkId:
+  $ref: './path/linkId.yml'
+
+locId:
+  $ref: './path/locId.yml'
+
+mapId:
+  $ref: './path/mapId.yml'
+
+matId:
+  $ref: './path/matId.yml'
+
+orgId:
+  $ref: './path/orgId.yml'
+
+prodId:
+  $ref: './path/prodId.yml'
+
+tagId:
+  $ref: './path/tagId.yml'
+
+unitId:
+  $ref: './path/unitId.yml'

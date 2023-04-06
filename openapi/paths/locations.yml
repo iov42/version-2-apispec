@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Locations
+  summary: List Locations
+  operationId: listLocations
+  description: List all the Locations
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  responses:
+    '200':
+      description: Array of Locations
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/location.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Locations
+  summary: Add Location
+  operationId: addLocation
+  description: Add a new Location
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  requestBody:
+    description: Location information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/location.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/location.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

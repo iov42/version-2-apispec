@@ -1,0 +1,30 @@
+type: object
+description: This is a location for an organisation, typically where there will be processing of goods within the supply chain
+required:
+  - name
+  - type
+properties:
+  id:
+    type: string
+  orgId:
+    type: string
+  name:
+    type: string
+  type:
+    type: string
+  address:
+    $ref: './address.yml'
+  geoLocation:
+    $ref: './geoJson/geometryCollection.yml'
+  links:
+    type: array
+    items:
+      $ref: './link.yml'
+  certificateIds:
+    type: array
+    items:
+      type: string
+  documentIds:
+    type: array
+    items:
+      type: string

@@ -1,0 +1,6 @@
+name: orgId
+in: path
+required: true
+description: The id of organisation
+schema:
+  type: string

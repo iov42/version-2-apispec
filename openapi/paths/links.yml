@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Links
+  summary: List Links
+  operationId: listLinks
+  description: List all the Links
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  responses:
+    '200':
+      description: Array of Links
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/link.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Links
+  summary: Add Link
+  operationId: addLink
+  description: Add a new Link
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  requestBody:
+    description: Link information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/link.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/link.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

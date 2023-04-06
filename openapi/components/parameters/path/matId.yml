@@ -1,0 +1,6 @@
+name: matId
+in: path
+required: true
+description: The system provided id of a material
+schema:
+  type: string

@@ -1,0 +1,6 @@
+name: conId
+in: path
+required: true
+description: The system provided id of a connection
+schema:
+  type: string
