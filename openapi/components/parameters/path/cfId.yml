@@ -1,0 +1,6 @@
+name: cfId
+in: path
+required: true
+description: The system provided id of a customField
+schema:
+  type: string

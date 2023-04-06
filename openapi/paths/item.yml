@@ -1,0 +1,55 @@
+put:
+  tags:
+    - Items
+  summary: Update item
+  operationId: updateItem
+  description: Update item by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/itemId.yml'
+  requestBody:
+    description: Update item information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/item.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/item.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Items
+  summary: Get Item
+  operationId: getItem
+  description: Get the item details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/itemId.yml'
+  responses:
+    '200':
+      description: Item info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/item.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

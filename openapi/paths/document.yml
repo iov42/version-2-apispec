@@ -1,0 +1,55 @@
+put:
+  tags:
+    - Documents
+  summary: Update document
+  operationId: updateDocument
+  description: Update document by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/docId.yml'
+  requestBody:
+    description: Update document information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/document.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/document.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Documents
+  summary: Get Document
+  operationId: getDocument
+  description: Get the document details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/docId.yml'
+  responses:
+    '200':
+      description: Document info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/document.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

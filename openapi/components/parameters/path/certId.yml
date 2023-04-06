@@ -1,0 +1,6 @@
+name: certId
+in: path
+required: true
+description: The system provided id of a certificate
+schema:
+  type: string

@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Items
+  summary: List Items
+  operationId: listItems
+  description: List all the Items
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  responses:
+    '200':
+      description: Array of Items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/item.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Items
+  summary: Add Item
+  operationId: addItem
+  description: Add a new Item
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  requestBody:
+    description: Item information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/item.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/item.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

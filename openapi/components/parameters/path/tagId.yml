@@ -1,0 +1,6 @@
+name: tagId
+in: path
+required: true
+description: The system provided id of a tag
+schema:
+  type: string

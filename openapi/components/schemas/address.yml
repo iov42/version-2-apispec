@@ -1,0 +1,19 @@
+type: object
+required:
+  - country
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  address:
+    description: The mainline of the address.
+    type: string
+  region:
+    description: Region of the address.
+    type: string
+  zip:
+    description: Zip/postal code for the address.
+    type: string
+  country:
+    description: Alpha-2 code of the ISO 3166 Country Codes specification.
+    $ref: './enums/countries.yml'

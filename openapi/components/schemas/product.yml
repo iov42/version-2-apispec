@@ -1,0 +1,11 @@
+type: object
+description: This is a definition of a product
+required:
+  - locationIdFrom
+  - locationIdTo
+  - date
+properties:
+  id:
+    type: string
+  name:
+    type: string

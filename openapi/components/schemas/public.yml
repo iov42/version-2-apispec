@@ -1,0 +1,15 @@
+type: object
+description: This is the information provide by an organisation that is public
+required:
+  - name
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  dltIdentity:
+    type: string
+  website:
+    type: string
+  description:
+    type: string

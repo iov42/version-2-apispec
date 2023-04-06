@@ -1,0 +1,6 @@
+name: mapId
+in: path
+required: true
+description: The system provided id of a mapping
+schema:
+  type: string

@@ -1,0 +1,6 @@
+type: array
+description: Point in 3D space
+minItems: 2
+maxItems: 3
+items:
+  type: number

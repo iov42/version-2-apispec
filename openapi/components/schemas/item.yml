@@ -1,0 +1,17 @@
+type: object
+description: This is a definition of an item
+properties:
+  id:
+    type: string
+  type:
+    type: string
+  website:
+    type: string
+  certificateIds:
+    type: array
+    items:
+      type: string
+  documentIds:
+    type: array
+    items:
+      type: string

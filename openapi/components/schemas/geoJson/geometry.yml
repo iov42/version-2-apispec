@@ -1,0 +1,18 @@
+type: object
+description: GeoJSon geometry
+discriminator: type
+required:
+  - type
+externalDocs:
+  url: http://geojson.org/geojson-spec.html#geometry-objects
+properties:
+  type:
+    type: string
+    enum:
+    - Point
+    - LineString
+    - Polygon
+    - MultiPoint
+    - MultiLineString
+    - MultiPolygon
+    description: the geometry type

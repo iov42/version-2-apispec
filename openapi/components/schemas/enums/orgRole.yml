@@ -1,0 +1,6 @@
+type: string
+enum:
+  - Admin
+  - Enforcement
+  - Verifier
+  - Participant

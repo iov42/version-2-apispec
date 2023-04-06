@@ -1,0 +1,13 @@
+type: object
+description: Definition of a unit of measurement
+required:
+  - name
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  symbol:
+    type: string
+  precision:
+    type: integer

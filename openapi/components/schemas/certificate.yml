@@ -1,0 +1,25 @@
+type: object
+required:
+  - standard
+  - number
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  standard:
+    description: What standard that this certificate falls under - e.g. FSC/FM
+    type: string
+  number:
+    description: The official certificate number
+    type: string
+  url:
+    description: The official URL where the certificate can be found (if available)
+    type: string
+  validFrom:
+    description: The starting validity date.
+    type: string
+    fromat: date
+  validTo:
+    description: The ending validity date.
+    type: string
+    fromat: date

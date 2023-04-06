@@ -1,0 +1,6 @@
+name: checkId
+in: path
+required: true
+description: The system provided id of a check
+schema:
+  type: string

@@ -1,0 +1,8 @@
+NullResponse:
+  $ref: "./200-nullResponse.yml"
+UnexpectedError:
+  $ref: "./400-unexpectedError.yml"
+Unprocessable:
+  $ref: "./422-unprocessable.yml"
+NotFound:
+  $ref: "./404-notFound.yml"
