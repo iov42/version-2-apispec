@@ -1,9 +1,7 @@
 name: Release API spec
 
 on:
-  push:
-    tags:
-      - "*"
+  workflow_dispatch
 
 env:
   RELEASE_DIR: restApi # Change this to match the id of your plugin.
