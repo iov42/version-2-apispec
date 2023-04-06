@@ -67,6 +67,8 @@ put:
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 get:
+  tags:
+    - Public
   summary: Get Public Info
   operationId: getPublicInfo
   description: Get and organisations public info
