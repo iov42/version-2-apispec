@@ -1,5 +1,5 @@
 description: Unprocessable Entity
-content:
-  application/json:
-    schema:
-      $ref : "../schemas/Error.yml"
+#content:
+#  application/json:
+#    schema:
+#      $ref : "../schemas/Error.yml"
