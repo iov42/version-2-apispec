@@ -6,6 +6,7 @@ put:
   description: Update link by id
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/path/linkId.yml'
   requestBody:
     description: Update link information
@@ -43,6 +44,7 @@ get:
   description: Get the link details
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/path/linkId.yml'
   responses:
     '200':

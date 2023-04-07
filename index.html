@@ -1,34 +1,19 @@
-<!DOCTYPE html>
+<!doctype html> <!-- Important: must specify -->
 <html>
   <head>
-    <title>API Reference | Traceability</title>
-    <!-- needed for adaptive design -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700"
-      rel="stylesheet"
-    />
-
-    <!--
-    Redoc doesn't change outer page styles
-    -->
+    <title>Traceability API</title>
+    <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
+    <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
+
     </style>
   </head>
   <body>
-    <!--
-    Redoc element with link to your OpenAPI definition
-    -->
-    <redoc spec-url="dist.yml"></redoc>
-    <!--
-    Link to Redoc JavaScript on CDN for rendering standalone element
-    -->
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+    <rapi-doc 
+        spec-url = "./openapi/openapi.yml"
+        theme = 'dark'
+        show-header = 'false'
+        primary-color = '#b6ffe1'
+        show-method-in-nav-bar='as-colored-text'> </rapi-doc>
   </body>
 </html>
