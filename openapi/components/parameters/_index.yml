@@ -2,6 +2,9 @@
 certId:
   $ref: './path/certId.yml'
 
+cfdId:
+  $ref: './path/cfdId.yml'
+
 cfId:
   $ref: './path/cfId.yml'
 

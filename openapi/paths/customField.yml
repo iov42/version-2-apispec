@@ -3,7 +3,7 @@ put:
     - CustomFields
   summary: Update customField
   operationId: updateCustomField
-  description: Update organisation by id
+  description: Update Custom Field by id
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/cfId.yml'
@@ -12,7 +12,20 @@ put:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/customField.yml'
+          oneOf:
+            - $ref: '../components/schemas/customField_Date.yml'
+            - $ref: '../components/schemas/customField_Datetime.yml'
+            - $ref: '../components/schemas/customField_Number.yml'
+            - $ref: '../components/schemas/customField_String.yml'
+        examples:
+          Date Field:
+              $ref: '../components/examples/customField_Date.yml'
+          Datetime Field:
+              $ref: '../components/examples/customField_Datetime.yml'
+          Number Field:
+              $ref: '../components/examples/customField_Number.yml'
+          String Field:
+              $ref: '../components/examples/customField_String.yml'
     required: true
   responses:
     '201':
@@ -20,7 +33,20 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/customField.yml'
+            oneOf:
+            - $ref: '../components/schemas/customField_Date.yml'
+            - $ref: '../components/schemas/customField_Datetime.yml'
+            - $ref: '../components/schemas/customField_Number.yml'
+            - $ref: '../components/schemas/customField_String.yml'
+          examples:
+            Date Field:
+                $ref: '../components/examples/customField_Date.yml'
+            Datetime Field:
+                $ref: '../components/examples/customField_Datetime.yml'
+            Number Field:
+                $ref: '../components/examples/customField_Number.yml'
+            String Field:
+                $ref: '../components/examples/customField_String.yml'
     '404':
       description: Invalid input
       content:
@@ -50,6 +76,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/customField.yml'
+            oneOf:
+            - $ref: '../components/schemas/customField_Date.yml'
+            - $ref: '../components/schemas/customField_Datetime.yml'
+            - $ref: '../components/schemas/customField_Number.yml'
+            - $ref: '../components/schemas/customField_String.yml'
+          examples:
+            Date Field:
+                $ref: '../components/examples/customField_Date.yml'
+            Datetime Field:
+                $ref: '../components/examples/customField_Datetime.yml'
+            Number Field:
+                $ref: '../components/examples/customField_Number.yml'
+            String Field:
+                $ref: '../components/examples/customField_String.yml'
     default:
       $ref: '../components/responses/400-unexpectedError.yml'

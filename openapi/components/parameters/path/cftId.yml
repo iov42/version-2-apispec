@@ -1,6 +1,6 @@
 name: cftId
 in: path
 required: true
-description: The system provided id of a custom field template
+description: The system provided id of a Custom Field Template
 schema:
   type: string

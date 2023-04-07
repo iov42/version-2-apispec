@@ -3,6 +3,9 @@ info:
   title: Traceability API
   description: This API spec defines how you can interact with the iov42 traceability system.
   version: '0.0.2'
+security:
+  - ApiKeyAuth: []
+  - JWTBearer: []
 tags:
   - name: Certificates
     description: Apis for the creation and retrieval of Certificates  
@@ -16,8 +19,6 @@ tags:
     description: Apis for the creation and retrieval of Documents  
   - name: Items
     description: Apis for the creation and retrieval of Items  
-  - name: Links
-    description: Apis for the creation and retrieval of Links  
   - name: Locations
     description: Apis for the creation and retrieval of Locations  
   - name: Mappings
@@ -55,6 +56,10 @@ paths:
     $ref: './paths/customFields.yml'
   /organisations/{orgId}/customFields/{cfId}:
     $ref: './paths/customField.yml'
+  /organisations/{orgId}/customFieldDefinitions:
+    $ref: './paths/customFieldDefinitions.yml'
+  /organisations/{orgId}/customFieldDefinitions/{cfdId}:
+    $ref: './paths/customFieldDefinition.yml'
   /organisations/{orgId}/customFieldTemplates:
     $ref: './paths/customFieldTemplates.yml'
   /organisations/{orgId}/customFieldTemplates/{cftId}:
@@ -104,3 +109,8 @@ components:
     $ref: './components/schemas/_index.yml'
   #responses:
   #  $ref: './components/responses/_index.yml'
+  securitySchemes:
+    ApiKeyAuth:
+      $ref: './components/securitySchemas/api_key.yml'
+    JWTBearer:
+      $ref: './components/securitySchemas/jwt_bearer.yml'

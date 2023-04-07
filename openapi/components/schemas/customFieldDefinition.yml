@@ -10,5 +10,5 @@ properties:
     type: boolean
   default:
     type: string
-  #type:
-  #  $ref: './enums/fieldType'
+  type:
+    $ref: './enums/fieldType.yml'

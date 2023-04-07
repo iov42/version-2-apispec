@@ -6,3 +6,6 @@ properties:
     type: string
   key:
     type: string
+  value:
+    type: string
+    format: date

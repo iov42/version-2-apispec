@@ -4,8 +4,16 @@ Check:
   $ref: "./check.yml"
 Connection:
   $ref: "./connection.yml"
-CustomField:
-  $ref: "./customField.yml"
+CustomFieldDate:
+  $ref: "./customField_Date.yml"
+CustomFieldDatetime:
+  $ref: "./customField_Datetime.yml"
+CustomFieldNumber:
+  $ref: "./customField_Number.yml"
+CustomFieldString:
+  $ref: "./customField_String.yml"
+CustomFieldDefinition:
+  $ref: "./customFieldDefinition.yml"
 CustomFieldTemplate:
   $ref: "./customFieldTemplate.yml"
 Document:

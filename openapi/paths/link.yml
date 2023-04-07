@@ -1,6 +1,6 @@
 put:
   tags:
-    - Links
+    - Locations
   summary: Update link
   operationId: updateLink
   description: Update link by id
@@ -38,7 +38,7 @@ put:
       $ref: '../components/responses/400-unexpectedError.yml'
 get:
   tags:
-    - Links
+    - Locations
   summary: Get Link
   operationId: getLink
   description: Get the link details

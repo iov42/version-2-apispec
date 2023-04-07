@@ -1,6 +1,6 @@
 name: cfId
 in: path
 required: true
-description: The system provided id of a customField
+description: The system provided id of a Custom Field
 schema:
   type: string

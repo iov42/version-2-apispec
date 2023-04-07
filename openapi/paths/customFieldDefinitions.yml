@@ -1,45 +1,42 @@
 get:
   tags:
-    - Locations
-  summary: List Links
-  operationId: listLinks
-  description: List all the Links
+    - CustomFields
+  summary: List Custom Field Definitions
+  operationId: listCustomFieldDefinitions
+  description: List all the Custom Field Definitions
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
   responses:
     '200':
-      description: Array of Links
+      description: Array of Custom Field Definitions
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/link.yml'
+              $ref: '../components/schemas/customFieldDefinition.yml'
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 post:
   tags:
-    - Locations
-  summary: Add Link
-  operationId: addLink
-  description: Add a new Link
+    - CustomFields
+  summary: Add Custom Field Definition
+  operationId: addCustomFieldDefinition
+  description: Add a new Custom Field Definition
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
   requestBody:
-    description: Link information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/link.yml'
+          $ref: '../components/schemas/customFieldDefinition.yml'
   responses:
     '201':
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/link.yml'
+            $ref: '../components/schemas/customFieldDefinition.yml'
     '422':
       description: Invalid input
       content:

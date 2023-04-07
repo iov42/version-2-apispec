@@ -1,18 +1,18 @@
 put:
   tags:
     - CustomFields
-  summary: Update Custom Field Template
-  operationId: updateCustomFieldTemplate
-  description: Update Custom Field Template by id
+  summary: Update Custom Field Definition
+  operationId: updateCustomFieldDefinition
+  description: Update Custom Field Definition by id
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/cftId.yml'
+    - $ref: '../components/parameters/path/cfdId.yml'
   requestBody:
-    description: Update Custom Field Template information
+    description: Update Custom Field Definition information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/customFieldTemplate.yml'
+          $ref: '../components/schemas/customFieldDefinition.yml'
     required: true
   responses:
     '201':
@@ -20,7 +20,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/customFieldTemplate.yml'
+            $ref: '../components/schemas/customFieldDefinition.yml'
     '404':
       description: Invalid input
       content:
@@ -38,18 +38,18 @@ put:
 get:
   tags:
     - CustomFields
-  summary: Get Custom Field Template
-  operationId: getCustomFieldTemplate
-  description: Get a Custom Field Template details
+  summary: Get Custom Field Definition
+  operationId: getCustomFieldDefinition
+  description: Get the Custom Field Definition details
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/cftId.yml'
+    - $ref: '../components/parameters/path/cfdId.yml'
   responses:
     '200':
-      description: Custom Field Template
+      description: CustomField
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/product.yml'
+            $ref: '../components/schemas/customFieldDefinition.yml'
     default:
       $ref: '../components/responses/400-unexpectedError.yml'

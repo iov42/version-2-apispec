@@ -1,0 +1,6 @@
+name: cfdId
+in: path
+required: true
+description: The system provided id of a Custom Field Definition
+schema:
+  type: string

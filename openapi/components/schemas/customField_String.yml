@@ -1,6 +1,10 @@
-allOf:
-  - $ref: './customField.yml'
-  - type: object
-    properties:
-      value:
-        type: string
+type: object
+properties:
+  id:
+    type: string
+  target:
+    type: string
+  key:
+    type: string
+  value:
+    type: string

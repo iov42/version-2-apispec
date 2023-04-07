@@ -6,7 +6,7 @@ properties:
     type: string
   name:
     type: string
-  value:
-    type: string
-  #type:
-  #  $ref: './enums/fieldType'
+  definitions:
+    type: array
+    items:
+      - $ref: './customFieldDefinition.yml'
