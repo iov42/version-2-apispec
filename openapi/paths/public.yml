@@ -4,6 +4,8 @@ post:
   summary: Add Public Info
   operationId: addPublicInfo
   description: Add Public Info
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
   requestBody:
     description: Update Public information
     content:
@@ -38,6 +40,8 @@ put:
   summary: Update Public Info
   operationId: updatePublicInfo
   description: Update Public Info by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
   requestBody:
     description: Update Public information
     content:
@@ -72,6 +76,8 @@ get:
   summary: Get Public Info
   operationId: getPublicInfo
   description: Get and organisations public info
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
   responses:
     '200':
       description: Public info
@@ -79,5 +85,11 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/public.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'            
     default:
       $ref: '../components/responses/400-unexpectedError.yml'

@@ -18,8 +18,8 @@ properties:
   validFrom:
     description: The starting validity date.
     type: string
-    fromat: date
+    format: date
   validTo:
     description: The ending validity date.
     type: string
-    fromat: date
+    format: date

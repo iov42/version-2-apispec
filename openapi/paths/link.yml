@@ -53,5 +53,11 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/link.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'            
     default:
       $ref: '../components/responses/400-unexpectedError.yml'

@@ -6,7 +6,7 @@ properties:
     type: string
   name:
     type: string
-  definitions:
-    type: array
-    items:
-      - $ref: './customFieldDefinition.yml'
+#  definitions:
+#    type: array
+#    items:
+#      - $ref: './customFieldDefinition.yml'

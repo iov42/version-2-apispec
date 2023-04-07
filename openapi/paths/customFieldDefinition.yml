@@ -46,10 +46,16 @@ get:
     - $ref: '../components/parameters/path/cfdId.yml'
   responses:
     '200':
-      description: CustomField
+      description: Custom Field Definition
       content:
         application/json:
           schema:
             $ref: '../components/schemas/customFieldDefinition.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'            
     default:
       $ref: '../components/responses/400-unexpectedError.yml'

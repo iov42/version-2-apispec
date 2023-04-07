@@ -2,9 +2,27 @@
 
 The API documentation is generated automatically on a Github Pages site. This site can be found here: [https://go.iov42.com/traceapi]. You will (currently) need to be logged into Github to see this site. If you cannot see it then you will need to be added to the repository users.
 
-## Modifying the spec.
+## Preparing to make changes
+
+You will need nodejs and npm to be able to use all the tools available.
+
+Install all dependencies
+
+```
+npm install
+```
+
+## Modify the spec.
 
 All the spec pages are split out as much as possible. This is to make managing such a large API spec easier. Please make sure you follow the same approach.
+
+## 'Lint' the spec
+
+The project uses redocly to run a Lint check against the spec. There should be no errors if you have done the right thing.
+
+```
+npm run test
+```
 
 ## Verify you haven't broken the site.
 
@@ -62,3 +80,22 @@ npm run build
 ```
 
 This will output a file in the root directory called 'bundled.yml"
+
+
+## Generate Graphql Schema
+
+This relies on the bundling of the spec into a single file.
+
+1. Install [openapi-to-graphql CLI](https://github.com/IBM/openapi-to-graphql)
+
+```
+npm i -g openapi-to-graphql-cli
+```
+
+2. Run the following command to create the graphql spec
+
+```
+openapi-to-graphql bundled.yml --save schema.graphql
+```
+
+The graphql spec is also checked in.

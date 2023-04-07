@@ -1,6 +1,0 @@
-type: array
-items:
-  anyOf:
-    - $ref: './customField_Datetime.yml'
-    - $ref: './customField_Number.yml'
-    - $ref: './customField_String.yml'

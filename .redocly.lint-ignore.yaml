@@ -1,0 +1,30 @@
+# This file instructs Redocly's linter to ignore the rules contained for specific parts of your API.
+# See https://redoc.ly/docs/cli/ for more information.
+openapi/openapi.yml:
+  no-empty-servers:
+    - '#/openapi'
+  info-license:
+    - '#/info'
+openapi/components/examples/customField_Date.yml:
+  spec-components-invalid-map-name:
+    - '#/'
+  no-invalid-media-type-examples:
+    - '#/value'
+openapi/components/examples/customField_Datetime.yml:
+  spec-components-invalid-map-name:
+    - '#/'
+  no-invalid-media-type-examples:
+    - '#/value'
+openapi/components/examples/customField_Number.yml:
+  spec-components-invalid-map-name:
+    - '#/'
+  no-invalid-media-type-examples:
+    - '#/value'
+openapi/components/examples/customField_String.yml:
+  spec-components-invalid-map-name:
+    - '#/'
+  no-invalid-media-type-examples:
+    - '#/value'
+#openapi/components/schemas/geoJson/geometry.yml:
+#  spec:
+#    - '#/discriminator'

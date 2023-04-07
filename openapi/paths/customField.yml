@@ -19,13 +19,13 @@ put:
             - $ref: '../components/schemas/customField_String.yml'
         examples:
           Date Field:
-              $ref: '../components/examples/customField_Date.yml'
+            $ref: '../components/examples/customField_Date.yml'
           Datetime Field:
-              $ref: '../components/examples/customField_Datetime.yml'
+            $ref: '../components/examples/customField_Datetime.yml'
           Number Field:
-              $ref: '../components/examples/customField_Number.yml'
+            $ref: '../components/examples/customField_Number.yml'
           String Field:
-              $ref: '../components/examples/customField_String.yml'
+            $ref: '../components/examples/customField_String.yml'
     required: true
   responses:
     '201':
@@ -40,13 +40,13 @@ put:
             - $ref: '../components/schemas/customField_String.yml'
           examples:
             Date Field:
-                $ref: '../components/examples/customField_Date.yml'
+              $ref: '../components/examples/customField_Date.yml'
             Datetime Field:
-                $ref: '../components/examples/customField_Datetime.yml'
+              $ref: '../components/examples/customField_Datetime.yml'
             Number Field:
-                $ref: '../components/examples/customField_Number.yml'
+              $ref: '../components/examples/customField_Number.yml'
             String Field:
-                $ref: '../components/examples/customField_String.yml'
+              $ref: '../components/examples/customField_String.yml'
     '404':
       description: Invalid input
       content:
@@ -83,12 +83,18 @@ get:
             - $ref: '../components/schemas/customField_String.yml'
           examples:
             Date Field:
-                $ref: '../components/examples/customField_Date.yml'
+              $ref: '../components/examples/customField_Date.yml'
             Datetime Field:
-                $ref: '../components/examples/customField_Datetime.yml'
+              $ref: '../components/examples/customField_Datetime.yml'
             Number Field:
-                $ref: '../components/examples/customField_Number.yml'
+              $ref: '../components/examples/customField_Number.yml'
             String Field:
-                $ref: '../components/examples/customField_String.yml'
+              $ref: '../components/examples/customField_String.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'                
     default:
       $ref: '../components/responses/400-unexpectedError.yml'

@@ -1,6 +1,5 @@
 type: object
 description: GeoJSon geometry
-discriminator: type
 required:
   - type
 externalDocs:

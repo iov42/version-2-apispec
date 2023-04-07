@@ -4,8 +4,6 @@ get:
   summary: List Units
   operationId: listUnits
   description: List all the Units
-  parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
   responses:
     '200':
       description: Array of Units
@@ -15,6 +13,12 @@ get:
             type: array
             items:
               $ref: '../components/schemas/unit.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'              
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 post:
@@ -23,8 +27,6 @@ post:
   summary: Add Unit
   operationId: addUnit
   description: Add a new Unit
-  parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
   requestBody:
     description: Unit information
     content:
