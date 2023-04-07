@@ -1,6 +1,6 @@
 # API Specification for Traceability system
 
-The API documentation is generated automatically on a Github Pages site. This site can be found here: https://jubilant-invention-r423e56.pages.github.io/. You will (currently) need to be logged into Github to see this site. If you cannot see it then you will need to be added to the repository users.
+The API documentation is generated automatically on a Github Pages site. This site can be found here: [https://go.iov42.com/traceapi]. You will (currently) need to be logged into Github to see this site. If you cannot see it then you will need to be added to the repository users.
 
 ## Modifying the spec.
 
@@ -12,7 +12,7 @@ In order to verify the documentation you will need to run a local web host - it 
 
 ### http-server
 
-[http-server][https://www.npmjs.com/package/http-server]
+[http-server](https://www.npmjs.com/package/http-server)
 
 
 1. Install http server from npm:
