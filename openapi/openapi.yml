@@ -44,6 +44,10 @@ paths:
     $ref: './paths/organisations.yml'
   /organisations/{orgId}:
     $ref: './paths/organisation.yml'
+  /organisations/{orgId}/attachments:
+    $ref: './paths/attachments.yml'
+  /organisations/{orgId}/attachments/{attachId}:
+    $ref: './paths/attachment.yml'
   /organisations/{orgId}/certificates:
     $ref: './paths/certificates.yml'
   /organisations/{orgId}/certificates/{certId}:
@@ -76,10 +80,6 @@ paths:
     $ref: './paths/documents.yml'
   /organisations/{orgId}/documents/{docId}:
     $ref: './paths/document.yml'
-  /organisations/{orgId}/documents/{docId}/attachments:
-    $ref: './paths/documentAttachments.yml'
-  /organisations/{orgId}/documents/{docId}/attachments/{attachId}:
-    $ref: './paths/documentAttachment.yml'
   /organisations/{orgId}/locations:
     $ref: './paths/locations.yml'
   /organisations/{orgId}/locations/{locId}:

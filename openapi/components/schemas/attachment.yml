@@ -1,0 +1,27 @@
+type: object
+description: This provides the ability to 'attach' resources to other resources. This is to allow the association of items without actually changing the target items content thus rendering claims & endorsements stale.
+required:
+  - targetUri
+  - attachmentUri
+  - attachmentType
+  - when
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  targetUri:
+    description: The resource that is being attached to.
+    type: string
+  attachmentUri:
+    description: The resource that is being attached.
+    type: string
+  attachmentType:
+    description: The type of resource that is being attached.
+    $ref: './enums/resourceType.yml'
+  when:
+    description: Datetime resource attached.
+    type: string
+    format: date-time
+  notes:
+    description: Any notes that are relevant to the attachment.
+    type: string

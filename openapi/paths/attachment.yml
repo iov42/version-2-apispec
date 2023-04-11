@@ -1,19 +1,18 @@
 put:
   tags:
-    - Documents
-  summary: Update Document Attachment
-  operationId: updateDocumentAttachment
-  description: Update Document Attachment by id
+    - Attachments
+  summary: Update Attachment
+  operationId: updateAttachment
+  description: Update Attachment by id
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/docId.yml'
     - $ref: '../components/parameters/path/attachId.yml'
   requestBody:
-    description: Update Document Attachment information
+    description: Update Attachment information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/documentAttachment.yml'
+          $ref: '../components/schemas/attachment.yml'
     required: true
   responses:
     '201':
@@ -21,7 +20,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/documentAttachment.yml'
+            $ref: '../components/schemas/attachment.yml'
     '404':
       description: Invalid input
       content:
@@ -38,21 +37,20 @@ put:
       $ref: '../components/responses/400-unexpectedError.yml'
 get:
   tags:
-    - Documents
-  summary: Get Document Attachment
-  operationId: getDocumentAttachment
-  description: Get the Document Attachment details
+    - Attachments
+  summary: Get Attachment
+  operationId: getAttachment
+  description: Get the Attachment details
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/docId.yml'
     - $ref: '../components/parameters/path/attachId.yml'
   responses:
     '200':
-      description: Document Attachment info
+      description: Attachment info
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/documentAttachment.yml'
+            $ref: '../components/schemas/attachment.yml'
     '404':
       description: Invalid input
       content:

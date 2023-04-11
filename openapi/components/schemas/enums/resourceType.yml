@@ -3,3 +3,7 @@ enum:
   - Delivery
   - Organisation
   - Product
+  - Document
+  - Certificate
+  - Tag
+  - CustomField

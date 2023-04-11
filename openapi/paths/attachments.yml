@@ -1,21 +1,20 @@
 get:
   tags:
-    - Documents
-  summary: List Document Attachments
-  operationId: listDocumentAttachments
-  description: List all Document Attachments
+    - Attachments
+  summary: List Attachments
+  operationId: listAttachments
+  description: List all Attachments
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/docId.yml'
   responses:
     '200':
-      description: Array of Document Attachments
+      description: Array of Attachments
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/documentAttachment.yml'
+              $ref: '../components/schemas/attachment.yml'
     '404':
       description: Invalid input
       content:
@@ -26,26 +25,25 @@ get:
       $ref: '../components/responses/400-unexpectedError.yml'
 post:
   tags:
-    - Documents
-  summary: Add Document Attachment
-  operationId: addDocumentAttachment
-  description: Add a new link between a document and another resource within the system.
+    - Attachments
+  summary: Add Attachment
+  operationId: addAttachment
+  description: Add a new link between resources.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/docId.yml'
   requestBody:
-    description: Document Attachment information
+    description: Attachment information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/documentAttachment.yml'
+          $ref: '../components/schemas/attachment.yml'
   responses:
     '201':
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/documentAttachment.yml'
+            $ref: '../components/schemas/attachment.yml'
     '422':
       description: Invalid input
       content:
