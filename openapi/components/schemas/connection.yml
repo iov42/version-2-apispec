@@ -1,4 +1,32 @@
 type: object
+required:
+  - name
 properties:
   id:
+    description: System provided identity field.
     type: string
+  name: 
+    description: The name of the organisation
+    type: string
+  publicUri:
+    description: This is the public organisation URI. Once organisations are connected then this will be populated. Before that happens an organisation can record for themselves but later have them linked if a given organisation then signs up.
+  website:
+    description: The corporate website for this organisation.
+    type: string
+  address:
+    $ref: './address.yml'
+  description:
+    description: Description of the organisation.
+    type: string
+  dltIdentity:
+    type: string
+  certificateIds:
+    description: The certificate ids for this organisation.
+    type: array
+    items:
+      type: string
+  documentIds:
+    description: The certificate ids for this organisation.
+    type: array
+    items:
+      type: string

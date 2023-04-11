@@ -4,6 +4,7 @@ required:
   - name
 properties:
   id:
+    description: System provided identity field.
     type: string
   name:
     type: string

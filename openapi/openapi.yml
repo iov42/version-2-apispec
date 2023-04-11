@@ -14,7 +14,9 @@ tags:
   - name: Connections
     description: Apis for the creation and retrieval of Connections  
   - name: CustomFields
-    description: Apis for the creation and retrieval of CustomFields  
+    description: Apis for the creation and retrieval of CustomFields
+  - name: Deliveries
+    description: Apis for the creation and retrieval of Deliveries
   - name: Documents
     description: Apis for the creation and retrieval of Documents  
   - name: Items
@@ -64,6 +66,10 @@ paths:
     $ref: './paths/customFieldTemplates.yml'
   /organisations/{orgId}/customFieldTemplates/{cftId}:
     $ref: './paths/customFieldTemplate.yml'    
+  /organisations/{orgId}/deliveries:
+    $ref: './paths/deliveries.yml'
+  /organisations/{orgId}/deliveries/{deliveryId}:
+    $ref: './paths/delivery.yml'
   /organisations/{orgId}/documents:
     $ref: './paths/documents.yml'
   /organisations/{orgId}/documents/{docId}:

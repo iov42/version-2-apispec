@@ -99,3 +99,8 @@ openapi-to-graphql bundled.yml --save schema.graphql
 ```
 
 The graphql spec is also checked in.
+
+
+## Generate Graphql Documentation
+
+

@@ -1,14 +1,20 @@
 type: object
+required:
+  - name
+  - required
+  - type
 properties:
   id:
+    description: System provided identity field.
     type: string
-  target:
-    type: string
-  key:
+  name:
+    description: The name of the field that should be added to the target resource type.
     type: string
   required:
+    description: If the field is required for the target resource type.
     type: boolean
   default:
     type: string
   type:
+    description: The type of the field.
     $ref: './enums/fieldType.yml'

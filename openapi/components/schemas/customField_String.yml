@@ -1,10 +1,18 @@
 type: object
+required:
+  - target
+  - name
+  - value
 properties:
   id:
+    description: System provided identity field.
     type: string
   target:
+    description: The URI for the target resource that this custom field is attached to.
     type: string
-  key:
+  name:
+    description: The name of the custom field.
     type: string
   value:
+    description: The value of the custom field.
     type: string

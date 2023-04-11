@@ -1,4 +1,17 @@
 type: object
 properties:
   id:
+    description: System provided identity field.
+    type: string
+  name:
+    description: Document name
+    type: string
+  type:
+    description: Document type
+    type: string
+  providedBy:
+    description: Who created/issued the document.
+    type: string
+  providedFor:
+    description: Who the document was created for.
     type: string

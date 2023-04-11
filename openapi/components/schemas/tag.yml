@@ -1,4 +1,5 @@
 type: object
 properties:
   id:
+    description: System provided identity field.
     type: string

@@ -31,6 +31,10 @@
       "description": "Apis for the creation and retrieval of CustomFields"
     },
     {
+      "name": "Deliveries",
+      "description": "Apis for the creation and retrieval of Deliveries"
+    },
+    {
       "name": "Documents",
       "description": "Apis for the creation and retrieval of Documents"
     },
@@ -1525,6 +1529,202 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/404-notFound"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/400-unexpectedError"
+          }
+        }
+      }
+    },
+    "/organisations/{orgId}/deliveries": {
+      "get": {
+        "tags": [
+          "Deliveries"
+        ],
+        "summary": "List Deliveries",
+        "operationId": "listDeliveries",
+        "description": "List all the Deliveries",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/orgId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Deliveries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/delivery"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/404-notFound"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/400-unexpectedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Deliveries"
+        ],
+        "summary": "Add Delivery",
+        "operationId": "addDelivery",
+        "description": "Add a new Delivery",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/orgId"
+          }
+        ],
+        "requestBody": {
+          "description": "Delivery information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/delivery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/delivery"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/422-unprocessable"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/400-unexpectedError"
+          }
+        }
+      }
+    },
+    "/organisations/{orgId}/deliveries/{deliveryId}": {
+      "put": {
+        "tags": [
+          "Deliveries"
+        ],
+        "summary": "Update Delivery",
+        "operationId": "updateDelivery",
+        "description": "Update Delivery by id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/orgId"
+          },
+          {
+            "$ref": "#/components/parameters/deliveryId"
+          }
+        ],
+        "requestBody": {
+          "description": "Update Delivery information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/delivery"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/delivery"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/404-notFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/422-unprocessable"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/400-unexpectedError"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Deliveries"
+        ],
+        "summary": "Get Delivery",
+        "operationId": "getDelivery",
+        "description": "Get the delivery details",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/orgId"
+          },
+          {
+            "$ref": "#/components/parameters/deliveryId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delivery info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/delivery"
                 }
               }
             }
@@ -3759,6 +3959,7 @@
         "description": "This is a definition of an organisation",
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "status": {
@@ -3771,9 +3972,6 @@
             "$ref": "#/components/schemas/address"
           },
           "type": {
-            "type": "string"
-          },
-          "website": {
             "type": "string"
           },
           "certificateIds": {
@@ -3864,25 +4062,73 @@
       },
       "connection": {
         "type": "object",
+        "required": [
+          "name"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
+          },
+          "name": {
+            "description": "The name of the organisation",
+            "type": "string"
+          },
+          "publicUri": {
+            "description": "This is the public organisation URI. Once organisations are connected then this will be populated. Before that happens an organisation can record for themselves but later have them linked if a given organisation then signs up."
+          },
+          "website": {
+            "description": "The corporate website for this organisation.",
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/address"
+          },
+          "description": {
+            "description": "Description of the organisation.",
+            "type": "string"
+          },
+          "dltIdentity": {
+            "type": "string"
+          },
+          "certificateIds": {
+            "description": "The certificate ids for this organisation.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "documentIds": {
+            "description": "The certificate ids for this organisation.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
       "customField_Date": {
         "type": "object",
+        "required": [
+          "target",
+          "name",
+          "value"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "target": {
+            "description": "The URI for the target resource that this custom field is attached to.",
             "type": "string"
           },
-          "key": {
+          "name": {
+            "description": "The name of the custom field.",
             "type": "string"
           },
           "value": {
+            "description": "The value of the custom field.",
             "type": "string",
             "format": "date"
           }
@@ -3890,17 +4136,26 @@
       },
       "customField_Datetime": {
         "type": "object",
+        "required": [
+          "target",
+          "name",
+          "value"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "target": {
+            "description": "The URI for the target resource that this custom field is attached to.",
             "type": "string"
           },
-          "key": {
+          "name": {
+            "description": "The name of the custom field.",
             "type": "string"
           },
           "value": {
+            "description": "The value of the custom field.",
             "type": "string",
             "format": "date-time"
           }
@@ -3908,34 +4163,52 @@
       },
       "customField_Number": {
         "type": "object",
+        "required": [
+          "target",
+          "name",
+          "value"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "target": {
+            "description": "The URI for the target resource that this custom field is attached to.",
             "type": "string"
           },
-          "key": {
+          "name": {
+            "description": "The name of the custom field.",
             "type": "string"
           },
           "value": {
+            "description": "The value of the custom field.",
             "type": "number"
           }
         }
       },
       "customField_String": {
         "type": "object",
+        "required": [
+          "target",
+          "name",
+          "value"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "target": {
+            "description": "The URI for the target resource that this custom field is attached to.",
             "type": "string"
           },
-          "key": {
+          "name": {
+            "description": "The name of the custom field.",
             "type": "string"
           },
           "value": {
+            "description": "The value of the custom field.",
             "type": "string"
           }
         }
@@ -3951,48 +4224,86 @@
       },
       "customFieldDefinition": {
         "type": "object",
+        "required": [
+          "name",
+          "required",
+          "type"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
-          "target": {
-            "type": "string"
-          },
-          "key": {
+          "name": {
+            "description": "The name of the field that should be added to the target resource type.",
             "type": "string"
           },
           "required": {
+            "description": "If the field is required for the target resource type.",
             "type": "boolean"
           },
           "default": {
             "type": "string"
           },
           "type": {
+            "description": "The type of the field.",
             "$ref": "#/components/schemas/fieldType"
           }
         }
       },
       "customFieldTemplate": {
         "type": "object",
+        "required": [
+          "targetType",
+          "name"
+        ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "targetType": {
+            "description": "The target type that the custom fields should be applied to.",
             "type": "string"
           },
           "name": {
             "type": "string"
+          },
+          "definitions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/customFieldDefinition"
+            }
           }
         }
       },
-      "product": {
+      "material": {
         "type": "object",
-        "description": "This is a definition of a product",
+        "description": "Definition of a material",
         "required": [
-          "locationIdFrom",
-          "locationIdTo",
-          "date"
+          "name",
+          "category"
+        ],
+        "properties": {
+          "id": {
+            "description": "System provided identity field.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the material",
+            "type": "string"
+          },
+          "category": {
+            "description": "Category of the material.",
+            "type": "string"
+          }
+        }
+      },
+      "unit": {
+        "type": "object",
+        "description": "Definition of a unit of measurement",
+        "required": [
+          "name"
         ],
         "properties": {
           "id": {
@@ -4000,6 +4311,92 @@
           },
           "name": {
             "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "precision": {
+            "type": "integer"
+          }
+        }
+      },
+      "product": {
+        "type": "object",
+        "description": "This is a definition of a product",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "description": "System provided identity field.",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "materials": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/material"
+            }
+          },
+          "unitOfMeasurement": {
+            "$ref": "#/components/schemas/unit"
+          }
+        }
+      },
+      "item": {
+        "type": "object",
+        "description": "This is a definition of an item",
+        "properties": {
+          "id": {
+            "description": "System provided identity field.",
+            "type": "string"
+          },
+          "dateCreated": {
+            "description": "The Datetime that this item was created in the real world.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateRecorded": {
+            "description": "The Datetime this item was recorded within the system (system provided)",
+            "type": "string",
+            "format": "date-time"
+          },
+          "productUri": {
+            "description": "The URI of the product that this item is an instance of.",
+            "type": "string"
+          },
+          "documentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "System provided identity field.",
+            "type": "string"
+          },
+          "fromFacility": {
+            "type": "string"
+          },
+          "toFacility": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/item"
+            }
           }
         }
       },
@@ -4007,6 +4404,23 @@
         "type": "object",
         "properties": {
           "id": {
+            "description": "System provided identity field.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Document name",
+            "type": "string"
+          },
+          "type": {
+            "description": "Document type",
+            "type": "string"
+          },
+          "providedBy": {
+            "description": "Who created/issued the document.",
+            "type": "string"
+          },
+          "providedFor": {
+            "description": "Who the document was created for.",
             "type": "string"
           }
         }
@@ -4070,12 +4484,15 @@
         ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
-          "locationIdFrom": {
+          "locationAUri": {
+            "description": "The URI of Location A",
             "type": "string"
           },
-          "locationIdTo": {
+          "locationBUri": {
+            "description": "The URI of Location B",
             "type": "string"
           },
           "date": {
@@ -4096,6 +4513,7 @@
         ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "orgId": {
@@ -4133,56 +4551,11 @@
           }
         }
       },
-      "item": {
-        "type": "object",
-        "description": "This is a definition of an item",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "website": {
-            "type": "string"
-          },
-          "certificateIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "documentIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "mapping": {
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
-          }
-        }
-      },
-      "material": {
-        "type": "object",
-        "description": "Definition of a material",
-        "required": [
-          "name",
-          "category"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "category": {
+            "description": "System provided identity field.",
             "type": "string"
           }
         }
@@ -4195,6 +4568,7 @@
         ],
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
           },
           "name": {
@@ -4215,28 +4589,8 @@
         "type": "object",
         "properties": {
           "id": {
+            "description": "System provided identity field.",
             "type": "string"
-          }
-        }
-      },
-      "unit": {
-        "type": "object",
-        "description": "Definition of a unit of measurement",
-        "required": [
-          "name"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "symbol": {
-            "type": "string"
-          },
-          "precision": {
-            "type": "integer"
           }
         }
       },
@@ -4638,6 +4992,15 @@
           "type": "string"
         }
       },
+      "deliveryId": {
+        "name": "deliveryId",
+        "in": "path",
+        "required": true,
+        "description": "The system provided id of a Delivery",
+        "schema": {
+          "type": "string"
+        }
+      },
       "docId": {
         "name": "docId",
         "in": "path",
@@ -4725,7 +5088,7 @@
         "value": {
           "id": "string",
           "target": "string",
-          "key": "string",
+          "name": "string",
           "value": "1970-01-01"
         }
       },
@@ -4733,7 +5096,7 @@
         "value": {
           "id": "string",
           "target": "string",
-          "key": "string",
+          "name": "string",
           "value": "1970-01-01T00:00:00.000Z"
         }
       },
@@ -4741,7 +5104,7 @@
         "value": {
           "id": "string",
           "target": "string",
-          "key": "string",
+          "name": "string",
           "value": 0
         }
       },
@@ -4749,7 +5112,7 @@
         "value": {
           "id": "string",
           "target": "string",
-          "key": "string",
+          "name": "string",
           "value": "string"
         }
       }

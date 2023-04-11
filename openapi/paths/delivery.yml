@@ -1,0 +1,61 @@
+put:
+  tags:
+    - Deliveries
+  summary: Update Delivery
+  operationId: updateDelivery
+  description: Update Delivery by id
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/deliveryId.yml'
+  requestBody:
+    description: Update Delivery information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/delivery.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/delivery.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Deliveries
+  summary: Get Delivery
+  operationId: getDelivery
+  description: Get the delivery details
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/deliveryId.yml'
+  responses:
+    '200':
+      description: Delivery info
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/delivery.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'            
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

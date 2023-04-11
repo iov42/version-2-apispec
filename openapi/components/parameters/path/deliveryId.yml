@@ -1,0 +1,6 @@
+name: deliveryId
+in: path
+required: true
+description: The system provided id of a Delivery
+schema:
+  type: string

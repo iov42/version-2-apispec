@@ -6,10 +6,13 @@ required:
   - date
 properties:
   id:
+    description: System provided identity field.
     type: string
-  locationIdFrom:
+  locationAUri:
+    description: The URI of Location A
     type: string
-  locationIdTo:
+  locationBUri:
+    description: The URI of Location B
     type: string
   date:
     type: string

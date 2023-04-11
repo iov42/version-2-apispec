@@ -1,11 +1,16 @@
 type: object
 description: This is a definition of a product
 required:
-  - locationIdFrom
-  - locationIdTo
-  - date
+  - name
 properties:
   id:
+    description: System provided identity field.
     type: string
   name:
     type: string
+  materials:
+    type: array
+    items:
+      $ref: './material.yml'
+  unitOfMeasurement:
+    $ref: './unit.yml'
