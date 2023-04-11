@@ -3,4 +3,5 @@
 /node_modules
 *.graphql
 bundled.yml
+bundled.json
 share.yml
