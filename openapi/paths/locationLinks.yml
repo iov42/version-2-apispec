@@ -1,0 +1,56 @@
+get:
+  tags:
+    - Locations
+  summary: List Links
+  operationId: listLinks
+  description: List all the Links
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/locId.yml'
+  responses:
+    '200':
+      description: Array of Links
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/locationLink.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'              
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Locations
+  summary: Add Link
+  operationId: addLink
+  description: Add a new Link
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/locId.yml'
+  requestBody:
+    description: Link information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/locationLink.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/locationLink.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

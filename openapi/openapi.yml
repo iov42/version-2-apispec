@@ -1,4 +1,4 @@
-openapi: '3.0.1'
+openapi: '3.1.0'
 info:
   title: Traceability API
   description: This API spec defines how you can interact with the iov42 traceability system.
@@ -37,6 +37,8 @@ tags:
     description: Apis for the creation and retrieval of tags.
   - name: Shared
     description: Apis with information shared across all organisations.
+  - name: Users
+    description: Apis for user related information.
 paths:
   /organisations:
     $ref: './paths/organisations.yml'
@@ -74,14 +76,18 @@ paths:
     $ref: './paths/documents.yml'
   /organisations/{orgId}/documents/{docId}:
     $ref: './paths/document.yml'
+  /organisations/{orgId}/documents/{docId}/attachments:
+    $ref: './paths/documentAttachments.yml'
+  /organisations/{orgId}/documents/{docId}/attachments/{attachId}:
+    $ref: './paths/documentAttachment.yml'
   /organisations/{orgId}/locations:
     $ref: './paths/locations.yml'
   /organisations/{orgId}/locations/{locId}:
     $ref: './paths/location.yml'
   /organisations/{orgId}/locations/{locId}/links:
-    $ref: './paths/links.yml'
+    $ref: './paths/locationLinks.yml'
   /organisations/{orgId}/locations/{locId}/links/{linkId}:
-    $ref: './paths/link.yml'
+    $ref: './paths/locationLink.yml'
   /organisations/{orgId}/items:
     $ref: './paths/items.yml'
   /organisations/{orgId}/items/{itemId}:
@@ -104,6 +110,12 @@ paths:
     $ref: './paths/tags.yml'
   /organisations/{orgId}/tags/{tagId}:
     $ref: './paths/tag.yml'
+  /organisations/{orgId}/users:
+    $ref: './paths/users.yml'
+  /organisations/{orgId}/users/{userId}:
+    $ref: './paths/user.yml'
+  /organisations/{orgId}/users/{userId}/apiKey:
+    $ref: './paths/apiKey.yml'
   /units:
     $ref: './paths/units.yml'
   /units/{unitId}:

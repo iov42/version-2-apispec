@@ -1,0 +1,54 @@
+get:
+  tags:
+    - Shared
+  summary: List Users
+  operationId: listUsers
+  description: List all the Users
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  responses:
+    '200':
+      description: Array of Users
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/user.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'              
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+post:
+  tags:
+    - Users
+  summary: Add User
+  operationId: addUser
+  description: Add a new User
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+  requestBody:
+    description: User information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/user.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/user.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

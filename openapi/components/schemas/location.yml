@@ -17,10 +17,6 @@ properties:
     $ref: './address.yml'
   geoLocation:
     $ref: './geoJson/geometryCollection.yml'
-  links:
-    type: array
-    items:
-      $ref: './link.yml'
   certificateIds:
     type: array
     items:

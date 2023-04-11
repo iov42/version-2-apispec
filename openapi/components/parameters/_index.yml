@@ -1,4 +1,7 @@
 # path
+attachId:
+  $ref: './path/attachId.yml'
+
 certId:
   $ref: './path/certId.yml'
 
@@ -46,3 +49,6 @@ tagId:
 
 unitId:
   $ref: './path/unitId.yml'
+
+userId:
+  $ref: './path/userId.yml'

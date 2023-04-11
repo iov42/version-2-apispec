@@ -1,0 +1,16 @@
+type: object
+description: This is a definition of a user
+required:
+  - firstName
+  - lastName
+  - emailAddress
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  firstName:
+    type: string
+  lastName:
+    type: string
+  emailAddress:
+    type: string

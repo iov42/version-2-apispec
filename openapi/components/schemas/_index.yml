@@ -22,10 +22,10 @@ Error:
   $ref: "./error.yml"
 Item:
   $ref: "./item.yml"
-Link:
-  $ref: "./link.yml"
 Location:
   $ref: "./location.yml"
+Link:
+  $ref: "./locationLink.yml"
 Mapping:
   $ref: "./mapping.yml"
 Material:

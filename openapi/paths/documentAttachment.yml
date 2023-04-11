@@ -1,19 +1,19 @@
 put:
   tags:
-    - Locations
-  summary: Update link
-  operationId: updateLink
-  description: Update link by id
+    - Documents
+  summary: Update Document Attachment
+  operationId: updateDocumentAttachment
+  description: Update Document Attachment by id
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
-    - $ref: '../components/parameters/path/linkId.yml'
+    - $ref: '../components/parameters/path/docId.yml'
+    - $ref: '../components/parameters/path/attachId.yml'
   requestBody:
-    description: Update link information
+    description: Update Document Attachment information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/link.yml'
+          $ref: '../components/schemas/documentAttachment.yml'
     required: true
   responses:
     '201':
@@ -21,7 +21,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/link.yml'
+            $ref: '../components/schemas/documentAttachment.yml'
     '404':
       description: Invalid input
       content:
@@ -38,21 +38,21 @@ put:
       $ref: '../components/responses/400-unexpectedError.yml'
 get:
   tags:
-    - Locations
-  summary: Get Link
-  operationId: getLink
-  description: Get the link details
+    - Documents
+  summary: Get Document Attachment
+  operationId: getDocumentAttachment
+  description: Get the Document Attachment details
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
-    - $ref: '../components/parameters/path/linkId.yml'
+    - $ref: '../components/parameters/path/docId.yml'
+    - $ref: '../components/parameters/path/attachId.yml'
   responses:
     '200':
-      description: Link info
+      description: Document Attachment info
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/link.yml'
+            $ref: '../components/schemas/documentAttachment.yml'
     '404':
       description: Invalid input
       content:

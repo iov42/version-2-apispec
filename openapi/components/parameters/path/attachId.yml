@@ -1,0 +1,6 @@
+name: attachId
+in: path
+required: true
+description: The system provided id for an attachment.
+schema:
+  type: string
