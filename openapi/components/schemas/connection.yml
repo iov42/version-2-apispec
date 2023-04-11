@@ -20,8 +20,3 @@ properties:
     type: string
   dltIdentity:
     type: string
-  certificateIds:
-    description: The certificate ids for this organisation.
-    type: array
-    items:
-      type: string

@@ -1,9 +1,12 @@
 type: string
 enum:
+  - CustomField
+  - Certificate
   - Delivery
+  - Document
+  - Item
+  - Location
   - Organisation
   - Product
-  - Document
-  - Certificate
   - Tag
-  - CustomField
+  - User

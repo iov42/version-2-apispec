@@ -15,7 +15,3 @@ properties:
   productUri: 
     description: The URI of the product that this item is an instance of. 
     type: string
-  documentIds:
-    type: array
-    items:
-      type: string
