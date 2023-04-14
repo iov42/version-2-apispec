@@ -6,6 +6,28 @@ get:
   description: List all the Products
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
+    - in: query
+      name: name
+      schema:
+        type: string
+      description: filter for the name of a product
+    - in: query
+      name: ownerOrganisationId
+      schema:
+        type: string
+      description: filter for products of which organisations you want to see
+    - in: query
+      name: unitOfMeasurementIds
+      schema:
+        type: string
+      description: filter for products with that unit of measurement
+    - in: query
+      name: allowedMaterialIds
+      schema:
+        type: array
+        items:
+          type: string
+      description: filter for products with any of those allowed materials
   responses:
     '200':
       description: Array of Products
@@ -14,13 +36,13 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/product.yml'
+              $ref: '../components/schemas/productInfo.yml'
     '404':
       description: Invalid input
       content:
         application/json:
           schema:
-            $ref: '../components/responses/404-notFound.yml'              
+            $ref: '../components/responses/404-notFound.yml'
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 post:
@@ -32,11 +54,11 @@ post:
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
   requestBody:
-    description: Product information
+    description: New Product information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/product.yml'
+          $ref: '../components/schemas/newProduct.yml'
   responses:
     '201':
       description: Successful operation

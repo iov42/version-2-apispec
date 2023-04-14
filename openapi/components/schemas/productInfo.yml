@@ -1,0 +1,18 @@
+type: object
+description: This represents info of a product
+required:
+  - name
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  name:
+    type: string
+  ownerOrganisationId:
+    type: string
+  allowedMaterialIds:
+    type: array
+    items:
+      type: string
+  unitOfMeasurementIds:
+    type : string

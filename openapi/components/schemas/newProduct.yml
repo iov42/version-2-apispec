@@ -1,0 +1,13 @@
+type: object
+description: This is a definition of a new product
+required:
+  - name
+properties:
+  name:
+    type: string
+  allowedMaterialIds:
+    type: array
+    items:
+      type: string
+  unitOfMeasurementId:
+    type: string
