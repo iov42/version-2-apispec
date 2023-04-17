@@ -44,6 +44,8 @@ tags:
   - name: Users
     description: Apis for user related information.
 paths:
+  /auth/token:
+    $ref: ./paths/auth.yml
   /organisations:
     $ref: ./paths/organisations.yml
   /organisations/{orgId}:

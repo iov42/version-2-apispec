@@ -1,0 +1,12 @@
+type: object
+description: Access Token Request
+properties:
+  grant_type:
+    description: Set to refresh_token.
+    type: string
+  client_id:
+    description: Your applications client ID.
+    type: string
+  refresh_token:
+    description: The refresh token to use.
+    type: string
