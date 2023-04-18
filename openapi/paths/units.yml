@@ -4,6 +4,9 @@ get:
   summary: List Units
   operationId: listUnits
   description: List all the Units
+  parameters:
+    - $ref: '../components/parameters/query/page.yml'
+    - $ref: '../components/parameters/query/per_page.yml'
   responses:
     '200':
       description: Array of Units

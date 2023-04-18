@@ -6,6 +6,8 @@ get:
   description: List all the Mappings
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/query/page.yml'
+    - $ref: '../components/parameters/query/per_page.yml'
   responses:
     '200':
       description: Array of Mappings

@@ -4,6 +4,9 @@ get:
   summary: List Organisations
   operationId: listOrganisations
   description: List all the organisations that user has access to
+  parameters:
+    - $ref: '../components/parameters/query/page.yml'
+    - $ref: '../components/parameters/query/per_page.yml'
   responses:
     '200':
       description: Array of organisations
