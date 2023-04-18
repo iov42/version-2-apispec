@@ -14,7 +14,3 @@ properties:
   #  $ref: './enums/role.yml'
   type:
     type: string
-  certificateIds:
-    type: array
-    items:
-      type: string

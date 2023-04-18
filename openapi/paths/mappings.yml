@@ -12,9 +12,14 @@ get:
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '../components/schemas/mapping.yml'
+            allOf:
+              - $ref: '../components/schemas/pagination.yml'
+              - type: object
+                properties:
+                  results: 
+                    type: array
+                    items: 
+                      $ref: '../components/schemas/mapping.yml'
     '404':
       description: Invalid input
       content:

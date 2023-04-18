@@ -10,3 +10,4 @@ enum:
   - Product
   - Tag
   - User
+  - Link

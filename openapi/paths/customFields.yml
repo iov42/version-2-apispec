@@ -46,7 +46,7 @@ post:
     - $ref: '../components/parameters/path/orgId.yml'
   requestBody:
     content:
-      application/json:
+      application/json:    
         schema:
           oneOf:
             - $ref: '../components/schemas/customField_Date.yml'

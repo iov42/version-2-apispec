@@ -1,0 +1,6 @@
+name: page
+in: query
+required: true
+description: The page number.
+schema:
+  type: integer
