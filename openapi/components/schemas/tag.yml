@@ -3,3 +3,14 @@ properties:
   id:
     description: System provided identity field.
     type: string
+  name: 
+    description: The name of the tag
+    type: string
+  description:
+    description: A description of what this tag denotes.
+  tagType:
+    $ref: './enums/tagType.yml'
+  color:
+    description: The HTML color code to display this tag under
+    type: string
+    pattern: '^#(?:[0-9a-fA-F]{3}){1,2}$'
