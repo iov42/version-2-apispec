@@ -1,19 +1,26 @@
 post:
   tags:
     - Users
-  summary: Create User API Key
-  operationId: addUserPublicKey
-  description: Generates a new Public Key for the given user
+  summary: Create a new User API Access Token
+  operationId: addUserAPIAccessToken
+  description: Generates a new User API Access Token for the given user
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'
+  requestBody:
+    description: API Access Token Information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/apiAccessToken.yml'
+    required: true
   responses:
     '201':
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiKey.yml'
+            $ref: '../components/schemas/apiAccessTokenRequestResult.yml'
     '404':
       description: Invalid input
       content:
@@ -31,24 +38,31 @@ post:
 get:
   tags:
     - Users
-  summary: Get User API Key
-  operationId: getUserAPIKey
-  description: Retrieves a users API Key
+  summary: Get List of User API Access Tokens
+  operationId: getUserAPIAccessTokens
+  description: Retrieves a users API Access Tokens
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'
   responses:
     '200':
-      description: User API Key
+      description: User API Access Tokens
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiKey.yml'
+            allOf:
+              - $ref: '../components/schemas/pagination.yml'
+              - type: object
+                properties:
+                  results: 
+                    type: array
+                    items: 
+                      $ref: '../components/schemas/apiAccessTokenResult.yml'
     '404':
       description: Invalid input
       content:
         application/json:
           schema:
-            $ref: '../components/responses/404-notFound.yml'            
+            $ref: '../components/responses/404-notFound.yml'          
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
