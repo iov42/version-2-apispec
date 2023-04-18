@@ -8,7 +8,7 @@ get:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/per_page.yml'
+    - $ref: '../components/parameters/query/size.yml'
   responses:
     '200':
       description: Array of Links

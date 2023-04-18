@@ -1,6 +1,0 @@
-name: per_page
-in: query
-required: true
-description: The number per page.
-schema:
-  type: integer

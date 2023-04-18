@@ -6,7 +6,7 @@ get:
   description: List all the Units
   parameters:
     - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/per_page.yml'
+    - $ref: '../components/parameters/query/size.yml'
   responses:
     '200':
       description: Array of Units
