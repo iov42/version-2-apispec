@@ -4,11 +4,13 @@ info:
   description: >-
     This API spec defines how you can interact with the iov42 traceability
     system.
-  version: 0.0.8
+  version: 0.0.9
 security:
   - ApiKeyAuth: []
   - JWTBearer: []
 tags:
+  - name: Attachments
+    description: Apis for the creation and retrieval of Attachments
   - name: Certificates
     description: Apis for the creation and retrieval of Certificates
   - name: Checks

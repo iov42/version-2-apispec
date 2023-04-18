@@ -1,6 +1,6 @@
 get:
   tags:
-    - Users
+    - Shared
   summary: List Users
   operationId: listUsers
   description: List all the Users
@@ -12,15 +12,20 @@ get:
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '../components/schemas/user.yml'
+            allOf:
+              - $ref: '../components/schemas/pagination.yml'
+              - type: object
+                properties:
+                  results: 
+                    type: array
+                    items: 
+                      $ref: '../components/schemas/user.yml'
     '404':
       description: Invalid input
       content:
         application/json:
           schema:
-            $ref: '../components/responses/404-notFound.yml'
+            $ref: '../components/responses/404-notFound.yml'              
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 post:
