@@ -4,9 +4,9 @@ post:
   x-badges:
     - color: green
       label: Ready for Dev    
-  summary: Retrieves an Access Token
+  summary: Get an Access Token
   operationId: getAccessToken
-  description: OAuth conform token retrieval
+  description: This endpoint allows the retrieval of an access token based on user authentication.
   requestBody:
     description: Access Token Request
     content:

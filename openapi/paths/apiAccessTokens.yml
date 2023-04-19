@@ -6,7 +6,7 @@ post:
       label: Ready for Dev    
   summary: Create a new User API Access Token
   operationId: addUserAPIAccessToken
-  description: Generates a new User API Access Token for the given user
+  description: This endpoint supports the creation of a new User API Access Token.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'
@@ -44,9 +44,9 @@ get:
   x-badges:
     - color: green
       label: Ready for Dev    
-  summary: Get List of User API Access Tokens
+  summary: List User API Access Tokens
   operationId: getUserAPIAccessTokens
-  description: Retrieves a users API Access Tokens
+  description: This endpoint supports the retrieval of a list of API Access Tokens. Note that 
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'

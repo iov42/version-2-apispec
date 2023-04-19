@@ -6,7 +6,7 @@ post:
       label: Ready
   summary: Refreshes an Access Token
   operationId: refreshAccessToken
-  description: OAuth conform token refresh
+  description: This endpoint conforms with OAuth for refreshing an access token.
   requestBody:
     description: Access Token Refresh Request
     content:
