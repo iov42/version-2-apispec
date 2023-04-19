@@ -1,0 +1,15 @@
+type: object
+description: Successful Token Response
+properties:
+  access_token:
+    description: The access token issued by the auth system.
+    type: string
+  token_type:
+    description: The type of the token issued.
+    type: string
+  expires_in:
+    description: The lifetime in seconds of the access token.
+    type: number
+  refresh_token:
+    description: The refresh token, which can be used to obtain a new access token.
+    type: string
