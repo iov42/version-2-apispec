@@ -1,6 +1,9 @@
 post:
   tags:
     - Authentication
+  x-badges:
+    - color: green
+      label: Ready
   summary: Refreshes an Access Token
   operationId: refreshAccessToken
   description: OAuth conform token refresh

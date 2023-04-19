@@ -1,6 +1,9 @@
 post:
   tags:
     - Authentication
+  x-badges:
+    - color: green
+      label: Ready for Dev    
   summary: Retrieves an Access Token
   operationId: getAccessToken
   description: OAuth conform token retrieval

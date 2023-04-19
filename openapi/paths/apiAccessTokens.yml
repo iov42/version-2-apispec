@@ -1,6 +1,9 @@
 post:
   tags:
     - Users
+  x-badges:
+    - color: green
+      label: Ready for Dev    
   summary: Create a new User API Access Token
   operationId: addUserAPIAccessToken
   description: Generates a new User API Access Token for the given user
@@ -38,6 +41,9 @@ post:
 get:
   tags:
     - Users
+  x-badges:
+    - color: green
+      label: Ready for Dev    
   summary: Get List of User API Access Tokens
   operationId: getUserAPIAccessTokens
   description: Retrieves a users API Access Tokens

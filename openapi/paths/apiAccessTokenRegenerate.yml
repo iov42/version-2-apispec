@@ -1,9 +1,12 @@
 post:
   tags:
     - Users
+  x-badges:
+    - color: green
+      label: Ready for Dev    
   summary: Regenerate a User API Access Token
   operationId: regenerateUserAPIAccessToken
-  description: Regenerate a User API Access Token for the given user
+  description: This endpoint a request to regenerate a given API Access Token. The details of the token are maintained, the token itself is changed.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'
