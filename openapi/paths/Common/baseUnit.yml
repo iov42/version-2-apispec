@@ -1,6 +1,9 @@
 put:
   tags:
     - Common
+  x-badges:
+    - color: blue
+      label: Needs Review      
   summary: Update Base Unit of Measurement
   operationId: updateBaseUnit
   description: Update details for a Base Unit of Measurement. It is only available for System Administrators.
@@ -72,6 +75,9 @@ get:
 delete:
   tags:
     - Common
+  x-badges:
+    - color: blue
+      label: Needs Review  
   summary: Delete Base Unit of Measurement
   operationId: deleteBaseUnit
   description: This endpoint allows the deletion of a specified Base Unit of Measurment specified. It is only available for System Administrators.
