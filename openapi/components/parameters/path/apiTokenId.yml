@@ -1,0 +1,6 @@
+name: apiTokenId
+in: path
+required: true
+description: The system provided id for an API Access Token.
+schema:
+  type: string

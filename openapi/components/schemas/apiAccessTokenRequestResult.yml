@@ -1,0 +1,25 @@
+type: object
+description: This is a definition of a API access token
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  name:
+    description: The name provided for the API access token.
+    type: string
+  note:
+    description: What's this key for?
+    type: string
+  enabled:
+    description: Whether the API access token is enabled or not.
+    type: boolean
+  expiry:
+    description: When this API access token will expire.
+    type: string
+    format: date-time
+  tokenHint:
+    description: This is the first few characters of the token to help users match
+    type: string
+  token:
+    description: The User's API access token. This will not be returned on GET calls, only on the initial POST
+    type: string

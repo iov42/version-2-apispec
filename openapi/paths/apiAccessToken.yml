@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Users
+  summary: Get Specific API Access Token
+  operationId: getUserAPIAccessToken
+  description: Retrieves the details for a specific User API Access Token
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/userId.yml'
+    - $ref: '../components/parameters/path/apiTokenId.yml'
+  responses:
+    '200':
+      description: User API Access Token
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/apiAccessTokenResult.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'            
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+delete:
+  tags:
+    - Users
+  summary: Delete a Specific API Access Token
+  operationId: deleteUserAPIAccessToken
+  description: Deletes the specified API Access Token
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/userId.yml'
+    - $ref: '../components/parameters/path/apiTokenId.yml'
+  responses:
+    '204':
+      description: Deleted
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'
+    '401':
+      description: Unauthorised
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
