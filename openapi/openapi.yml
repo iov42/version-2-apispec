@@ -37,6 +37,8 @@ tags:
     description: >-
       Apis for organisational information that is 'public'. By public this
       information is available to any registered user.
+  - name: Registrations
+    description: Apis for the creation and retrieval of registrations.
   - name: Tags
     description: Apis for the creation and retrieval of tags.
   - name: Shared
@@ -120,6 +122,14 @@ paths:
     $ref: ./paths/user.yml
   /organisations/{orgId}/users/{userId}/apiKey:
     $ref: ./paths/apiKey.yml
+  /registrations:
+    $ref: ./paths/Registrations/registrations.yml
+  /registrations/{registrationId}:
+    $ref: ./paths/Registrations/registration.yml
+  /registrations/{registrationId}/verify:
+    $ref: ./paths/Registrations/registrationVerify.yml
+  /registrations/{registrationId}/resend:
+    $ref: ./paths/Registrations/registrationResend.yml
   /units:
     $ref: ./paths/units.yml
   /units/{unitId}:

@@ -1,0 +1,60 @@
+post:
+  tags:
+    - Registrations
+  summary: Create Registration
+  operationId: createRegistration
+  description: Add Registration
+  requestBody:
+    description: Registration Information
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: '../../components/schemas/registrationOrg.yml'
+            - $ref: '../../components/schemas/registrationUser.yml'
+          discriminator:
+              propertyName: regType
+        examples:
+          OrgRegistration:
+              $ref: '../../components/examples/registration_Org.yml'
+          UserRegistration:
+              $ref: '../../components/examples/registration_User.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/registrationStatus.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/422-unprocessable.yml'
+    default:
+      $ref: '../../components/responses/400-unexpectedError.yml'
+get:
+  tags:
+    - Registrations
+  summary: Get Registrations
+  operationId: getRegistrations
+  description: Get list of registrations.
+  responses:
+    '200':
+      description: Array of Registrations
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../components/schemas/registrationStatus.yml'
+    '422':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/422-unprocessable.yml'            
+    default:
+      $ref: '../../components/responses/400-unexpectedError.yml'

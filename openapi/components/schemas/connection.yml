@@ -9,7 +9,7 @@ properties:
     description: The name of the organisation
     type: string
   publicUri:
-    description: This is the public organisation URI. Once organisations are connected then this will be populated. Before that happens an organisation can record for themselves but later have them linked if a given organisation then signs up.
+    description: This is the public organisation URI. Once organisation is on the system as well and are connected then this will be populated. Before that happens an organisation can record for themselves but later have them linked if a given organisation then signs up.
   website:
     description: The corporate website for this organisation.
     type: string
