@@ -1,6 +1,6 @@
 # API Specification for Traceability system
 
-The API documentation is generated automatically on a Github Pages site. This site can be found here: [https://go.iov42.com/traceapi]. You will (currently) need to be logged into Github to see this site. If you cannot see it then you will need to be added to the repository users.
+The API documentation is generated automatically on a Github Pages site. This site can be found here: [https://api.traceability.iov42.com]. You will (currently) need to be logged into Github to see this site. If you cannot see it then you will need to be added to the repository users.
 
 ## Preparing to make changes
 
