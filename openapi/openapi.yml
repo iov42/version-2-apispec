@@ -9,6 +9,8 @@ security:
   - ApiKeyAuth: []
   - JWTBearer: []
 tags:
+  - name: Attachments
+    description: Apis for the creation and retrieval of Attachments
   - name: Certificates
     description: Apis for the creation and retrieval of Certificates
   - name: Checks

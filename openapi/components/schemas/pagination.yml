@@ -1,0 +1,30 @@
+type: object
+properties:
+  empty:
+    description: Indicates if there are any results to return. True indicates no results.
+    type: boolean
+  first: 
+    description: Indicates if this is the first page of the set of results.
+    type: boolean
+  last: 
+    description: Indicates if this is the last page of the set of results.
+    type: boolean
+  size:
+    description: The page size as requested in query parameters.
+    type: integer
+  number:
+    description: The page number.
+    type: integer
+  numberOfElements:
+    description: The number of elements on this page.
+    type: integer
+  totalElements:
+    description: The total number of elements in this result set.
+    type: integer
+  totalPages:
+    description: The total number of pages in this result set.
+    type: integer
+  content:
+    description: The contents of the page.
+    type: array
+    items: {} # any type of items

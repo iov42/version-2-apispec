@@ -4,15 +4,23 @@ get:
   summary: List Units
   operationId: listUnits
   description: List all the Units
+  parameters:
+    - $ref: '../components/parameters/query/page.yml'
+    - $ref: '../components/parameters/query/size.yml'
   responses:
     '200':
       description: Array of Units
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '../components/schemas/unit.yml'
+            allOf:
+              - $ref: '../components/schemas/pagination.yml'
+              - type: object
+                properties:
+                  results: 
+                    type: array
+                    items: 
+                      $ref: '../components/schemas/unit.yml'
     '404':
       description: Invalid input
       content:
