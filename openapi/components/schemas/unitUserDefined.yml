@@ -1,0 +1,12 @@
+type: object
+description: The extended definition of a User defined unit of measurement. Such a unit of measurement must always expressed relative to a base unit of measurement.
+required:
+  - baseUnit
+  - conversionFactor
+properties:
+  baseUnit:
+    description: The URI of the base unit of measurement that this is based of. This unit can only be an expression of the same type as the base unit.
+    type: string
+  conversionFactor:
+    description: The factor with which this unit can be converted into the base unit. The inverse of this factor will be used to convert the base unit measurement into this unit of measurement.
+    type: number

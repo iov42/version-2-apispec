@@ -1,23 +1,24 @@
 put:
   tags:
-    - Products
+    - Config
   x-badges:
     - color: blue
       label: Needs Review
-  summary: Update material
-  operationId: updateMaterial
-  description: Update material by id
+  summary: Update User Defined Unit of Measurement
+  operationId: updateUserDefinedUnit
+  description: This endpoint supports the updating of a User Defined Unit of Measurement
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/matId.yml'
+    - $ref: '../components/parameters/path/unitId.yml'
   requestBody:
-    description: Update material information
+    description: User Defined Unit
     content:
       application/json:
         schema:
           allOf:
             - $ref: '../components/schemas/id.yml'
-            - $ref: '../components/schemas/material.yml'
+            - $ref: '../components/schemas/unit.yml'
+            - $ref: '../components/schemas/unitUserDefined.yml'
     required: true
   responses:
     '201':
@@ -27,7 +28,8 @@ put:
           schema:
             allOf:
               - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/material.yml'
+              - $ref: '../components/schemas/unit.yml'
+              - $ref: '../components/schemas/unitUserDefined.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':
@@ -42,25 +44,26 @@ put:
       $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - Products
+    - Config
   x-badges:
     - color: blue
-      label: Needs Review
-  summary: Get Material
-  operationId: getMaterial
-  description: Get the material details
+      label: Needs Review  
+  summary: Get User Defined Unit of Measurement
+  operationId: getUserDefinedUnit
+  description: This endpoints returns the details for a User Defined Unit of Measurement
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/matId.yml'
+    - $ref: '../components/parameters/path/unitId.yml'
   responses:
     '200':
-      description: Material info
+      description: User Defined Unit
       content:
         application/json:
           schema:
             allOf:
               - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/material.yml'
+              - $ref: '../components/schemas/unit.yml'
+              - $ref: '../components/schemas/unitUserDefined.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':

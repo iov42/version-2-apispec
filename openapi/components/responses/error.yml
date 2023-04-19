@@ -1,0 +1,10 @@
+type: object
+description: Error object containing the code of the error and associated message.
+required:
+  - code
+  - message
+properties:
+  code:
+    type: string
+  message:
+    type: string

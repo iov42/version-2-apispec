@@ -4,14 +4,14 @@ put:
   x-badges:
     - color: blue
       label: Needs Review
-  summary: Update material
-  operationId: updateMaterial
-  description: Update material by id
+  summary: Update a material Category
+  operationId: updateMaterialCategory
+  description: This endpoint allows a Material Category to be updated.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/matId.yml'
   requestBody:
-    description: Update material information
+    description: Updated Material Category
     content:
       application/json:
         schema:
@@ -46,15 +46,15 @@ get:
   x-badges:
     - color: blue
       label: Needs Review
-  summary: Get Material
-  operationId: getMaterial
-  description: Get the material details
+  summary: Get MaterialCategory
+  operationId: getMaterialCategory
+  description: This endpoint supports retrieval of a specific Material Category
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/matId.yml'
   responses:
     '200':
-      description: Material info
+      description: Material Category
       content:
         application/json:
           schema:

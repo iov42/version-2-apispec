@@ -1,13 +1,15 @@
 type: object
-description: Definition of a unit of measurement
 required:
   - name
+  - symbol
+  - precision
 properties:
-  id:
-    type: string
   name:
+    description: The name for the unit of measurement e.g "Meters Cubed"
     type: string
   symbol:
+    description: The symbol for the unit of measurement e.g. "M3"
     type: string
   precision:
+    description: The precision with which this unit of measurement is provided.
     type: integer

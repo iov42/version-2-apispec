@@ -4,16 +4,16 @@ get:
   x-badges:
     - color: blue
       label: Needs Review    
-  summary: List Materials
-  operationId: listMaterials
-  description: List all the Materials
+  summary: List Material Categories
+  operationId: listMaterialCategories
+  description: This endpoint returns a list of Material Categories.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
   responses:
     '200':
-      description: Array of Materials
+      description: Array of Material Categories
       content:
         application/json:
           schema:
@@ -26,7 +26,7 @@ get:
                     items: 
                       allOf:
                         - $ref: '../components/schemas/id.yml'
-                        - $ref: '../components/schemas/material.yml'
+                        - $ref: '../components/schemas/materialCategory.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
@@ -41,9 +41,9 @@ post:
   x-badges:
     - color: blue
       label: Needs Review
-  summary: Add Material
-  operationId: addMaterial
-  description: Add a new Material
+  summary: Add Material Category
+  operationId: addMaterialCategory
+  description: This endpoint supports the adding of a new Material Category
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
   requestBody:
@@ -51,7 +51,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/material.yml'
+          $ref: '../components/schemas/materialCategory.yml'
   responses:
     '201':
       description: Successful operation
@@ -60,7 +60,7 @@ post:
           schema:
             allOf:
               - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/material.yml'
+              - $ref: '../components/schemas/materialCategory.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':

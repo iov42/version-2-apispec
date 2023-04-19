@@ -8,9 +8,17 @@ properties:
     type: string
   name:
     type: string
-  materials:
+  allowedMaterials:
+    description: URI for the materials that are allowed to be used for this product.
     type: array
     items:
-      $ref: './material.yml'
-  unitOfMeasurement:
-    $ref: './unit.yml'
+      type: string
+  baseUnit:
+    description: URI for the base unit of measurements that this product is based off.
+    type: string
+  userDefinedUnits:
+    description: List of URIs for user defined units that are attached to this Product for conversion purposes.
+    type: array
+    items:
+      type: string
+
