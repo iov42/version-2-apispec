@@ -1,0 +1,6 @@
+name: size
+in: query
+required: true
+description: The number of elements per page.
+schema:
+  type: integer
