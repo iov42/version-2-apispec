@@ -16,7 +16,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/apiAccessToken.yml'
+          $ref: '../components/schemas/apiAccessTokenRequest.yml'
     required: true
   responses:
     '201':

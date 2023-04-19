@@ -15,7 +15,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/apiAccessToken.yml'
+          $ref: '../components/schemas/apiAccessTokenRequest.yml'
     required: true
   responses:
     '201':
@@ -23,7 +23,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessTokenRequestResult.yml'
+            $ref: '../components/schemas/apiAccessToken.yml'
     '404':
       description: Invalid input
       content:
@@ -58,7 +58,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/apiAccessTokenResult.yml'        
+              $ref: '../components/schemas/apiAccessToken.yml'
     '404':
       description: Invalid input
       content:

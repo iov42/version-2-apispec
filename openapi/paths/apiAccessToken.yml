@@ -17,7 +17,42 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessTokenResult.yml'
+            $ref: '../components/schemas/apiAccessToken.yml'
+    '404':
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/404-notFound.yml'            
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'
+put:
+  tags:
+    - Users
+  x-badges:
+    - color: green
+      label: Ready for Dev    
+  summary: Update Specific API Access Token
+  operationId: updateUserAPIAccessToken
+  description: This endpoint allows for the update of certain information for an API access token.
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/userId.yml'
+    - $ref: '../components/parameters/path/apiTokenId.yml'
+  requestBody:
+    description: Updated API Access Token Information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/apiAccessTokenRequest.yml'
+    required: true
+  responses:
+    '200':
+      description: User API Access Token
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/apiAccessToken.yml'
     '404':
       description: Invalid input
       content:
