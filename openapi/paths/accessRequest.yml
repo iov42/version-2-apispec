@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Authentication
+  summary: Retrieves an Access Token
+  operationId: getAccessToken
+  description: OAuth conform token retrieval
+  requestBody:
+    description: Access Token Request
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+           $ref: '../components/schemas/accessTokenPasswordRequest.yml'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/accessToken.yml'
+    '400':
+      description: Invalid token
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/400-accessError.yml'
+    default:
+      $ref: '../components/responses/400-unexpectedError.yml'

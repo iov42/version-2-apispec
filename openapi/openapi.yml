@@ -4,11 +4,15 @@ info:
   description: >-
     This API spec defines how you can interact with the iov42 traceability
     system.
-  version: 0.0.8
+  version: 0.0.9
 security:
   - ApiKeyAuth: []
   - JWTBearer: []
 tags:
+  - name: Attachments
+    description: Apis for the creation and retrieval of Attachments
+  - name: Authentication
+    description: Apis for client authentication.
   - name: Certificates
     description: Apis for the creation and retrieval of Certificates
   - name: Checks
@@ -46,6 +50,10 @@ tags:
   - name: Users
     description: Apis for user related information.
 paths:
+  /auth/token:
+    $ref: ./paths/accessRequest.yml
+  /auth/token/refresh:
+    $ref: ./paths/accessRefresh.yml
   /organisations:
     $ref: ./paths/organisations.yml
   /organisations/{orgId}:
@@ -122,6 +130,12 @@ paths:
     $ref: ./paths/user.yml
   /organisations/{orgId}/users/{userId}/apiKey:
     $ref: ./paths/apiKey.yml
+  /organisations/{orgId}/users/{userId}/apiTokens:
+    $ref: ./paths/apiAccessTokens.yml
+  /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}:
+    $ref: ./paths/apiAccessToken.yml
+  /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}/regenerate:
+    $ref: ./paths/apiAccessTokenRegenerate.yml
   /registrations:
     $ref: ./paths/Registrations/registrations.yml
   /registrations/{registrationId}:

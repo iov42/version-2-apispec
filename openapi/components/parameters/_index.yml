@@ -1,4 +1,7 @@
 # path
+apiTokenId:
+  $ref: './path/apiTokenId.yml'
+
 attachId:
   $ref: './path/attachId.yml'
 

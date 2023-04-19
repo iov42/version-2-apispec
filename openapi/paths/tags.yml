@@ -6,15 +6,22 @@ get:
   description: List all the Tags
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/query/page.yml'
+    - $ref: '../components/parameters/query/size.yml'
   responses:
     '200':
       description: Array of Tags
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '../components/schemas/tag.yml'
+            allOf:
+              - $ref: '../components/schemas/pagination.yml'
+              - type: object
+                properties:
+                  results: 
+                    type: array
+                    items: 
+                      $ref: '../components/schemas/tag.yml'
     '404':
       description: Invalid input
       content:
