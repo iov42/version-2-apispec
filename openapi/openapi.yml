@@ -120,8 +120,12 @@ paths:
     $ref: ./paths/users.yml
   /organisations/{orgId}/users/{userId}:
     $ref: ./paths/user.yml
-  /organisations/{orgId}/users/{userId}/apiKey:
-    $ref: ./paths/apiKey.yml
+  /organisations/{orgId}/users/{userId}/apiTokens:
+    $ref: ./paths/apiAccessTokens.yml
+  /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}:
+    $ref: ./paths/apiAccessToken.yml
+  /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}/regenerate:
+    $ref: ./paths/apiAccessTokenRegenerate.yml
   /units:
     $ref: ./paths/units.yml
   /units/{unitId}:
