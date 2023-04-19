@@ -1,5 +1,5 @@
 type: object
-description: Sucessful Token Response
+description: Successful Token Response
 properties:
   access_token:
     description: The access token issued by the auth system.
