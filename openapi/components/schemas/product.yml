@@ -3,9 +3,6 @@ description: This is a definition of a product
 required:
   - name
 properties:
-  id:
-    description: System provided identity field.
-    type: string
   name:
     type: string
   allowedMaterials:

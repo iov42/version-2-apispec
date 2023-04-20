@@ -24,7 +24,9 @@ get:
                   results: 
                     type: array
                     items: 
-                      $ref: '../components/schemas/product.yml'
+                      allOf:
+                        - $ref: '../components/schemas/id.yml'
+                        - $ref: '../components/schemas/product.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':

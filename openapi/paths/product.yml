@@ -15,7 +15,9 @@ put:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/product.yml'
+          allOf:
+            - $ref: '../components/schemas/id.yml'
+            - $ref: '../components/schemas/product.yml'
     required: true
   responses:
     '201':
@@ -23,7 +25,9 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/product.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/product.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':
@@ -54,7 +58,9 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/product.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/product.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
