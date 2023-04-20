@@ -18,8 +18,6 @@ CustomFieldTemplate:
   $ref: "./customFieldTemplate.yml"
 Document:
   $ref: "./document.yml"
-Error:
-  $ref: "./error.yml"
 Item:
   $ref: "./item.yml"
 Location:
