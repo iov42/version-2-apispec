@@ -5,6 +5,8 @@ post:
   operationId: createRegistration
   description: Add Registration
   security: []
+  parameters:
+    - $ref: '../../components/parameters/query/inviteToken.yml'
   requestBody:
     description: Registration Information
     content:

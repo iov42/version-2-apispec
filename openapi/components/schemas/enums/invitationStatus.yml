@@ -1,4 +1,4 @@
 type: string
 enum:
-  - AWAITING_VERIFICATION
-  - VERIFIED
+  - PENDING
+  - ACCEPTED
