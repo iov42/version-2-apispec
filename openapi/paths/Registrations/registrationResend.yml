@@ -4,6 +4,7 @@ post:
   summary: Resend Registration Email
   operationId: resendRegistrationEmail
   description: Resend email for verification of a registration.
+  security: []
   parameters:
     - $ref: '../../components/parameters/path/registrationId.yml'
   responses:

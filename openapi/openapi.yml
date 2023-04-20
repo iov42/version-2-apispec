@@ -128,8 +128,6 @@ paths:
     $ref: ./paths/users.yml
   /organisations/{orgId}/users/{userId}:
     $ref: ./paths/user.yml
-  /organisations/{orgId}/users/{userId}/apiKey:
-    $ref: ./paths/apiKey.yml
   /organisations/{orgId}/users/{userId}/apiTokens:
     $ref: ./paths/apiAccessTokens.yml
   /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}:
@@ -144,6 +142,10 @@ paths:
     $ref: ./paths/Registrations/registrationVerify.yml
   /registrations/{registrationId}/resend:
     $ref: ./paths/Registrations/registrationResend.yml
+  /invitations:
+    $ref: ./paths/Registrations/invitations.yml
+  /invitations/{invitationId}:
+    $ref: ./paths/Registrations/invitation.yml
   /units:
     $ref: ./paths/units.yml
   /units/{unitId}:

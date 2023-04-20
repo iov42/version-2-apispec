@@ -1,8 +1,8 @@
 post:
   tags:
     - Registrations
-  summary: Create Registration
-  operationId: createRegistration
+  summary: Create Invitation
+  operationId: createInvitation
   description: Add Registration
   security: []
   requestBody:

@@ -1,0 +1,15 @@
+type: object
+description: This is the definition for a registration status.
+required:
+  - firstName
+  - lastName
+  - emailAddress
+  - passwordHash
+  - organisation
+  - country
+properties:
+  id:
+    type: string
+  status:
+    description: Status of registration.
+    $ref: './enums/registrationStatus.yml'

@@ -1,24 +1,23 @@
 get:
   tags:
     - Registrations
-  summary: Get Registration Status
-  operationId: getRegistrationStatus
-  description: Get Registration Status
-  security: []
+  summary: Get Invitation Status
+  operationId: getInvitationStatus
+  description: Get Invitation Status
   parameters:
-    - $ref: '../../components/parameters/path/registrationId.yml'  
+    - $ref: '../../components/parameters/path/invitationId.yml'
   responses:
     '200':
       description: Registration Status
       content:
         application/json:
           schema:
-            $ref: '../../components/schemas/registrationStatus.yml'
+            $ref: '../../components/schemas/invitation.yml'
     '404':
       description: Invalid input
       content:
         application/json:
           schema:
-            $ref: '../../components/responses/404-notFound.yml'            
+            $ref: '../../components/responses/404-notFound.yml'
     default:
       $ref: '../../components/responses/400-unexpectedError.yml'

@@ -4,6 +4,7 @@ put:
   summary: Verify a Registration
   operationId: verifyRegistration
   description: Verify Registration by way of an email link.
+  security: []
   parameters:
     - $ref: '../../components/parameters/path/registrationId.yml'
     - $ref: '../../components/parameters/query/t.yml'
