@@ -19,8 +19,8 @@ get:
             items:
               allOf: 
                 - $ref: '../components/schemas/id.yml'
-                - $ref: '../components/schemas/unit.yml'
-                - $ref: '../components/schemas/unitUserDefined.yml'
+                - $ref: '../components/schemas/Units/unit.yml'
+                - $ref: '../components/schemas/Units/derivedUnit.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
@@ -47,15 +47,15 @@ post:
         schema:
           allOf:
             - $ref: '../components/schemas/id.yml'
-            - $ref: '../components/schemas/unit.yml'
-            - $ref: '../components/schemas/unitUserDefined.yml'
+            - $ref: '../components/schemas/Units/unit.yml'
+            - $ref: '../components/schemas/Units/derivedUnit.yml'
   responses:
     '201':
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/unit.yml'
+            $ref: '../components/schemas/Units/unit.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':

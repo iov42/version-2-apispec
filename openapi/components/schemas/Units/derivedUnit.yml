@@ -1,5 +1,5 @@
 type: object
-description: The extended definition of a User defined unit of measurement. Such a unit of measurement must always expressed relative to a base unit of measurement.
+description: The extended definition of a derived unit of measurement. Such a unit of measurement must always expressed relative to a base unit of measurement.
 required:
   - baseUnit
   - conversionFactor

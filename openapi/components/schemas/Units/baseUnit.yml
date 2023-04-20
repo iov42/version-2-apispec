@@ -5,4 +5,4 @@ required:
 properties:
   type:
     description: The type of unit of measurement.
-    $ref: './enums/unitType.yml'
+    $ref: '../enums/unitType.yml'

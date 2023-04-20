@@ -8,5 +8,5 @@ properties:
     description: Name of the material
     type: string
   category:
-    description: The URI for the material category.
+    description: The material category.
     type: string

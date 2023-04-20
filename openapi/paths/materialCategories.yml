@@ -6,64 +6,18 @@ get:
       label: Needs Review    
   summary: List Material Categories
   operationId: listMaterialCategories
-  description: This endpoint returns a list of Material Categories.
+  description: This endpoint returns a distinct list of Categories that have been use on Materials.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
-    - $ref: '../components/parameters/query/category.yml'
   responses:
     '200':
       description: Array of Material Categories
       content:
         application/json:
           schema:
-            allOf:
-              - $ref: '../components/schemas/pagination.yml'
-              - type: object
-                properties:
-                  results: 
-                    type: array
-                    items: 
-                      allOf:
-                        - $ref: '../components/schemas/id.yml'
-                        - $ref: '../components/schemas/materialCategory.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
-    default:
-      $ref: '../components/responses/500-internalError.yml'
-post:
-  tags:
-    - Products
-  x-badges:
-    - color: blue
-      label: Needs Review
-  summary: Add Material Category
-  operationId: addMaterialCategory
-  description: This endpoint supports the adding of a new Material Category
-  parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-  requestBody:
-    description: Material information
-    content:
-      application/json:
-        schema:
-          $ref: '../components/schemas/materialCategory.yml'
-  responses:
-    '201':
-      description: Successful operation
-      content:
-        application/json:
-          schema:
-            allOf:
-              - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/materialCategory.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
+            type: array
+            items: 
+              type: string                   
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':

@@ -1,8 +1,0 @@
-type: object
-description: Definition of a material category
-required:
-  - category
-properties:
-  category:
-    description: Category for a material.
-    type: string

@@ -135,8 +135,6 @@ paths:
     $ref: ./paths/material.yml
   /organisations/{orgId}/material-categories:
     $ref: ./paths/materialCategories.yml
-  /organisations/{orgId}/material-categories/{matId}:
-    $ref: ./paths/materialCategory.yml
   /organisations/{orgId}/products:
     $ref: ./paths/products.yml
   /organisations/{orgId}/products/{prodId}:

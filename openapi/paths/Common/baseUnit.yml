@@ -16,8 +16,8 @@ put:
         schema:
           allOf:
             - $ref: '../../components/schemas/id.yml'
-            - $ref: '../../components/schemas/unit.yml'
-            - $ref: '../../components/schemas/unitBase.yml'
+            - $ref: '../../components/schemas/Units/unit.yml'
+            - $ref: '../../components/schemas/Units/baseUnit.yml'
     required: true
   responses:
     '200':
@@ -27,8 +27,8 @@ put:
           schema:
             allOf:
               - $ref: '../../components/schemas/id.yml'
-              - $ref: '../../components/schemas/unit.yml'
-              - $ref: '../../components/schemas/unitBase.yml'
+              - $ref: '../../components/schemas/Units/unit.yml'
+              - $ref: '../../components/schemas/Units/baseUnit.yml'
     '400':
       $ref: '../../components/responses/400-badRequest.yml'
     '401':
@@ -60,8 +60,8 @@ get:
           schema:
             allOf:
               - $ref: '../../components/schemas/id.yml'
-              - $ref: '../../components/schemas/unit.yml'
-              - $ref: '../../components/schemas/unitBase.yml'
+              - $ref: '../../components/schemas/Units/unit.yml'
+              - $ref: '../../components/schemas/Units/baseUnit.yml'
     '401':
       $ref: '../../components/responses/401-unauthorised.yml'
     '403':
