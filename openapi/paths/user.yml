@@ -36,6 +36,9 @@ put:
 get:
   tags:
     - Users
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get User
   operationId: getUser
   description: Get the User details

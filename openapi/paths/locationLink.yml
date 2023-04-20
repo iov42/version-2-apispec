@@ -1,6 +1,9 @@
 put:
   tags:
     - Locations
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update link
   operationId: updateLink
   description: Update link by id
@@ -37,6 +40,9 @@ put:
 get:
   tags:
     - Locations
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Link
   operationId: getLink
   description: Get the link details

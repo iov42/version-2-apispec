@@ -1,6 +1,9 @@
 put:
   tags:
     - Locations
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update location
   operationId: updateLocation
   description: Update location by id
@@ -36,6 +39,9 @@ put:
 get:
   tags:
     - Locations
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Location
   operationId: getLocation
   description: Get the Location details

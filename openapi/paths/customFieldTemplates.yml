@@ -1,6 +1,9 @@
 get:
   tags:
     - CustomFields
+  x-badges:
+    - color: red
+      label: Draft
   summary: List Custom Field Templates
   operationId: listCustomFieldTemplates
   description: List all the Custom Field Templates
@@ -26,6 +29,9 @@ get:
 post:
   tags:
     - CustomFields
+  x-badges:
+    - color: red
+      label: Draft
   summary: Add Custom Field template
   operationId: addCustomFieldTemplate
   description: Add a new Custom Field Template

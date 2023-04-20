@@ -1,6 +1,9 @@
 get:
   tags:
     - Mappings
+  x-badges:
+    - color: red
+      label: Draft
   summary: List Mappings
   operationId: listMappings
   description: List all the Mappings
@@ -33,6 +36,9 @@ get:
 post:
   tags:
     - Mappings
+  x-badges:
+    - color: red
+      label: Draft
   summary: Add Mapping
   operationId: addMapping
   description: Add a new Mapping

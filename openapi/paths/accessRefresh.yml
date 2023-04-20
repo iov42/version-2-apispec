@@ -2,8 +2,8 @@ post:
   tags:
     - Authentication
   x-badges:
-    - color: green
-      label: Ready for Dev 
+    - color: blue
+      label: Needs Review
   summary: Refreshes an Access Token
   operationId: refreshAccessToken
   description: This endpoint conforms with OAuth for refreshing an access token.

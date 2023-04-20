@@ -1,6 +1,9 @@
 put:
   tags:
     - Mappings
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update mapping
   operationId: updateMapping
   description: Update mapping by id
@@ -36,6 +39,9 @@ put:
 get:
   tags:
     - Mappings
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Mapping
   operationId: getMapping
   description: Get the Mapping details

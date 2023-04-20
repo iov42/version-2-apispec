@@ -1,6 +1,9 @@
 get:
   tags:
     - Deliveries
+  x-badges:
+    - color: red
+      label: Draft
   summary: List Deliveries
   operationId: listDeliveries
   description: List all the Deliveries
@@ -33,6 +36,9 @@ get:
 post:
   tags:
     - Deliveries
+  x-badges:
+    - color: red
+      label: Draft
   summary: Add Delivery
   operationId: addDelivery
   description: Add a new Delivery

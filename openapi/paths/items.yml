@@ -1,6 +1,9 @@
 get:
   tags:
     - Items
+  x-badges:
+    - color: red
+      label: Draft
   summary: List Items
   operationId: listItems
   description: List all the Items
@@ -33,6 +36,9 @@ get:
 post:
   tags:
     - Items
+  x-badges:
+    - color: red
+      label: Draft
   summary: Add Item
   operationId: addItem
   description: Add a new Item

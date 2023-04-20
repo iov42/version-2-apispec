@@ -2,8 +2,8 @@ put:
   tags:
     - Organisation
   x-badges:
-    - color: green
-      label: Ready for Dev    
+    - color: blue
+      label: Needs Review  
   summary: Update organisation
   operationId: updateOrganisation
   description: Update organisation by id
@@ -39,8 +39,8 @@ get:
   tags:
     - Organisation
   x-badges:
-    - color: green
-      label: Ready for Dev    
+    - color: blue
+      label: Needs Review  
   summary: Get Organisation
   operationId: getOrganisation
   description: Get the Organisation details

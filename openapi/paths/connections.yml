@@ -1,6 +1,9 @@
 get:
   tags:
     - Connections
+  x-badges:
+    - color: red
+      label: Draft
   summary: List Connections
   operationId: listConnections
   description: List all the Connections
@@ -33,6 +36,9 @@ get:
 post:
   tags:
     - Connections
+  x-badges:
+    - color: red
+      label: Draft
   summary: Add a new Connection
   operationId: addConnection
   description: Add a new Connection

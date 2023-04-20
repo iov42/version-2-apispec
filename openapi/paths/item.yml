@@ -1,6 +1,9 @@
 put:
   tags:
     - Items
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update item
   operationId: updateItem
   description: Update item by id
@@ -36,6 +39,9 @@ put:
 get:
   tags:
     - Items
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Item
   operationId: getItem
   description: Get the item details

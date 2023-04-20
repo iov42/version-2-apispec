@@ -1,6 +1,9 @@
 put:
   tags:
     - Attachments
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update Attachment
   operationId: updateAttachment
   description: Update Attachment by id
@@ -36,6 +39,9 @@ put:
 get:
   tags:
     - Attachments
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Attachment
   operationId: getAttachment
   description: Get the Attachment details

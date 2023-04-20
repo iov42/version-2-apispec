@@ -2,8 +2,8 @@ get:
   tags:
     - Organisation
   x-badges:
-    - color: green
-      label: Ready for Dev    
+    - color: blue
+      label: Needs Review  
   summary: List Organisations
   operationId: listOrganisations
   description: List all the organisations that user has access to
@@ -36,8 +36,8 @@ post:
   tags:
     - Organisation
   x-badges:
-    - color: green
-      label: Ready for Dev    
+    - color: blue
+      label: Needs Review  
   summary: Add a new organisation
   operationId: addOrganisation
   description: Add a new organisation

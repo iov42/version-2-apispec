@@ -1,6 +1,9 @@
 put:
   tags:
     - CustomFields
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update Custom Field Template
   operationId: updateCustomFieldTemplate
   description: Update Custom Field Template by id
@@ -36,6 +39,9 @@ put:
 get:
   tags:
     - CustomFields
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Custom Field Template
   operationId: getCustomFieldTemplate
   description: Get a Custom Field Template details

@@ -1,6 +1,9 @@
 put:
   tags:
-    - Tags
+    - Config
+  x-badges:
+    - color: red
+      label: Draft
   summary: Update tag
   operationId: updateTag
   description: Update tag by id
@@ -35,7 +38,10 @@ put:
       $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - Tags
+    - Config
+  x-badges:
+    - color: red
+      label: Draft
   summary: Get Tag
   operationId: getTag
   description: Get the Tag details

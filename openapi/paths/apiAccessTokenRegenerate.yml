@@ -2,8 +2,8 @@ post:
   tags:
     - Users
   x-badges:
-    - color: green
-      label: Ready for Dev    
+    - color: blue
+      label: Needs Review  
   summary: Regenerate a User API Access Token
   operationId: regenerateUserAPIAccessToken
   description: This endpoint a request to regenerate a given API Access Token. The details of the token are maintained, the token itself is changed.

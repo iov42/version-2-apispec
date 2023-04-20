@@ -1,6 +1,9 @@
 get:
   tags:
-    - Tags
+    - Config
+  x-badges:
+    - color: red
+      label: Draft
   summary: List Tags
   operationId: listTags
   description: List all the Tags
@@ -32,7 +35,10 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
-    - Tags
+    - Config
+  x-badges:
+    - color: red
+      label: Draft
   summary: Add Tag
   operationId: addTag
   description: Add a new Tag
