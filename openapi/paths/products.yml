@@ -58,7 +58,9 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/product.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/product.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':
