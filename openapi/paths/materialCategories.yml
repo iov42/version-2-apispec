@@ -11,6 +11,7 @@ get:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
+    - $ref: '../components/parameters/query/category.yml'
   responses:
     '200':
       description: Array of Material Categories

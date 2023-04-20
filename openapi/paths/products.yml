@@ -11,6 +11,8 @@ get:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
+    - $ref: '../components/parameters/query/name.yml'
+    - $ref: '../components/parameters/query/owner.yml'
   responses:
     '200':
       description: Array of Products

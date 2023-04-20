@@ -4,6 +4,10 @@ required:
   - name
 properties:
   name:
+    description: This is the name for the product.
+    type: string
+  owner:
+    description: This is the URI for the owning organisation.
     type: string
   allowedMaterials:
     description: URI for the materials that are allowed to be used for this product.
