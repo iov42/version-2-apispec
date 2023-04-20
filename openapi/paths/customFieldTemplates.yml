@@ -15,10 +15,14 @@ get:
             type: array
             items:
               $ref: '../components/schemas/customFieldTemplate.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'             
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
     - CustomFields
@@ -39,11 +43,13 @@ post:
         application/json:
           schema:
             $ref: '../components/schemas/customFieldTemplate.yml'
-    '422':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/422-unprocessable.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'

@@ -21,16 +21,18 @@ put:
         application/json:
           schema:
             $ref: '../components/schemas/check.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
     '404':
       $ref: '../components/responses/404-notFound.yml'
-    '422':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/422-unprocessable.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
     - Checks
@@ -47,7 +49,13 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/check.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
     '404':
-      $ref: '../components/responses/404-notFound.yml'           
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'

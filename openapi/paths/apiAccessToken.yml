@@ -18,14 +18,16 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/apiAccessToken.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
     '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/404-notFound.yml'            
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
 put:
   tags:
     - Users
@@ -53,10 +55,18 @@ put:
         application/json:
           schema:
             $ref: '../components/schemas/apiAccessToken.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
     '404':
-      $ref: '../components/responses/404-notFound.yml'           
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
 delete:
   tags:
     - Users
@@ -72,10 +82,14 @@ delete:
     - $ref: '../components/parameters/path/apiTokenId.yml'
   responses:
     '204':
-      description: Deleted
+      $ref: '../components/responses/204-noContent.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
     '404':
       $ref: '../components/responses/404-notFound.yml'
-    '401':
-      description: Unauthorised
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
