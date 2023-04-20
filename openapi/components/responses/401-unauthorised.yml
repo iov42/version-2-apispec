@@ -1,0 +1,5 @@
+description: This response means unauthenticated. Authenticate with the server and try again.
+content:
+  application/json:
+    schema:
+      $ref: './error.yml'

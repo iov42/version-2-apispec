@@ -11,42 +11,63 @@ security:
 tags:
   - name: Attachments
     description: Apis for the creation and retrieval of Attachments
+    x-tag-expanded: false 
   - name: Authentication
     description: Apis for client authentication.
+    x-tag-expanded: false 
   - name: Certificates
     description: Apis for the creation and retrieval of Certificates
+    x-tag-expanded: false 
   - name: Checks
     description: Apis for the creation and retrieval of Checks
+    x-tag-expanded: false 
+  - name: Common
+    description: Apis with information common across all organisations.
+    x-tag-expanded: false 
+  - name: Config
+    description: Apis for configuration of an organisations environment.
+    x-tag-expanded: false 
   - name: Connections
     description: Apis for the creation and retrieval of Connections
+    x-tag-expanded: false 
   - name: CustomFields
     description: Apis for the creation and retrieval of CustomFields
+    x-tag-expanded: false 
   - name: Deliveries
     description: Apis for the creation and retrieval of Deliveries
+    x-tag-expanded: false 
   - name: Documents
     description: Apis for the creation and retrieval of Documents
+    x-tag-expanded: false 
   - name: Items
     description: Apis for the creation and retrieval of Items
+    x-tag-expanded: false 
   - name: Locations
     description: Apis for the creation and retrieval of Locations
+    x-tag-expanded: false 
   - name: Mappings
     description: Apis for the creation and retrieval of Mapping
+    x-tag-expanded: false 
   - name: Materials
     description: Apis for the creation and retrieval of Materials
+    x-tag-expanded: false 
   - name: Organisation
     description: Apis for the creation and retrieval of Organisation
+    x-tag-expanded: false 
   - name: Products
     description: Apis for the creation and retrieval of Products
+    x-tag-expanded: false 
   - name: Public
     description: >-
       Apis for organisational information that is 'public'. By public this
       information is available to any registered user.
+    x-tag-expanded: false 
   - name: Tags
     description: Apis for the creation and retrieval of tags.
-  - name: Shared
-    description: Apis with information shared across all organisations.
+    x-tag-expanded: false 
   - name: Users
     description: Apis for user related information.
+    x-tag-expanded: false
 paths:
   /auth/token:
     $ref: ./paths/accessRequest.yml
@@ -72,17 +93,17 @@ paths:
     $ref: ./paths/connections.yml
   /organisations/{orgId}/connections/{conId}:
     $ref: ./paths/connection.yml
-  /organisations/{orgId}/customFields:
+  /organisations/{orgId}/custom-fields:
     $ref: ./paths/customFields.yml
-  /organisations/{orgId}/customFields/{cfId}:
+  /organisations/{orgId}/custom-fields/{cfId}:
     $ref: ./paths/customField.yml
-  /organisations/{orgId}/customFieldDefinitions:
+  /organisations/{orgId}/custom-field-definitions:
     $ref: ./paths/customFieldDefinitions.yml
-  /organisations/{orgId}/customFieldDefinitions/{cfdId}:
+  /organisations/{orgId}/custom-field-definitions/{cfdId}:
     $ref: ./paths/customFieldDefinition.yml
-  /organisations/{orgId}/customFieldTemplates:
+  /organisations/{orgId}/custom-field-templates:
     $ref: ./paths/customFieldTemplates.yml
-  /organisations/{orgId}/customFieldTemplates/{cftId}:
+  /organisations/{orgId}/custom-field-templates/{cftId}:
     $ref: ./paths/customFieldTemplate.yml
   /organisations/{orgId}/deliveries:
     $ref: ./paths/deliveries.yml
@@ -112,6 +133,8 @@ paths:
     $ref: ./paths/materials.yml
   /organisations/{orgId}/materials/{matId}:
     $ref: ./paths/material.yml
+  /organisations/{orgId}/material-categories:
+    $ref: ./paths/materialCategories.yml
   /organisations/{orgId}/products:
     $ref: ./paths/products.yml
   /organisations/{orgId}/products/{prodId}:
@@ -122,20 +145,24 @@ paths:
     $ref: ./paths/tags.yml
   /organisations/{orgId}/tags/{tagId}:
     $ref: ./paths/tag.yml
+  /organisations/{orgId}/units:
+    $ref: ./paths/userDefinedUnits.yml
+  /organisations/{orgId}/units/{unitId}:
+    $ref: ./paths/userDefinedUnit.yml
   /organisations/{orgId}/users:
     $ref: ./paths/users.yml
   /organisations/{orgId}/users/{userId}:
     $ref: ./paths/user.yml
-  /organisations/{orgId}/users/{userId}/apiTokens:
+  /organisations/{orgId}/users/{userId}/api-tokens:
     $ref: ./paths/apiAccessTokens.yml
-  /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}:
+  /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}:
     $ref: ./paths/apiAccessToken.yml
-  /organisations/{orgId}/users/{userId}/apiTokens/{apiTokenId}/regenerate:
+  /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}/regenerate:
     $ref: ./paths/apiAccessTokenRegenerate.yml
-  /units:
-    $ref: ./paths/units.yml
-  /units/{unitId}:
-    $ref: ./paths/unit.yml
+  /common/base-units:
+    $ref: ./paths/Common/baseUnits.yml
+  /common/base-units/{unitId}:
+    $ref: ./paths/Common/baseUnit.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml

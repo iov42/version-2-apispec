@@ -1,0 +1,22 @@
+type: object
+description: This is the definition for a registration status.
+required:
+  - firstName
+  - lastName
+  - emailAddress
+  - passwordHash
+  - organisation
+  - country
+properties:
+  id:
+    type: string
+  inviteType:
+    description: Whether this is an invitation to a user to join an organisation or an invitation to another organisation to join the platform.
+    $ref: './enums/invitationType.yml'
+  invitingOrganisationName:
+    type: string
+  invitingOrganisation:
+    type: string
+  status:
+    description: Status of invitation.
+    $ref: './enums/invitationStatus.yml'

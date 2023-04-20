@@ -1,0 +1,98 @@
+put:
+  tags:
+    - Common
+  x-badges:
+    - color: blue
+      label: Needs Review      
+  summary: Update Base Unit of Measurement
+  operationId: updateBaseUnit
+  description: Update details for a Base Unit of Measurement. It is only available for System Administrators.
+  parameters:
+    - $ref: '../../components/parameters/path/unitId.yml'
+  requestBody:
+    description: Update unit information
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: '../../components/schemas/id.yml'
+            - $ref: '../../components/schemas/Units/unit.yml'
+            - $ref: '../../components/schemas/Units/baseUnit.yml'
+    required: true
+  responses:
+    '200':
+      description: Successfully updated Base Unit of Measurement.
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../components/schemas/id.yml'
+              - $ref: '../../components/schemas/Units/unit.yml'
+              - $ref: '../../components/schemas/Units/baseUnit.yml'
+    '400':
+      $ref: '../../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'
+get:
+  tags:
+    - Common
+  x-badges:
+    - color: blue
+      label: Needs Review    
+  summary: Get Base Unit of Measurement
+  operationId: getBaseUnit
+  description: Get the Base Unit of Measurement details
+  parameters:
+    - $ref: '../../components/parameters/path/unitId.yml'
+  responses:
+    '200':
+      description: Unit info
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../components/schemas/id.yml'
+              - $ref: '../../components/schemas/Units/unit.yml'
+              - $ref: '../../components/schemas/Units/baseUnit.yml'
+    '401':
+      $ref: '../../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'
+delete:
+  tags:
+    - Common
+  x-badges:
+    - color: blue
+      label: Needs Review  
+  summary: Delete Base Unit of Measurement
+  operationId: deleteBaseUnit
+  description: This endpoint allows the deletion of a specified Base Unit of Measurment specified. It is only available for System Administrators.
+  parameters:
+    - $ref: '../../components/parameters/path/unitId.yml'
+  responses:
+    '204':
+      $ref: '../../components/responses/204-noContent.yml'
+    '401':
+      $ref: '../../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

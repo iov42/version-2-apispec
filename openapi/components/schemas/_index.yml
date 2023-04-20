@@ -39,7 +39,7 @@ Public:
 Tag:
   $ref: "./tag.yml"
 Unit:
-  $ref: "./unit.yml"
+  $ref: "./Units/unit.yml"
 
 GeoFeature:
   $ref: "./geoJson/feature.yml"

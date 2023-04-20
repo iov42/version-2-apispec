@@ -1,0 +1,5 @@
+description: The client does not have access rights; it is unauthorized.
+content:
+  application/json:
+    schema:
+      $ref: './error.yml'

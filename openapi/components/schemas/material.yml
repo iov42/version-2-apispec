@@ -4,12 +4,9 @@ required:
   - name
   - category
 properties:
-  id:
-    description: System provided identity field.
-    type: string
   name:
     description: Name of the material
     type: string
   category:
-    description: Category of the material.
+    description: The material category.
     type: string

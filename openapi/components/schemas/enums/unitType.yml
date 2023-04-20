@@ -1,0 +1,7 @@
+type: string
+enum:
+  - Volume
+  - Area
+  - Length
+  - Mass
+  - Units

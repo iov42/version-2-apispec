@@ -54,11 +54,7 @@ put:
           schema:
             $ref: '../components/schemas/apiAccessToken.yml'
     '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/404-notFound.yml'            
+      $ref: '../components/responses/404-notFound.yml'           
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 delete:
@@ -78,11 +74,7 @@ delete:
     '204':
       description: Deleted
     '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/404-notFound.yml'
+      $ref: '../components/responses/404-notFound.yml'
     '401':
       description: Unauthorised
     default:

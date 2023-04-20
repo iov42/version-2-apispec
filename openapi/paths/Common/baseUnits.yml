@@ -1,0 +1,66 @@
+get:
+  tags:
+    - Common
+  x-badges:
+    - color: blue
+      label: Needs Review    
+  summary: List Base Units of Measurement
+  operationId: listBaseUnits
+  description: Endpoint to retrieve all the Base Unit of Measurement defined in the system.
+  responses:
+    '200':
+      description: Array of Base Units
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf: 
+                - $ref: '../../components/schemas/id.yml'
+                - $ref: '../../components/schemas/Units/unit.yml'
+                - $ref: '../../components/schemas/Units/baseUnit.yml'
+    '401':
+      $ref: '../../components/responses/401-unauthorised.yml'
+    '429':
+      $ref: '../../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'
+post:
+  tags:
+    - Common
+  x-badges:
+    - color: blue
+      label: Needs Review    
+  summary: Add Base Unit
+  operationId: addBaseUnit
+  description: This endpoint can be used to add a new Base Unit of Measurement to the system. It is only available for System Administrators.
+  requestBody:
+    description: Base Unit information
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: '../../components/schemas/Units/unit.yml'
+            - $ref: '../../components/schemas/Units/baseUnit.yml'
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../components/schemas/id.yml'
+              - $ref: '../../components/schemas/Units/unit.yml'
+              - $ref: '../../components/schemas/Units/baseUnit.yml'
+    '400':
+      $ref: '../../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

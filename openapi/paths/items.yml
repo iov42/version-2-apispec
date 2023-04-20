@@ -23,11 +23,7 @@ get:
                     items: 
                       $ref: '../components/schemas/item.yml'
     '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/404-notFound.yml'              
+      $ref: '../components/responses/404-notFound.yml'              
     default:
       $ref: '../components/responses/400-unexpectedError.yml'
 post:
