@@ -1,0 +1,8 @@
+name: material
+in: query
+required: false
+description: Filter based on the Materials that a resource uses.
+schema:
+  type: array
+  items: 
+    type: string  
