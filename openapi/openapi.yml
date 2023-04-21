@@ -4,7 +4,7 @@ info:
   description: >-
     This API spec defines how you can interact with the iov42 traceability
     system.
-  version: 0.0.12
+  version: 0.0.13
 servers:
   - url: https://reqres.in/api
     description: Mock API Service.
