@@ -155,6 +155,8 @@ paths:
     $ref: ./paths/apiAccessToken.yml
   /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}/regenerate:
     $ref: ./paths/apiAccessTokenRegenerate.yml
+  /common/base-unit-types:
+    $ref: ./paths/Common/baseUnitTypes.yml
   /common/base-units:
     $ref: ./paths/Common/baseUnits.yml
   /common/base-units/{unitId}:
