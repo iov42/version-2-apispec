@@ -3,4 +3,6 @@ in: query
 required: false
 description: Filter on the 'name' field of a resource.
 schema:
-  type: string
+  type: array
+  items: 
+    type: string 

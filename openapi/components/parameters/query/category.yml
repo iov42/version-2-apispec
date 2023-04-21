@@ -3,4 +3,6 @@ in: query
 required: false
 description: Filter based on the 'category' field of a resource.
 schema:
-  type: string
+  type: array
+  items: 
+    type: string  
