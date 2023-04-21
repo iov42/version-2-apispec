@@ -1,9 +1,6 @@
 get:
   tags:
     - Config
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: List User Defined Units of Measurement
   operationId: listUserDefinedUnits
   description: This endpoint returns all the User Defined Units Of Measurement that have been defined for an organisation.
@@ -32,9 +29,6 @@ get:
 post:
   tags:
     - Config
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: Add User Defined Unit of Measurement
   operationId: addUserDefinedUnit
   description: This endpoint supports the addition of a User Defined Unit. A User Defined Unit allows for conversions to Base Units and to other User Define Units.

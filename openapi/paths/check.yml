@@ -1,9 +1,6 @@
 put:
   tags:
     - Checks
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update check
   operationId: updateCheck
   description: Update check by id
@@ -39,9 +36,6 @@ put:
 get:
   tags:
     - Checks
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get Check
   operationId: getCheck
   description: Get the Check details

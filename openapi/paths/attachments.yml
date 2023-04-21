@@ -1,9 +1,6 @@
 get:
   tags:
     - Attachments
-  x-badges:
-    - color: red
-      label: Draft
   summary: List Attachments
   operationId: listAttachments
   description: List all Attachments
@@ -36,9 +33,6 @@ get:
 post:
   tags:
     - Attachments
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add Attachment
   operationId: addAttachment
   description: Add a new link between resources.

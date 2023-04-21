@@ -1,9 +1,6 @@
 get:
   tags:
-    - Mappings
-  x-badges:
-    - color: red
-      label: Draft
+    - Config
   summary: List Mappings
   operationId: listMappings
   description: List all the Mappings
@@ -35,10 +32,7 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
-    - Mappings
-  x-badges:
-    - color: red
-      label: Draft
+    - Config
   summary: Add Mapping
   operationId: addMapping
   description: Add a new Mapping

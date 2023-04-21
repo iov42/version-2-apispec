@@ -1,9 +1,6 @@
 put:
   tags:
     - Documents
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update document
   operationId: updateDocument
   description: Update document by id
@@ -39,9 +36,6 @@ put:
 get:
   tags:
     - Documents
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get Document
   operationId: getDocument
   description: Get the document details

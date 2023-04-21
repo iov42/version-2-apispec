@@ -1,9 +1,6 @@
 get:
   tags:
     - Documents
-  x-badges:
-    - color: red
-      label: Draft
   summary: List Documents
   operationId: listDocuments
   description: List all the Documents
@@ -36,9 +33,6 @@ get:
 post:
   tags:
     - Documents
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add document
   operationId: addDocument
   description: Add a new Document

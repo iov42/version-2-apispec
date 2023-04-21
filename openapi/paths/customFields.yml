@@ -1,9 +1,6 @@
 get:
   tags:
     - CustomFields
-  x-badges:
-    - color: red
-      label: Draft
   summary: List Custom Fields
   operationId: listCustomFields
   description: List all the Custom Fields
@@ -42,9 +39,6 @@ get:
 post:
   tags:
     - CustomFields
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add Custom Field
   operationId: addCustomField
   description: Add a new Custom Field

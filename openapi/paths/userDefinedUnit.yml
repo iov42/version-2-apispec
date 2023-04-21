@@ -1,9 +1,6 @@
 put:
   tags:
     - Config
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: Update User Defined Unit of Measurement
   operationId: updateUserDefinedUnit
   description: This endpoint supports the updating of a User Defined Unit of Measurement
@@ -45,9 +42,6 @@ put:
 get:
   tags:
     - Config
-  x-badges:
-    - color: blue
-      label: Needs Review  
   summary: Get User Defined Unit of Measurement
   operationId: getUserDefinedUnit
   description: This endpoints returns the details for a User Defined Unit of Measurement

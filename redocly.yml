@@ -7,6 +7,7 @@ extends:
 rules:
   no-unused-components: error
   paths-kebab-case: error
+  tag-description: off
 theme:
   openapi:
     htmlTemplate: ./index.html

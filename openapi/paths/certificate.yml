@@ -1,9 +1,6 @@
 put:
   tags:
     - Certificates
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update certificate
   operationId: updateCertificate
   description: Update certificate by id
@@ -39,9 +36,6 @@ put:
 get:
   tags:
     - Certificates
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get certificate
   operationId: getCertificate
   description: Get the certificate details

@@ -1,9 +1,6 @@
 put:
   tags:
-    - Mappings
-  x-badges:
-    - color: red
-      label: Draft
+    - Config
   summary: Update mapping
   operationId: updateMapping
   description: Update mapping by id
@@ -38,10 +35,7 @@ put:
       $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - Mappings
-  x-badges:
-    - color: red
-      label: Draft
+    - Config
   summary: Get Mapping
   operationId: getMapping
   description: Get the Mapping details

@@ -1,9 +1,6 @@
 get:
   tags:
     - Common
-  x-badges:
-    - color: blue
-      label: Needs Review    
   summary: List Base Units of Measurement
   operationId: listBaseUnits
   description: Endpoint to retrieve all the Base Unit of Measurement defined in the system.
@@ -28,9 +25,6 @@ get:
 post:
   tags:
     - Common
-  x-badges:
-    - color: blue
-      label: Needs Review    
   summary: Add Base Unit
   operationId: addBaseUnit
   description: This endpoint can be used to add a new Base Unit of Measurement to the system. It is only available for System Administrators.

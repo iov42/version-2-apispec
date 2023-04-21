@@ -1,9 +1,6 @@
 get:
   tags:
     - Products
-  x-badges:
-    - color: blue
-      label: Needs Review    
   summary: List Material Categories
   operationId: listMaterialCategories
   description: This endpoint returns a distinct list of Categories that have been use on Materials.

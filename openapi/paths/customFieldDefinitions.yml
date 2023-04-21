@@ -20,9 +20,6 @@
 post:
   tags:
     - CustomFields
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add Custom Field Definition
   operationId: addCustomFieldDefinition
   description: Add a new Custom Field Definition

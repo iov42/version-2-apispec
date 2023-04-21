@@ -1,9 +1,6 @@
 get:
   tags:
     - Locations
-  x-badges:
-    - color: red
-      label: Draft
   summary: List Links
   operationId: listLinks
   description: List all the Links
@@ -37,9 +34,6 @@ get:
 post:
   tags:
     - Locations
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add Link
   operationId: addLink
   description: Add a new Link

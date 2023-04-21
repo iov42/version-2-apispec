@@ -1,9 +1,6 @@
 put:
   tags:
     - Deliveries
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update Delivery
   operationId: updateDelivery
   description: Update Delivery by id
@@ -39,9 +36,6 @@ put:
 get:
   tags:
     - Deliveries
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get Delivery
   operationId: getDelivery
   description: Get the delivery details

@@ -1,9 +1,6 @@
 get:
   tags:
     - Products
-  x-badges:
-    - color: blue
-      label: Needs Review    
   summary: List Materials
   operationId: listMaterials
   description: List all the Materials
@@ -40,9 +37,6 @@ get:
 post:
   tags:
     - Products
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: Add Material
   operationId: addMaterial
   description: Add a new Material

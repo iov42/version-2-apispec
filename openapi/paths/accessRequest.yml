@@ -1,9 +1,6 @@
 post:
   tags:
     - Authentication
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: Get an Access Token
   operationId: getAccessToken
   description: This endpoint allows the retrieval of an access token based on user authentication.

@@ -1,9 +1,6 @@
 put:
   tags:
     - Products
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: Update material
   operationId: updateMaterial
   description: Update material by id
@@ -43,9 +40,6 @@ put:
 get:
   tags:
     - Products
-  x-badges:
-    - color: blue
-      label: Needs Review
   summary: Get Material
   operationId: getMaterial
   description: Get the material details

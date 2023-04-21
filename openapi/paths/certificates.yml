@@ -1,9 +1,6 @@
 get:
   tags:
     - Certificates
-  x-badges:
-    - color: red
-      label: Draft
   summary: List Certificates
   operationId: listCertificates
   description: List all the certificates
@@ -36,9 +33,6 @@ get:
 post:
   tags:
     - Certificates
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add a new certificate
   operationId: addCertificate
   description: Add a new certificate

@@ -4,13 +4,15 @@ info:
   description: >-
     This API spec defines how you can interact with the iov42 traceability
     system.
-  version: 0.0.11
+  version: 0.0.12
+servers:
+  - url: https://reqres.in/api
+    description: Mock API Service.
 security:
   - ApiKeyAuth: []
   - JWTBearer: []
 tags:
   - name: Attachments
-    description: Apis for the creation and retrieval of Attachments
     x-tag-expanded: false
   - name: Authentication
     description: Apis for client authentication.
@@ -58,9 +60,6 @@ tags:
     description: Apis for the creation and retrieval of Products
     x-tag-expanded: false
   - name: Public
-    description: >-
-      Apis for organisational information that is 'public'. By public this
-      information is available to any registered user.
     x-tag-expanded: false
   - name: Users
     description: Apis for user related information.

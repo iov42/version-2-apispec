@@ -1,9 +1,6 @@
 post:
   tags:
     - Public
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add Public Info
   operationId: addPublicInfo
   description: Add Public Info
@@ -36,9 +33,6 @@ post:
 put:
   tags:
     - Public
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update Public Info
   operationId: updatePublicInfo
   description: Update Public Info by id
@@ -73,9 +67,6 @@ put:
 get:
   tags:
     - Public
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get Public Info
   operationId: getPublicInfo
   description: Get and organisations public info

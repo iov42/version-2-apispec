@@ -1,9 +1,6 @@
 put:
   tags:
     - Connections
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update connection
   operationId: updateConnection
   description: Update connection by id
@@ -39,9 +36,6 @@ put:
 get:
   tags:
     - Connections
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get Connection
   operationId: getConnection
   description: Get the Connection details

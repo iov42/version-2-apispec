@@ -1,12 +1,13 @@
 put:
   tags:
     - Config
-  x-badges:
-    - color: red
-      label: Draft
   summary: Update tag
   operationId: updateTag
-  description: Update tag by id
+  description: |
+    `Endpoint` to update an existing tag.
+
+    ## This is cool.
+
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/tagId.yml'
@@ -39,9 +40,6 @@ put:
 get:
   tags:
     - Config
-  x-badges:
-    - color: red
-      label: Draft
   summary: Get Tag
   operationId: getTag
   description: Get the Tag details

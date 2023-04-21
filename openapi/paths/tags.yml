@@ -1,9 +1,6 @@
 get:
   tags:
     - Config
-  x-badges:
-    - color: red
-      label: Draft
   summary: List Tags
   operationId: listTags
   description: List all the Tags
@@ -36,9 +33,6 @@ get:
 post:
   tags:
     - Config
-  x-badges:
-    - color: red
-      label: Draft
   summary: Add Tag
   operationId: addTag
   description: Add a new Tag
