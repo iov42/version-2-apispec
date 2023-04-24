@@ -1,8 +1,6 @@
 value: 
-    regType: "Org"
-    firstName: "First"
-    lastName: "Name"
-    email: "first.name@someorg.com"
-    password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"
-    organisation: "Some Org"
-    country: "BE" 
+    type: "Org"
+    invitingOrganisationName: "Some Org"
+    invitingOrganisation: "/organisations/1234"
+    when: "2023-04-01T00:00:01.100Z"
+    status: "PENDING"

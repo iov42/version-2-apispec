@@ -15,10 +15,6 @@ get:
           schema:
             $ref: '../../components/schemas/registrationStatus.yml'
     '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../../components/responses/404-notFound.yml'            
+      $ref: '../../components/responses/404-notFound.yml'
     default:
-      $ref: '../../components/responses/400-unexpectedError.yml'
+      $ref: '../../components/responses/500-internalError.yml'

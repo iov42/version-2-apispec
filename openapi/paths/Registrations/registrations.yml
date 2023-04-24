@@ -6,7 +6,7 @@ post:
   description: Add Registration
   security: []
   parameters:
-    - $ref: '../../components/parameters/query/inviteToken.yml'
+    - $ref: '../../components/parameters/query/t.yml'
   requestBody:
     description: Registration Information
     content:
@@ -30,11 +30,7 @@ post:
         application/json:
           schema:
             $ref: '../../components/schemas/registrationStatus.yml'
-    '422':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../../components/responses/422-unprocessable.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
     default:
-      $ref: '../../components/responses/400-unexpectedError.yml'
+      $ref: '../../components/responses/500-internalError.yml'

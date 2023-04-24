@@ -1,6 +1,5 @@
 type: object
 description: This is the definition for a registration status.
-required:
 properties:
   when:
     description: When the registration was created.

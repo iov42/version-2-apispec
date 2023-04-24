@@ -1,8 +1,6 @@
 type: object
 description: This is the definition of an invitation.
 properties:
-  id:
-    description: The identity for the invitation. 
   type:
     description: This is the type of invitation. If it is for a User then it is inviting a user to join the organisation. If it is for an organisation then you are inviting an organisation to join the plaform.
     $ref: './enums/invitationType.yml'
