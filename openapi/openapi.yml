@@ -113,9 +113,9 @@ paths:
     $ref: ./paths/locations.yml
   /organisations/{orgId}/locations/{locId}:
     $ref: ./paths/location.yml
-  /organisations/{orgId}/locations/{locId}/links:
+  /organisations/{orgId}/location-links:
     $ref: ./paths/locationLinks.yml
-  /organisations/{orgId}/locations/{locId}/links/{linkId}:
+  /organisations/{orgId}/location-links/{linkId}:
     $ref: ./paths/locationLink.yml
   /organisations/{orgId}/items:
     $ref: ./paths/items.yml

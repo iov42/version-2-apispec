@@ -6,7 +6,6 @@ put:
   description: Update link by id
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/path/linkId.yml'
   requestBody:
     description: Update link information
@@ -21,7 +20,9 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/locationLink.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/locationLink.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':
@@ -42,7 +43,6 @@ get:
   description: Get the link details
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/path/linkId.yml'
   responses:
     '200':
@@ -50,7 +50,9 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/locationLink.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/locationLink.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':

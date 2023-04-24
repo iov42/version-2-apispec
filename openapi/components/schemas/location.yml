@@ -4,11 +4,6 @@ required:
   - name
   - type
 properties:
-  id:
-    description: System provided identity field.
-    type: string
-  orgId:
-    type: string
   name:
     type: string
   type:

@@ -1,21 +1,20 @@
 type: object
-description: This is a link between two locations.
+description: This is a link between two locations. There is implied directionality 'from' & 'to'
 required:
-  - locationIdFrom
-  - locationIdTo
-  - date
+  - from
+  - to
+  - when
 properties:
-  id:
-    description: System provided identity field.
+  from:
+    description: The 'from' location (URI)
     type: string
-  locationAUri:
-    description: The URI of Location A
+  to:
+    description: The 'from' location (URI)
     type: string
-  locationBUri:
-    description: The URI of Location B
-    type: string
-  date:
+  when:
+    description: The Date and time that the link was created.
     type: string
     format: date-time
-  status:
-    $ref: './enums/status.yml'
+  by:
+    description: The identity of the organisation who created the link.
+    type: string

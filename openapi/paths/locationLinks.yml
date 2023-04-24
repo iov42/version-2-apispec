@@ -6,7 +6,6 @@ get:
   description: List all the Links
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
   responses:
@@ -22,7 +21,9 @@ get:
                   results: 
                     type: array
                     items: 
-                      $ref: '../components/schemas/locationLink.yml'
+                      allOf:
+                        - $ref: '../components/schemas/id.yml'
+                        - $ref: '../components/schemas/locationLink.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
@@ -39,7 +40,6 @@ post:
   description: Add a new Link
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
   requestBody:
     description: Link information
     content:
@@ -52,7 +52,9 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/locationLink.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/locationLink.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':
