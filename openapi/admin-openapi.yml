@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info:
+  title: Traceability ADMINAPI
+  description: >-
+    This API spec defines the ADMIN functions to manage the iov42 traceability platform.
+  version: 0.0.1
+servers:
+  - url: https://reqres.in/api
+    description: Mock API Service.
+security:
+  - ApiKeyAuth: []
+  - JWTBearer: []
+tags:
+  - name: Common
+    x-tag-expanded: false
+paths:
+  /common/base-units:
+    $ref: ./paths/admin/baseUnits.yml
+  /common/base-units/{unitId}:
+    $ref: ./paths/admin/baseUnit.yml
+components:
+  schemas:
+    $ref: ./components/schemas/_index.yml
+  securitySchemes:
+    ApiKeyAuth:
+      $ref: ./components/securitySchemas/api_key.yml
+    JWTBearer:
+      $ref: ./components/securitySchemas/jwt_bearer.yml

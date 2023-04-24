@@ -1,0 +1,42 @@
+<!doctype html> <!-- Important: must specify -->
+<html>
+  <head>
+    <title>Traceability API</title>
+    <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
+    <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $('[data-include]')
+        $.each(includes, function () {
+          var file = '../docs/' + $(this).data('include') + '.html'
+          $(this).load(file)
+        })
+      })
+    </script>
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+  </head>
+  <body>
+    <rapi-doc 
+        spec-url = "../openapi/admin-openapi.yml"
+        theme = 'dark'
+        show-header = 'false'
+        primary-color = '#b6ffe1'
+        bg-color = '#240105'
+        show-method-in-nav-bar = 'as-colored-text'
+        allow-try = 'true'
+        render-style="focussed"> 
+
+        <!--render-style="read|focussed|view"-->
+       
+        <!--Common-->
+        <div slot="post-/common/base-units" data-include="badge/needsReview"></div>
+        <div slot="put-/common/base-units/-unitId-" data-include="badge/needsReview"></div>
+        <div slot="delete-/common/base-units/-unitId-" data-include="badge/needsReview"></div>
+
+    </rapi-doc>
+  </body>
+</html>
