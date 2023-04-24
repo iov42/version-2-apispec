@@ -1,0 +1,5 @@
+description: The server cannot process the request due to what is perceived to be a client error e.g. malformed request.
+content:
+  application/json:
+    schema:
+      $ref: './error.yml'

@@ -1,9 +1,9 @@
 post:
   tags:
     - Authentication
-  summary: Retrieves an Access Token
+  summary: Get an Access Token
   operationId: getAccessToken
-  description: OAuth conform token retrieval
+  description: This endpoint allows the retrieval of an access token based on user authentication.
   requestBody:
     description: Access Token Request
     content:
@@ -18,10 +18,8 @@ post:
           schema:
             $ref: '../components/schemas/accessToken.yml'
     '400':
-      description: Invalid token
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/400-accessError.yml'
+      $ref: '../components/responses/400-badRequest.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'

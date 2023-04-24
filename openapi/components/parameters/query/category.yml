@@ -1,0 +1,8 @@
+name: category
+in: query
+required: false
+description: Filter based on the 'category' field of a resource.
+schema:
+  type: array
+  items: 
+    type: string  

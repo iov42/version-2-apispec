@@ -1,0 +1,8 @@
+type: object
+description: The extended definition of a base unit of measurement.
+required:
+  - type
+properties:
+  type:
+    description: The type of unit of measurement.
+    $ref: '../enums/unitType.yml'

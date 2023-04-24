@@ -1,19 +1,14 @@
 {
   "name": "traceability-api-spec",
-  "version": "0.0.9",
+  "version": "0.0.13",
   "dependencies": {
     "@redocly/cli": "^1.0.0-beta.124",
-    "graphql": "^16.6.0",
-    "js-yaml": "^4.1.0",
-    "openapi-to-graphql": "^2.2.0",
-    "openapi-to-graphql-cli": "^2.4.0",
-    "spectaql": "^2.0.5"
+    "js-yaml": "^4.1.0"
   },
   "private": true,
   "scripts": {
     "start": "redocly preview-docs",
     "build": "npm --no-git-tag-version version patch && redocly bundle -o bundled && redocly bundle --format json -o bundled.json && node updateVersion.js",
-    "test": "redocly lint",
-    "graphql": "openapi-to-graphql bundled.yml --save schema.graphql && npx spectaql spectaql.yml"
+    "test": "redocly lint"
   }
 }

@@ -1,0 +1,70 @@
+put:
+  tags:
+    - Config
+  summary: Update User Defined Unit of Measurement
+  operationId: updateUserDefinedUnit
+  description: This endpoint supports the updating of a User Defined Unit of Measurement
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/unitId.yml'
+  requestBody:
+    description: User Defined Unit
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: '../components/schemas/id.yml'
+            - $ref: '../components/schemas/Units/unit.yml'
+            - $ref: '../components/schemas/Units/derivedUnit.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/Units/unit.yml'
+              - $ref: '../components/schemas/Units/derivedUnit.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../components/responses/500-internalError.yml'
+get:
+  tags:
+    - Config
+  summary: Get User Defined Unit of Measurement
+  operationId: getUserDefinedUnit
+  description: This endpoints returns the details for a User Defined Unit of Measurement
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/unitId.yml'
+  responses:
+    '200':
+      description: User Defined Unit
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/Units/unit.yml'
+              - $ref: '../components/schemas/Units/derivedUnit.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../components/responses/500-internalError.yml'

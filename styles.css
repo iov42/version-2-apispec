@@ -1,0 +1,90 @@
+.badge {
+    border: 1px solid;
+    width: fit-content; 
+    height: fit-content;
+    font-size: small;
+    font-weight: bold;
+    padding: 3px 10px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speculative {
+    color: #f05c4a; 
+    border-color: #f05c4a;
+}
+
+.inProgress {
+    color: #eda215;
+    border-color: #eda215
+}
+
+.needsReview {
+    color: #71b7ff;
+    border-color: #71b7ff;
+}
+
+.readyForDev {
+    color: #2aa850; 
+    border-color: #2aa850;
+}
+
+.complete {
+    color: #ffffff; 
+    border-color: #ffffff;
+}
+
+.note {
+    font-size: small;
+    font-weight: bold;
+    padding: 3px 10px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.danger {
+    border-left: 6px solid #f44336;
+    border-top: 1px solid #f44336;
+    border-right: 1px solid #f44336;
+    border-bottom: 1px solid #f44336;
+  }
+ 
+.danger .icon {
+    color: #f44336; 
+}
+
+.success {
+    border-left: 6px solid #04AA6D;
+    border-top: 1px solid #04AA6D;
+    border-right: 1px solid #04AA6D;
+    border-bottom: 1px solid #04AA6D;
+}
+
+.success .icon {
+    color: #04AA6D; 
+}
+
+.info {
+    border-left: 6px solid #2196F3;
+    border-top: 1px solid #2196F3;
+    border-right: 1px solid #2196F3;
+    border-bottom: 1px solid #2196F3;
+}
+
+.info .icon {
+    color: #2196F3; 
+}
+
+.warning {
+    border-left: 6px solid #ffeb3b;
+    border-top: 1px solid #ffeb3b;
+    border-right: 1px solid #ffeb3b;
+    border-bottom: 1px solid #ffeb3b;
+}
+
+.warning .icon {
+    color: #ffeb3b; 
+}

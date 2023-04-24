@@ -18,8 +18,6 @@ CustomFieldTemplate:
   $ref: "./customFieldTemplate.yml"
 Document:
   $ref: "./document.yml"
-Error:
-  $ref: "./error.yml"
 Item:
   $ref: "./item.yml"
 Location:
@@ -39,7 +37,7 @@ Public:
 Tag:
   $ref: "./tag.yml"
 Unit:
-  $ref: "./unit.yml"
+  $ref: "./Units/unit.yml"
 
 GeoFeature:
   $ref: "./geoJson/feature.yml"

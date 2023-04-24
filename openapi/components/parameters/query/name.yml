@@ -1,0 +1,8 @@
+name: name
+in: query
+required: false
+description: Filter on the 'name' field of a resource.
+schema:
+  type: array
+  items: 
+    type: string 

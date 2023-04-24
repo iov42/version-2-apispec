@@ -3,7 +3,7 @@ get:
     - Users
   summary: Get Specific API Access Token
   operationId: getUserAPIAccessToken
-  description: Retrieves the details for a specific User API Access Token
+  description: This endpoint retrieves details of a specific API access token.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'
@@ -14,35 +14,73 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessTokenResult.yml'
+            $ref: '../components/schemas/apiAccessToken.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
     '404':
-      description: Invalid input
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
+    default:
+      $ref: '../components/responses/500-internalError.yml'
+put:
+  tags:
+    - Users
+  summary: Update Specific API Access Token
+  operationId: updateUserAPIAccessToken
+  description: This endpoint allows for the update of certain information for an API access token.
+  parameters:
+    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: '../components/parameters/path/userId.yml'
+    - $ref: '../components/parameters/path/apiTokenId.yml'
+  requestBody:
+    description: Updated API Access Token Information
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/apiAccessTokenRequest.yml'
+    required: true
+  responses:
+    '200':
+      description: User API Access Token
       content:
         application/json:
           schema:
-            $ref: '../components/responses/404-notFound.yml'            
+            $ref: '../components/schemas/apiAccessToken.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
 delete:
   tags:
     - Users
   summary: Delete a Specific API Access Token
   operationId: deleteUserAPIAccessToken
-  description: Deletes the specified API Access Token
+  description: This endpoint allows the deletion of a specific API Access Token
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/path/userId.yml'
     - $ref: '../components/parameters/path/apiTokenId.yml'
   responses:
     '204':
-      description: Deleted
-    '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/404-notFound.yml'
+      $ref: '../components/responses/204-noContent.yml'
     '401':
-      description: Unauthorised
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '404':
+      $ref: '../components/responses/404-notFound.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'

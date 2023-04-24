@@ -1,0 +1,6 @@
+name: owner
+in: query
+required: false
+description: Filter on the 'owner' URI field of a resource.
+schema:
+  type: string

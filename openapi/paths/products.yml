@@ -3,11 +3,13 @@ get:
     - Products
   summary: List Products
   operationId: listProducts
-  description: List all the Products
+  description: This endpoint returns all the products that have either been defined by the organisation or have been provided by other organisations.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
+    - $ref: '../components/parameters/query/name.yml'
+    - $ref: '../components/parameters/query/owner.yml'
   responses:
     '200':
       description: Array of Products
@@ -21,15 +23,17 @@ get:
                   results: 
                     type: array
                     items: 
-                      $ref: '../components/schemas/product.yml'
-    '404':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/404-notFound.yml'              
+                      allOf:
+                        - $ref: '../components/schemas/id.yml'
+                        - $ref: '../components/schemas/product.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
     - Products
@@ -50,12 +54,16 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/product.yml'
-    '422':
-      description: Invalid input
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/422-unprocessable.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/product.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '403':
+      $ref: '../components/responses/403-forbidden.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'

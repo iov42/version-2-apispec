@@ -1,0 +1,18 @@
+type: object
+description: This is a definition of a API access token
+required:
+  - id
+  - name
+properties:
+  id:
+    description: System provided identity field.
+    type: string
+  name:
+    description: The name provided for the API access token.
+    type: string
+  note:
+    description: What's this key for?
+    type: string
+  enabled:
+    description: Whether the API access token is enabled or not.
+    type: boolean

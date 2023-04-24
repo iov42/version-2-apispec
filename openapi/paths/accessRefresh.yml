@@ -3,7 +3,7 @@ post:
     - Authentication
   summary: Refreshes an Access Token
   operationId: refreshAccessToken
-  description: OAuth conform token refresh
+  description: This endpoint conforms with OAuth for refreshing an access token.
   requestBody:
     description: Access Token Refresh Request
     content:
@@ -18,10 +18,8 @@ post:
           schema:
             $ref: '../components/schemas/accessToken.yml'
     '400':
-      description: Invalid token
-      content:
-        application/json:
-          schema:
-            $ref: '../components/responses/400-accessError.yml'
+      $ref: '../components/responses/400-badRequest.yml'
+    '429':
+      $ref: '../components/responses/429-tooManyRequests.yml'
     default:
-      $ref: '../components/responses/400-unexpectedError.yml'
+      $ref: '../components/responses/500-internalError.yml'
