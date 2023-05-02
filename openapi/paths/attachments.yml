@@ -8,6 +8,7 @@ get:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
+    - $ref: '../components/parameters/query/attachmentType.yml'
   responses:
     '200':
       description: Array of Attachments
@@ -43,14 +44,16 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/attachment.yml'
+          $ref: '../components/schemas/attachmentRequest.yml'
   responses:
     '201':
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/attachment.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/attachment.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':

@@ -12,7 +12,3 @@ properties:
   attachmentUri:
     description: The resource that is being attached.
     type: string
-  when:
-    description: Datetime resource attached.
-    type: string
-    format: date-time

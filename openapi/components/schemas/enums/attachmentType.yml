@@ -1,0 +1,8 @@
+type: string
+enum:
+  - CustomField
+  - Certificate
+  - Document
+  - Item
+  - Location
+  - Tag
