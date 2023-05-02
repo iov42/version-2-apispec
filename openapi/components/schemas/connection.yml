@@ -15,6 +15,3 @@ properties:
     type: string
   address:
     $ref: './address.yml'
-  description:
-    description: Description of the organisation.
-    type: string
