@@ -1,12 +1,10 @@
 type: object
 description: This is the definition for a registration status.
 required:
-  - firstName
-  - lastName
-  - emailAddress
-  - passwordHash
-  - organisation
-  - country
+  - type
+  - recipient
+  - invitingOrganisationName
+  - invitingOrganisation
 properties:
   type:
     description: This is the type of invitation. If it is for a User then it is inviting a user to join the organisation. If it is for an organisation then you are inviting an organisation to join the plaform.

@@ -1,6 +1,5 @@
 value: 
     type: "Org"
+    recipient: "joe.bloggs@anotherorg.com"
     invitingOrganisationName: "Some Org"
     invitingOrganisation: "/organisations/1234"
-    when: "2023-04-01T00:00:01.100Z"
-    status: "PENDING"
