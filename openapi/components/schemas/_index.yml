@@ -57,7 +57,5 @@ GeoMultiPolygon:
   $ref: "./geoJson/multiPolygon.yml"
 GeoPoint:
   $ref: "./geoJson/point.yml"
-GeoPoint3D:
-  $ref: "./geoJson/point3D.yml"
 GeoPolygon:
   $ref: "./geoJson/polygon.yml"

@@ -4,13 +4,15 @@ required:
   - type
   - geometries
 externalDocs:
-  url: http://geojson.org/geojson-spec.html#geometrycollection
-properties:
-  type:
-    type: string
-    enum:
-    - GeometryCollection
-  geometries:
-    type: array
-    items:
-      $ref: './geometry.yml'
+  url: https://tools.ietf.org/html/rfc7946#section-3.1.8
+allOf:
+  - $ref: './geometry.yml'
+  - type: object
+    required:
+      - geometries
+    properties:
+      geometries:
+        type: array
+        items:
+          $ref: './geometryElement.yml'
+        minItems: 0

@@ -1,0 +1,8 @@
+description: GeoJSon fundamental geometry construct.
+externalDocs:
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.1.1'
+type: array
+minItems: 2
+maxItems: 3
+items:
+  type: number

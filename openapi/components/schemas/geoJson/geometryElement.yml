@@ -1,0 +1,20 @@
+description: Abstract type for all GeoJSon 'Geometry' object the type of which is not 'GeometryCollection'
+externalDocs:
+  url: https://tools.ietf.org/html/rfc7946#section-3
+allOf:
+  - $ref: './geometry.yml'
+  - type: object
+    properties:
+      'type':
+        type: string
+        enum:
+        - Point
+        - MultiPoint
+        - LineString
+        - MultiLineString
+        - Polygon
+        - MultiPolygon
+    required:
+      - type
+    discriminator:
+      propertyName: type

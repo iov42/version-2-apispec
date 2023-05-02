@@ -1,16 +1,14 @@
-type: object
 description: GeoJSon Feature collection
-required:
-  - type
-  - features
 externalDocs:
-  url: https://tools.ietf.org/html/rfc7946#section-3.3
-properties:
-  type:
-    type: string
-    enum:
-    - FeatureCollection
-  features:
-    type: array
-    items:
-      $ref: './feature.yml'
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.3'
+allOf:
+  - $ref: './object.yml'
+  - type: object
+    required:
+      - features
+    properties:
+      features:
+        type: array
+        items:
+          $ref: './feature.yml'
+          minItems: 0

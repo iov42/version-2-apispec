@@ -1,0 +1,23 @@
+type: object
+description: Abstract type for all GeoJSon object except Feature and FeatureCollection
+externalDocs:
+  url: https://tools.ietf.org/html/rfc7946#section-3
+required:
+  - type
+discriminator:
+  propertyName: type
+properties:
+  'type':
+    type: string
+    enum:
+    - Point
+    - LineString
+    - Polygon
+    - MultiPoint
+    - MultiLineString
+    - MultiPolygon
+    description: the geometry type
+  'bbox':
+    type: array
+    items:
+      type: number

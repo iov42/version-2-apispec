@@ -9,7 +9,7 @@ properties:
     description: The 'from' location (URI)
     type: string
   to:
-    description: The 'from' location (URI)
+    description: The 'to' location (URI)
     type: string
   when:
     description: The Date and time that the link was created.

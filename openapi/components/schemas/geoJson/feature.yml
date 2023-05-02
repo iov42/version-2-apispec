@@ -1,19 +1,18 @@
-type: object
 description: GeoJSon Feature
-required:
-  - type
-  - id
-  - geometry
 externalDocs:
-  url: https://tools.ietf.org/html/rfc7946#section-3.2
-properties:
-  type:
-    type: string
-    enum:
-      - Feature
-  id:
-    type: integer
-  geometry:
-    $ref: './geometryCollection.yml'
-  properties:
-    type: object
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.2'
+allOf:
+  - $ref: './object.yml'
+  - type: object
+    required:
+      - geometry
+      - properties
+    properties:
+      'geometry':
+        $ref: './geometry.yml'
+      'properties':
+        type: object
+      'id':
+        oneOf:
+          - type: number
+          - type: string

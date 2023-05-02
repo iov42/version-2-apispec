@@ -1,9 +1,16 @@
 type: object
 description: GeoJSon geometry
 externalDocs:
-  url: http://geojson.org/geojson-spec.html#id2
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.1.2'
 allOf:
-  - $ref: "./geometry.yml"
-  - properties:
-      coordinates:
-        $ref: './point3D.yml'
+  - $ref: './geometryElement.yml'
+  - type: object
+    required:
+    - type
+    - coordinates
+    properties:
+      'type':
+        type: 'string'
+        enum: [Point]
+      'coordinates':
+        $ref: './position.yml'
