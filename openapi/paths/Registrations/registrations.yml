@@ -29,7 +29,9 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../components/schemas/registrationStatus.yml'
+            allOf:
+              - $ref: '../../components/schemas/id.yml'
+              - $ref: '../../components/schemas/registrationStatus.yml'
     '404':
       $ref: '../../components/responses/404-notFound.yml'
     default:
