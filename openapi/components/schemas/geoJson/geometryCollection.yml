@@ -1,18 +1,22 @@
 type: object
 description: GeoJSon geometry collection
+externalDocs:
+  url: https://tools.ietf.org/html/rfc7946#section-3.1.8
 required:
   - type
   - geometries
-externalDocs:
-  url: https://tools.ietf.org/html/rfc7946#section-3.1.8
-allOf:
-  - $ref: './geometry.yml'
-  - type: object
-    required:
-      - geometries
-    properties:
-      geometries:
-        type: array
-        items:
-          $ref: './geometryElement.yml'
-        minItems: 0
+properties:
+  'type':
+    type: 'string'
+    enum: [GeometryCollection]
+  geometries:
+    type: array
+    items:
+      anyOf:
+        - $ref: './point.yml'
+        - $ref: './multiPoint.yml'
+        - $ref: './lineString.yml'
+        - $ref: './multiLineString.yml'
+        - $ref: './polygon.yml'
+        - $ref: './multiPolygon.yml'
+    minItems: 0

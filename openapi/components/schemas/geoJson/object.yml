@@ -1,23 +1,14 @@
 type: object
-description: Abstract type for all GeoJSon object except Feature and FeatureCollection
+description: Abstract type for all GeoJSon objects
 externalDocs:
   url: https://tools.ietf.org/html/rfc7946#section-3
-required:
-  - type
-discriminator:
-  propertyName: type
-properties:
-  'type':
-    type: string
-    enum:
-    - Point
-    - LineString
-    - Polygon
-    - MultiPoint
-    - MultiLineString
-    - MultiPolygon
-    description: the geometry type
-  'bbox':
-    type: array
-    items:
-      type: number
+oneOf:
+  - $ref: './point.yml'
+  - $ref: './multiPoint.yml'
+  - $ref: './lineString.yml'
+  - $ref: './multiLineString.yml'
+  - $ref: './polygon.yml'
+  - $ref: './multiPolygon.yml'
+  - $ref: './geometryCollection.yml'
+  - $ref: './feature.yml'
+  - $ref: './featureCollection.yml'

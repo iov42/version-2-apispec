@@ -1,18 +1,25 @@
 description: GeoJSon Feature
 externalDocs:
   url: 'https://tools.ietf.org/html/rfc7946#section-3.2'
-allOf:
-  - $ref: './object.yml'
-  - type: object
-    required:
-      - geometry
-      - properties
-    properties:
-      'geometry':
-        $ref: './geometry.yml'
-      'properties':
-        type: object
-      'id':
-        oneOf:
-          - type: number
-          - type: string
+required:
+  - type
+  - geometry
+properties:
+  'type':
+    type: 'string'
+    enum: [Feature]    
+  'geometry':
+    oneOf:
+      - $ref: './point.yml'
+      - $ref: './multiPoint.yml'
+      - $ref: './lineString.yml'
+      - $ref: './multiLineString.yml'
+      - $ref: './polygon.yml'
+      - $ref: './multiPolygon.yml'
+      - $ref: './geometryCollection.yml'
+  'properties':
+    type: object
+  'id':
+    oneOf:
+      - type: number
+      - type: string

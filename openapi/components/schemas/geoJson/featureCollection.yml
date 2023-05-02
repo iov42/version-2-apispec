@@ -1,14 +1,15 @@
 description: GeoJSon Feature collection
 externalDocs:
   url: 'https://tools.ietf.org/html/rfc7946#section-3.3'
-allOf:
-  - $ref: './object.yml'
-  - type: object
-    required:
-      - features
-    properties:
-      features:
-        type: array
-        items:
-          $ref: './feature.yml'
-          minItems: 0
+required:
+  - type
+  - features
+properties:
+  'type':
+    type: 'string'
+    enum: [Feature]       
+  'features':
+    type: array
+    items:
+      $ref: './feature.yml'
+      minItems: 0

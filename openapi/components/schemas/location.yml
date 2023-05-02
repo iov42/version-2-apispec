@@ -11,4 +11,4 @@ properties:
   address:
     $ref: './address.yml'
   geoLocation:
-    $ref: './geoJson/geometryCollection.yml'
+    $ref: './geoJson/geometry.yml'

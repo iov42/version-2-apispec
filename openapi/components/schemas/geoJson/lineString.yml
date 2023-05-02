@@ -1,11 +1,17 @@
 description: GeoJSon geometry
 externalDocs:
   url: 'https://tools.ietf.org/html/rfc7946#section-3.1.4'
-allOf:
-  - $ref: './geometryElement.yml'
-  - type: object
-    required:
-    - coordinates
-    properties:
-      'coordinates':
-        $ref: './lineStringCoordinates.yml'
+required:
+  - type
+  - coordinates
+properties:
+  'type':
+    type: 'string'
+    enum: [LineString]      
+  'coordinates':
+    $ref: './lineStringCoordinates.yml'
+#  'bbox':
+#    type: array
+#    items:
+#      type: number
+#    minItems: 4    

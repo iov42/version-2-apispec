@@ -1,13 +1,14 @@
 description: GeoJSon polygon geometry
 externalDocs:
   url: 'https://tools.ietf.org/html/rfc7946#section-3.1.6'
-allOf:
-  - $ref: './geometryElement.yml'
-  - type: object
-    required:
-    - coordinates
-    properties:
-      'coordinates':
-        type: array
-        items:
-          $ref: './linearRing.yml'
+required:
+  - type
+  - coordinates
+properties:
+  'type':
+    type: 'string'
+    enum: [Polygon]
+  'coordinates':
+    type: array
+    items:
+      $ref: './linearRing.yml'
