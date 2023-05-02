@@ -18,5 +18,3 @@ properties:
   description:
     description: Description of the organisation.
     type: string
-  dltIdentity:
-    type: string
