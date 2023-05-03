@@ -1,0 +1,6 @@
+name: attachmentUri
+in: query
+required: false
+description: Filter based on the attached resource.
+schema:
+  type: string

@@ -9,6 +9,8 @@ get:
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
     - $ref: '../components/parameters/query/attachmentType.yml'
+    - $ref: '../components/parameters/query/targetUri.yml'
+    - $ref: '../components/parameters/query/attachmentUri.yml'
   responses:
     '200':
       description: Array of Attachments

@@ -1,0 +1,6 @@
+name: attachmentType
+in: query
+required: false
+description: Filter based on what resource types be attached to another resource.
+schema:
+  $ref: '../../schemas/enums/attachmentType.yml'
