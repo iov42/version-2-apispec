@@ -1,8 +1,8 @@
 type: string
 enum:
-  - CustomField
-  - Certificate
-  - Document
-  - Item
-  - Location
-  - Tag
+  - CUSTOM_FIELD
+  - CERTIFICATE
+  - DOCUMENT
+  - ITEM
+  - LOCATION
+  - TAG
