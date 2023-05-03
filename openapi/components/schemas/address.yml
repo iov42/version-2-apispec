@@ -2,9 +2,6 @@ type: object
 required:
   - country
 properties:
-  id:
-    description: System provided identity field.
-    type: string
   address:
     description: The mainline of the address.
     type: string

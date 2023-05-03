@@ -1,0 +1,6 @@
+name: linkDirection
+in: query
+required: false
+description: The link direction parameter.
+schema:
+  $ref: '../../schemas/enums/linkDirection.yml'
