@@ -1,0 +1,16 @@
+post:
+  tags:
+    - Registrations
+  summary: Resend Registration Email
+  operationId: resendRegistrationEmail
+  description: Resend email for verification of a registration.
+  security: []
+  parameters:
+    - $ref: '../../components/parameters/path/registrationId.yml'
+  responses:
+    '201':
+      description: Successful operation
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

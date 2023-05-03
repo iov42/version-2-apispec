@@ -47,6 +47,9 @@ orgId:
 prodId:
   $ref: './path/prodId.yml'
 
+registrationId:
+  $ref: './path/registrationId.yml'
+
 tagId:
   $ref: './path/tagId.yml'
 

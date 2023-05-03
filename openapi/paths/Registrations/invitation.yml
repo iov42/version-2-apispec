@@ -1,0 +1,21 @@
+get:
+  tags:
+    - Registrations
+  summary: Get Invitation
+  operationId: getInvitation
+  description: Get Invitation
+  parameters:
+    - $ref: '../../components/parameters/path/invitationId.yml'
+  responses:
+    '200':
+      description: Invitation Details
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../components/schemas/id.yml'
+              - $ref: '../../components/schemas/invitation.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

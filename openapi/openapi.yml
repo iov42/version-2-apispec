@@ -60,6 +60,15 @@ tags:
     description: Apis for the creation and retrieval of Products
     x-tag-expanded: false
   - name: Public
+    description: >-
+      Apis for organisational information that is 'public'. By public this
+      information is available to any registered user.
+  - name: Registrations
+    description: Apis for the creation and retrieval of registrations.
+  - name: Tags
+    description: Apis for the creation and retrieval of tags.
+  - name: Shared
+    description: Apis with information shared across all organisations.
     x-tag-expanded: false
   - name: Users
     description: Apis for user related information.
@@ -155,6 +164,18 @@ paths:
     $ref: ./paths/apiAccessToken.yml
   /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}/regenerate:
     $ref: ./paths/apiAccessTokenRegenerate.yml
+  /registrations:
+    $ref: ./paths/Registrations/registrations.yml
+  /registrations/{registrationId}:
+    $ref: ./paths/Registrations/registration.yml
+  /registrations/{registrationId}/verify:
+    $ref: ./paths/Registrations/registrationVerify.yml
+  /registrations/{registrationId}/resend:
+    $ref: ./paths/Registrations/registrationResend.yml
+  /invitations:
+    $ref: ./paths/Registrations/invitations.yml
+  /invitations/{invitationId}:
+    $ref: ./paths/Registrations/invitation.yml
   /common/base-unit-types:
     $ref: ./paths/Common/baseUnitTypes.yml
   /common/base-units:
