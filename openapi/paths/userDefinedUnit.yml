@@ -18,7 +18,7 @@ put:
             - $ref: '../components/schemas/Units/derivedUnit.yml'
     required: true
   responses:
-    '201':
+    '200':
       description: Successful operation
       content:
         application/json:

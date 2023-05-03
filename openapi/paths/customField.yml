@@ -28,7 +28,7 @@ put:
             $ref: '../components/examples/customField_String.yml'
     required: true
   responses:
-    '201':
+    '200':
       description: Successful operation
       content:
         application/json:
