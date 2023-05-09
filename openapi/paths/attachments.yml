@@ -3,11 +3,9 @@ get:
     - Attachments
   summary: List Attachments
   operationId: listAttachments
-  description: List all Attachments
+  description: List all Attachments. If a target or attachment uri filter parameter is not provided then this query will only return 100 rows.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
     - $ref: '../components/parameters/query/attachmentType.yml'
     - $ref: '../components/parameters/query/targetUri.yml'
     - $ref: '../components/parameters/query/attachmentUri.yml'
@@ -17,14 +15,9 @@ get:
       content:
         application/json:
           schema:
-            allOf:
-              - $ref: '../components/schemas/pagination.yml'
-              - type: object
-                properties:
-                  results: 
-                    type: array
-                    items: 
-                      $ref: '../components/schemas/attachment.yml'
+            type: array
+            items: 
+              $ref: '../components/schemas/attachment.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
