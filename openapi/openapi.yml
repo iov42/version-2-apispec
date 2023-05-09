@@ -75,6 +75,9 @@ tags:
   - name: Users
     description: Apis for user related information.
     x-tag-expanded: false
+  - name: Supply Chains
+    description: APIs for creation and retrieval of supply chains.
+    x-tag-expanded: false
 paths:
   /auth/token:
     $ref: ./paths/accessRequest.yml
@@ -184,6 +187,10 @@ paths:
     $ref: ./paths/Common/baseUnits.yml
   /common/base-units/{unitId}:
     $ref: ./paths/Common/baseUnit.yml
+  /organisations/{orgId}/supply-chains:
+    $ref: ./paths/supplyChains.yml
+  /organisations/{orgId}/supply-chains/{scId}:
+    $ref: ./paths/supplyChain.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml
