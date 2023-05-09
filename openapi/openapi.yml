@@ -63,8 +63,10 @@ tags:
     description: >-
       Apis for organisational information that is 'public'. By public this
       information is available to any registered user.
+    x-tag-expanded: false
   - name: Registrations
     description: Apis for the creation and retrieval of registrations.
+    x-tag-expanded: false
   - name: Tags
     description: Apis for the creation and retrieval of tags.
   - name: Shared
