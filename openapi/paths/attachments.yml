@@ -3,7 +3,7 @@ get:
     - Attachments
   summary: List Attachments
   operationId: listAttachments
-  description: List all Attachments. If a target or attachment uri filter parameter is not provided then this query will only return 100 rows.
+  description: List all Attachments. Either targetUri or attachmentUri are required, if both are missing then this a 400 error will be returned.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
     - $ref: '../components/parameters/query/attachmentType.yml'
@@ -18,6 +18,8 @@ get:
             type: array
             items: 
               $ref: '../components/schemas/attachment.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
