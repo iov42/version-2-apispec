@@ -3,6 +3,4 @@ in: query
 required: false
 description: Filter based on the Material Categories a resource uses.
 schema:
-  type: array
-  items: 
-    type: string  
+  type: string
