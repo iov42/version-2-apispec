@@ -1,20 +1,7 @@
 type: object
 description: This is a definition of an organisation
 properties:
-  id:
-    description: System provided identity field.
-    type: string
-  status:
-    $ref: './enums/status.yml'
   name:
     type: string
   address:
-    $ref: './address.yml'
-  # role:
-  #  $ref: './enums/role.yml'
-  type:
-    type: string
-  certificateIds:
-    type: array
-    items:
-      type: string
+    $ref: "./address.yml"

@@ -2,9 +2,6 @@ type: object
 required:
   - country
 properties:
-  id:
-    description: System provided identity field.
-    type: string
   address:
     description: The mainline of the address.
     type: string
@@ -16,4 +13,4 @@ properties:
     type: string
   country:
     description: Alpha-2 code of the ISO 3166 Country Codes specification.
-    $ref: './enums/countries.yml'
+    $ref: "./enums/countries.yml"

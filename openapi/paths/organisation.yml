@@ -5,33 +5,33 @@ put:
   operationId: updateOrganisation
   description: Update organisation by id
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
     description: Update organisation information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/organisation.yml'
+          $ref: "../components/schemas/organisation.yml"
     required: true
   responses:
-    '200':
+    "200":
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/organisation.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            $ref: "../components/schemas/organisation.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
     - Organisation
@@ -39,21 +39,23 @@ get:
   operationId: getOrganisation
   description: Get the Organisation details
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   responses:
-    '200':
+    "200":
       description: Organisation info
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/organisation.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            allOf:
+              - $ref: "../components/schemas/organisation.yml"
+              - $ref: "../components/schemas/orgType.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
