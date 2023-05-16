@@ -1,0 +1,6 @@
+name: invitationId
+in: path
+required: true
+description: The system provided id of an invitation.
+schema:
+  type: string

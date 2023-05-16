@@ -1,0 +1,23 @@
+type: object
+description: This is the definition for a User Registration.
+required:
+  - regType
+  - firstName
+  - lastName
+  - email
+  - password
+properties:
+  regType:
+    description: Type of Registration
+    type: string
+    enum:
+      - User
+  firstName:
+    type: string
+  lastName:
+    type: string
+  email:
+    type: string
+  password:
+    type: string
+    format: password

@@ -17,7 +17,7 @@ put:
             - $ref: '../components/schemas/material.yml'
     required: true
   responses:
-    '201':
+    '200':
       description: Successful operation
       content:
         application/json:
