@@ -21,7 +21,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessToken.yml'
+            $ref: '../components/schemas/apiAccessTokenRequestResult.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':

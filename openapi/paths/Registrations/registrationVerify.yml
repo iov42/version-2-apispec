@@ -1,0 +1,17 @@
+put:
+  tags:
+    - Registrations
+  summary: Verify a Registration
+  operationId: verifyRegistration
+  description: Verify Registration by way of an email link.
+  security: []
+  parameters:
+    - $ref: '../../components/parameters/path/registrationId.yml'
+    - $ref: '../../components/parameters/query/t.yml'
+  responses:
+    '200':
+      description: Successful operation
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

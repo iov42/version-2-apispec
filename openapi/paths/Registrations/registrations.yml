@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Registrations
+  summary: Create Registration
+  operationId: createRegistration
+  description: Add Registration
+  security: []
+  parameters:
+    - $ref: '../../components/parameters/query/t.yml'
+  requestBody:
+    description: Registration Information
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: '../../components/schemas/registrationOrg.yml'
+            - $ref: '../../components/schemas/registrationUser.yml'
+          discriminator:
+              propertyName: regType
+        examples:
+          OrgRegistration:
+              $ref: '../../components/examples/registration_Org.yml'
+          UserRegistration:
+              $ref: '../../components/examples/registration_User.yml'
+    required: true
+  responses:
+    '201':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../components/schemas/id.yml'
+              - $ref: '../../components/schemas/registrationStatus.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

@@ -1,0 +1,8 @@
+description: >
+  GeoJSon fundamental geometry construct, array of two or more positions.
+externalDocs:
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.1.4'
+type: array
+items:
+  $ref: './position.yml'
+minItems: 2

@@ -1,0 +1,20 @@
+get:
+  tags:
+    - Registrations
+  summary: Get Registration Status
+  operationId: getRegistrationStatus
+  description: Get Registration Status
+  security: []
+  parameters:
+    - $ref: '../../components/parameters/path/registrationId.yml'  
+  responses:
+    '200':
+      description: Registration Status
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/registrationStatus.yml'
+    '404':
+      $ref: '../../components/responses/404-notFound.yml'
+    default:
+      $ref: '../../components/responses/500-internalError.yml'

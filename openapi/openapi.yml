@@ -60,9 +60,23 @@ tags:
     description: Apis for the creation and retrieval of Products
     x-tag-expanded: false
   - name: Public
+    description: >-
+      Apis for organisational information that is 'public'. By public this
+      information is available to any registered user.
+    x-tag-expanded: false
+  - name: Registrations
+    description: Apis for the creation and retrieval of registrations.
+    x-tag-expanded: false
+  - name: Tags
+    description: Apis for the creation and retrieval of tags.
+  - name: Shared
+    description: Apis with information shared across all organisations.
     x-tag-expanded: false
   - name: Users
     description: Apis for user related information.
+    x-tag-expanded: false
+  - name: Supply Chains
+    description: APIs for creation and retrieval of supply chains.
     x-tag-expanded: false
 paths:
   /auth/token:
@@ -113,9 +127,9 @@ paths:
     $ref: ./paths/locations.yml
   /organisations/{orgId}/locations/{locId}:
     $ref: ./paths/location.yml
-  /organisations/{orgId}/locations/{locId}/links:
+  /organisations/{orgId}/location-links:
     $ref: ./paths/locationLinks.yml
-  /organisations/{orgId}/locations/{locId}/links/{linkId}:
+  /organisations/{orgId}/location-links/{linkId}:
     $ref: ./paths/locationLink.yml
   /organisations/{orgId}/items:
     $ref: ./paths/items.yml
@@ -155,12 +169,28 @@ paths:
     $ref: ./paths/apiAccessToken.yml
   /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}/regenerate:
     $ref: ./paths/apiAccessTokenRegenerate.yml
+  /registrations:
+    $ref: ./paths/Registrations/registrations.yml
+  /registrations/{registrationId}:
+    $ref: ./paths/Registrations/registration.yml
+  /registrations/{registrationId}/verify:
+    $ref: ./paths/Registrations/registrationVerify.yml
+  /registrations/{registrationId}/resend:
+    $ref: ./paths/Registrations/registrationResend.yml
+  /invitations:
+    $ref: ./paths/Registrations/invitations.yml
+  /invitations/{invitationId}:
+    $ref: ./paths/Registrations/invitation.yml
   /common/base-unit-types:
     $ref: ./paths/Common/baseUnitTypes.yml
   /common/base-units:
     $ref: ./paths/Common/baseUnits.yml
   /common/base-units/{unitId}:
     $ref: ./paths/Common/baseUnit.yml
+  /organisations/{orgId}/supply-chains:
+    $ref: ./paths/supplyChains.yml
+  /organisations/{orgId}/supply-chains/{scId}:
+    $ref: ./paths/supplyChain.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml

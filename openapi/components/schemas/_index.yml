@@ -39,25 +39,23 @@ Tag:
 Unit:
   $ref: "./Units/unit.yml"
 
-GeoFeature:
+Feature:
   $ref: "./geoJson/feature.yml"
-GeoFeatureCollection:
+FeatureCollection:
   $ref: "./geoJson/featureCollection.yml"
-GeoGeometry:
+Geometry:
   $ref: "./geoJson/geometry.yml"
-GeoGeometryCollection:
+GeometryCollection:
   $ref: "./geoJson/geometryCollection.yml"
-GeoLineString:
+LineString:
   $ref: "./geoJson/lineString.yml"
-GeoMultiLineString:
+MultiLineString:
   $ref: "./geoJson/multiLineString.yml"
-GeoMultiPoint:
+MultiPoint:
   $ref: "./geoJson/multiPoint.yml"
-GeoMultiPolygon:
+MultiPolygon:
   $ref: "./geoJson/multiPolygon.yml"
-GeoPoint:
+Point:
   $ref: "./geoJson/point.yml"
-GeoPoint3D:
-  $ref: "./geoJson/point3D.yml"
-GeoPolygon:
+Polygon:
   $ref: "./geoJson/polygon.yml"

@@ -1,0 +1,12 @@
+type: object
+description: This is a link between two locations in a supply chain.
+required:
+  - locationFrom
+  - locationTo
+properties:
+  locationFrom:
+    description: The URI of Location A.
+    type: string
+  locationTo:
+    description: The URI of Location B.
+    type: string

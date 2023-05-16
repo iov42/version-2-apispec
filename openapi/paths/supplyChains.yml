@@ -1,0 +1,67 @@
+get:
+  tags:
+    - Supply Chains
+  summary: List Supply Chains
+  operationId: listSupplyChains
+  description: List all the Supply Chains
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
+  responses:
+    "200":
+      description: Array of Supply Chains
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/pagination.yml"
+              - type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/supplyChain.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"
+post:
+  tags:
+    - Supply Chains
+  summary: Add Supply Chain
+  operationId: addSupplyChain
+  description: Add a new Supply Chain
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+  requestBody:
+    description: Supply chain information
+    content:
+      application/json:
+        schema:
+          $ref: "../components/schemas/supplyChain.yml"
+  responses:
+    "201":
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/supplyChain.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"

@@ -1,0 +1,7 @@
+description: A linear ring is a closed LineString with four or more positions.
+externalDocs:
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.1.6'
+type: array
+items:
+  $ref: './position.yml'
+minItems: 4

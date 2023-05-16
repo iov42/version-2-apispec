@@ -1,17 +1,11 @@
-type: object
-description: GeoJSon geometry
-required:
-  - type
+description: Abstract type for all GeoJSon object except Feature and FeatureCollection
 externalDocs:
-  url: http://geojson.org/geojson-spec.html#geometry-objects
-properties:
-  type:
-    type: string
-    enum:
-    - Point
-    - LineString
-    - Polygon
-    - MultiPoint
-    - MultiLineString
-    - MultiPolygon
-    description: the geometry type
+  url: https://tools.ietf.org/html/rfc7946#section-3
+oneOf:
+  - $ref: './point.yml'
+  - $ref: './multiPoint.yml'
+  - $ref: './lineString.yml'
+  - $ref: './multiLineString.yml'
+  - $ref: './polygon.yml'
+  - $ref: './multiPolygon.yml'
+  - $ref: './geometryCollection.yml'

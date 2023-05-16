@@ -1,0 +1,10 @@
+name: unit-type
+in: query
+required: false
+description: Filter based on the Base Unit Type that a resource uses.
+schema:
+  type: array
+  items: 
+    type: string  
+  minItems: 1
+style: pipeDelimited

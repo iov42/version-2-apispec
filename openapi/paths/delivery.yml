@@ -15,7 +15,7 @@ put:
           $ref: '../components/schemas/delivery.yml'
     required: true
   responses:
-    '201':
+    '200':
       description: Successful operation
       content:
         application/json:

@@ -1,0 +1,6 @@
+name: registrationId
+in: path
+required: true
+description: The system provided id of a registration.
+schema:
+  type: string

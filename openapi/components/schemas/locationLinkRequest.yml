@@ -1,0 +1,13 @@
+type: object
+description: This is a link between two locations. There is implied directionality 'from' & 'to'
+required:
+  - from
+  - to
+  - when
+properties:
+  from:
+    description: The 'from' location (URI)
+    type: string
+  to:
+    description: The 'to' location (URI)
+    type: string

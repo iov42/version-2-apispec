@@ -1,29 +1,21 @@
-put:
+get:
   tags:
     - Locations
-  summary: Update link
-  operationId: updateLink
-  description: Update link by id
+  summary: Get Link
+  operationId: getLink
+  description: Get the link details
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/path/linkId.yml'
-  requestBody:
-    description: Update link information
-    content:
-      application/json:
-        schema:
-          $ref: '../components/schemas/locationLink.yml'
-    required: true
   responses:
-    '201':
-      description: Successful operation
+    '200':
+      description: Link info
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/locationLink.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/locationLink.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
@@ -34,23 +26,18 @@ put:
       $ref: '../components/responses/429-tooManyRequests.yml'
     default:
       $ref: '../components/responses/500-internalError.yml'
-get:
+delete:
   tags:
     - Locations
-  summary: Get Link
-  operationId: getLink
-  description: Get the link details
+  summary: Delete a Location Link
+  operationId: deleteLocationLink
+  description: This endpoint allows the deletion of a Location Link
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/locId.yml'
     - $ref: '../components/parameters/path/linkId.yml'
   responses:
-    '200':
-      description: Link info
-      content:
-        application/json:
-          schema:
-            $ref: '../components/schemas/locationLink.yml'
+    '204':
+      $ref: '../components/responses/204-noContent.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':

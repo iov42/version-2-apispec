@@ -9,7 +9,10 @@ get:
     - $ref: '../components/parameters/query/page.yml'
     - $ref: '../components/parameters/query/size.yml'
     - $ref: '../components/parameters/query/name.yml'
-    - $ref: '../components/parameters/query/owner.yml'
+    - $ref: '../components/parameters/query/material.yml'
+    - $ref: '../components/parameters/query/material-category.yml'
+    - $ref: '../components/parameters/query/base-unit.yml'
+    - $ref: '../components/parameters/query/unit-type.yml'
   responses:
     '200':
       description: Array of Products
