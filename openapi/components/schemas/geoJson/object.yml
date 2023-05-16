@@ -1,4 +1,5 @@
-description: Abstract type for all GeoJSon object except Feature and FeatureCollection
+type: object
+description: Abstract type for all GeoJSon objects
 externalDocs:
   url: https://tools.ietf.org/html/rfc7946#section-3
 oneOf:
@@ -9,3 +10,5 @@ oneOf:
   - $ref: './polygon.yml'
   - $ref: './multiPolygon.yml'
   - $ref: './geometryCollection.yml'
+  - $ref: './feature.yml'
+  - $ref: './featureCollection.yml'

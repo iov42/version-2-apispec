@@ -1,0 +1,6 @@
+name: locationUri
+in: query
+required: false
+description: The resource uri for a location
+schema:
+  type: string

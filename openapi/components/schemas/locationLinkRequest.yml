@@ -11,10 +11,3 @@ properties:
   to:
     description: The 'to' location (URI)
     type: string
-  when:
-    description: The Date and time that the link was created.
-    type: string
-    format: date-time
-#  by:
-#    description: The identity of the organisation who created the link.
-#    type: string

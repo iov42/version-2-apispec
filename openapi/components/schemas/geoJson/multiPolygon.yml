@@ -1,15 +1,16 @@
-type: object
 description: GeoJSon geometry
 externalDocs:
-  url: http://geojson.org/geojson-spec.html#id6
-allOf:
-  - $ref: "./geometry.yml"
-  - properties:
-      coordinates:
-        type: array
-        items:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: './point3D.yml'
+  url: 'https://tools.ietf.org/html/rfc7946#section-3.1.7'
+required:
+  - type
+  - coordinates
+properties:
+  'type':
+    type: 'string'
+    enum: [MultiPolygon]
+  'coordinates':
+    type: array
+    items:
+      type: array
+      items:
+        $ref: './linearRing.yml'
