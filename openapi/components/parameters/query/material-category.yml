@@ -1,7 +1,7 @@
-name: category
+name: material-category
 in: query
 required: false
-description: Filter based on the 'category' field of a resource.
+description: Filter based on the Material Categories a resource uses.
 schema:
   type: array
   items: 

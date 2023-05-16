@@ -1,7 +1,7 @@
-name: category
+name: base-unit
 in: query
 required: false
-description: Filter based on the 'category' field of a resource.
+description: Filter based on the name of the Base Unit that a resource uses.
 schema:
   type: array
   items: 
