@@ -1,0 +1,22 @@
+type: object
+description: This is a definition of a supply chain which contains one or multiple locations.
+required:
+  - name
+  - locations
+properties:
+  name:
+    description: Name of the supply chain. Should be unique.
+    type: string
+  description:
+    description: A description for the supply chain.
+    type: string
+  locations:
+    description: A list of location URIs that are part of this supply chain.
+    type: array
+    items:
+      type: string
+  links:
+    description: A list of links between locations that are specific to this supply chain.
+    type: array
+    items:
+      $ref: "./supplyChainLink.yml"

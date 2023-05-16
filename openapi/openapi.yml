@@ -63,8 +63,10 @@ tags:
     description: >-
       Apis for organisational information that is 'public'. By public this
       information is available to any registered user.
+    x-tag-expanded: false
   - name: Registrations
     description: Apis for the creation and retrieval of registrations.
+    x-tag-expanded: false
   - name: Tags
     description: Apis for the creation and retrieval of tags.
   - name: Shared
@@ -72,6 +74,9 @@ tags:
     x-tag-expanded: false
   - name: Users
     description: Apis for user related information.
+    x-tag-expanded: false
+  - name: Supply Chains
+    description: APIs for creation and retrieval of supply chains.
     x-tag-expanded: false
 paths:
   /auth/token:
@@ -182,6 +187,10 @@ paths:
     $ref: ./paths/Common/baseUnits.yml
   /common/base-units/{unitId}:
     $ref: ./paths/Common/baseUnit.yml
+  /organisations/{orgId}/supply-chains:
+    $ref: ./paths/supplyChains.yml
+  /organisations/{orgId}/supply-chains/{scId}:
+    $ref: ./paths/supplyChain.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml

@@ -1,0 +1,6 @@
+name: scId
+in: path
+required: true
+description: The id of a supply chain
+schema:
+  type: string
