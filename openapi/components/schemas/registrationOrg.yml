@@ -8,6 +8,7 @@ required:
   - password
   - organisation
   - country
+  - orgRoles
 properties:
   regType:
     description: Type of Registration
@@ -32,4 +33,9 @@ properties:
     type: string
   country:
     description: Alpha-2 code of the ISO 3166 Country Codes specification.
-    $ref: './enums/countries.yml'
+    $ref: "./enums/countries.yml"
+  orgRoles:
+    description: Determines the roles of the organisation you are registering.
+    type: array
+    items:
+      $ref: "./enums/orgRole.yml"

@@ -1,4 +1,0 @@
-type: string
-enum:
-  - SUPPLY_CHAIN_MEMBER
-  - VERIFIER

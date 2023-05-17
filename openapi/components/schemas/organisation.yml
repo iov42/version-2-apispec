@@ -5,3 +5,5 @@ properties:
     type: string
   address:
     $ref: "./address.yml"
+  roles:
+    $ref: "./../schemas/enums/orgRole.yml"

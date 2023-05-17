@@ -1,7 +1,0 @@
-type: object
-required:
-  - type
-properties:
-  type:
-    description: Type of the organisation.
-    $ref: "./enums/orgType.yml"

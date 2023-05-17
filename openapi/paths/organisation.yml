@@ -48,7 +48,6 @@ get:
           schema:
             allOf:
               - $ref: "../components/schemas/organisation.yml"
-              - $ref: "../components/schemas/orgType.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":

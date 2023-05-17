@@ -23,7 +23,6 @@ get:
                       allOf:
                         - $ref: "../components/schemas/id.yml"
                         - $ref: "../components/schemas/organisation.yml"
-                        - $ref: "../components/schemas/orgType.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
@@ -32,36 +31,3 @@ get:
       $ref: "../components/responses/429-tooManyRequests.yml"
     default:
       $ref: "../components/responses/500-internalError.yml"
-# post:
-#   tags:
-#     - Organisation
-#   summary: Add a new organisation
-#   operationId: addOrganisation
-#   description: Add a new organisation
-#   requestBody:
-#     description: Organisation information
-#     content:
-#       application/json:
-#         schema:
-#           allOf:
-#             - $ref: "../components/schemas/organisation.yml"
-#             - $ref: "../components/schemas/orgType.yml"
-#   responses:
-#     "201":
-#       description: Successful operation
-#       content:
-#         application/json:
-#           schema:
-#             allOf:
-#               - $ref: "../components/schemas/organisation.yml"
-#               - $ref: "../components/schemas/orgType.yml"
-#     "400":
-#       $ref: "../components/responses/400-badRequest.yml"
-#     "401":
-#       $ref: "../components/responses/401-unauthorised.yml"
-#     "403":
-#       $ref: "../components/responses/403-forbidden.yml"
-#     "429":
-#       $ref: "../components/responses/429-tooManyRequests.yml"
-#     default:
-#       $ref: "../components/responses/500-internalError.yml"
