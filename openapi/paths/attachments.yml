@@ -3,25 +3,23 @@ get:
     - Attachments
   summary: List Attachments
   operationId: listAttachments
-  description: List all Attachments
+  description: List all Attachments. Either targetUri or attachmentUri are required, if both are missing then this a 400 error will be returned.
   parameters:
     - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
+    - $ref: '../components/parameters/query/attachmentType.yml'
+    - $ref: '../components/parameters/query/targetUri.yml'
+    - $ref: '../components/parameters/query/attachmentUri.yml'
   responses:
     '200':
       description: Array of Attachments
       content:
         application/json:
           schema:
-            allOf:
-              - $ref: '../components/schemas/pagination.yml'
-              - type: object
-                properties:
-                  results: 
-                    type: array
-                    items: 
-                      $ref: '../components/schemas/attachment.yml'
+            type: array
+            items: 
+              $ref: '../components/schemas/attachment.yml'
+    '400':
+      $ref: '../components/responses/400-badRequest.yml'
     '401':
       $ref: '../components/responses/401-unauthorised.yml'
     '403':
@@ -43,14 +41,16 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/attachment.yml'
+          $ref: '../components/schemas/attachmentRequest.yml'
   responses:
     '201':
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/attachment.yml'
+            allOf:
+              - $ref: '../components/schemas/id.yml'
+              - $ref: '../components/schemas/attachment.yml'
     '400':
       $ref: '../components/responses/400-badRequest.yml'
     '401':

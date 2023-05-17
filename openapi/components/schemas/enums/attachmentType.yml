@@ -1,0 +1,8 @@
+type: string
+enum:
+  - CUSTOM_FIELD
+  - CERTIFICATE
+  - DOCUMENT
+  - ITEM
+  - LOCATION
+  - TAG

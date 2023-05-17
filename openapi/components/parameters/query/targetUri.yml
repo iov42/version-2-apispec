@@ -1,0 +1,6 @@
+name: targetUri
+in: query
+required: false
+description: Filter based on what the target resource of an attachment.
+schema:
+  type: string
