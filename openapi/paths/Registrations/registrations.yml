@@ -32,6 +32,10 @@ post:
             allOf:
               - $ref: '../../components/schemas/id.yml'
               - $ref: '../../components/schemas/registrationStatus.yml'
+    '400':
+      $ref: '../../components/responses/400-badRequest.yml'
+    '422':
+      $ref: '../../components/responses/422-unprocessable.yml'
     '404':
       $ref: '../../components/responses/404-notFound.yml'
     default:

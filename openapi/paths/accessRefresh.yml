@@ -17,8 +17,10 @@ post:
         application/json:
           schema:
             $ref: '../components/schemas/accessToken.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
+    '401':
+      $ref: '../components/responses/401-unauthorised.yml'
+    '422':
+      $ref: '../components/responses/422-unprocessable.yml'
     '429':
       $ref: '../components/responses/429-tooManyRequests.yml'
     default:
