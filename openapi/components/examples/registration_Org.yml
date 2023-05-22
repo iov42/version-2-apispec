@@ -1,8 +1,9 @@
-value: 
-    regType: "Org"
-    firstName: "First"
-    lastName: "Name"
-    email: "first.name@someorg.com"
-    password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"
-    organisation: "Some Org"
-    country: "BE" 
+value:
+  regType: "Org"
+  firstName: "First"
+  lastName: "Name"
+  email: "first.name@someorg.com"
+  password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"
+  organisation: "Some Org"
+  country: "BE"
+  orgRoles: ["PARTICIPANT"]

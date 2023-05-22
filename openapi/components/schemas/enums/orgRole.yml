@@ -1,6 +1,6 @@
 type: string
 enum:
-  - Admin
-  - Enforcement
-  - Verifier
-  - Participant
+  - ADMIN
+  - ENFORCEMENT
+  - VERIFIER
+  - PARTICIPANT

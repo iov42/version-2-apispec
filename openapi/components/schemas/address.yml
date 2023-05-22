@@ -13,4 +13,4 @@ properties:
     type: string
   country:
     description: Alpha-2 code of the ISO 3166 Country Codes specification.
-    $ref: './enums/countries.yml'
+    $ref: "./enums/countries.yml"
