@@ -34,9 +34,9 @@ post:
               - $ref: '../../components/schemas/registrationStatus.yml'
     '400':
       $ref: '../../components/responses/400-badRequest.yml'
+    '409':
+      $ref: '../../components/responses/409-conflict.yml'
     '422':
       $ref: '../../components/responses/422-unprocessable.yml'
-    '404':
-      $ref: '../../components/responses/404-notFound.yml'
     default:
       $ref: '../../components/responses/500-internalError.yml'

@@ -11,6 +11,8 @@ put:
   responses:
     '200':
       description: Successful operation
+    '403':
+      $ref: '../../components/responses/403-forbidden.yml'
     '404':
       $ref: '../../components/responses/404-notFound.yml'
     '422':
