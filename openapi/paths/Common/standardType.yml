@@ -1,0 +1,64 @@
+put:
+  tags:
+    - Common
+  summary: Update Standard Type
+  operationId: updateStandardType
+  description: Update details for a Standard Type. It is only available for System Administrators.
+  parameters:
+    - $ref: "../../components/parameters/path/standardId.yml"
+    - $ref: "../../components/parameters/path/standardTypeId.yml"
+  requestBody:
+    description: Update standard type information
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: "../../components/schemas/standardType.yml"
+    required: true
+  responses:
+    "200":
+      description: Successfully updated Standard Type.
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/id.yml"
+              - $ref: "../../components/schemas/standardType.yml"
+    "400":
+      $ref: "../../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"
+get:
+  tags:
+    - Common
+  summary: Get Standard Type
+  operationId: getStandardType
+  description: Get the Standard Type details
+  parameters:
+    - $ref: "../../components/parameters/path/standardId.yml"
+    - $ref: "../../components/parameters/path/standardTypeId.yml"
+  responses:
+    "200":
+      description: Standard Type info
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/id.yml"
+              - $ref: "../../components/schemas/standardType.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

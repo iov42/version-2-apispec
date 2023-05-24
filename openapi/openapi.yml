@@ -187,6 +187,14 @@ paths:
     $ref: ./paths/Common/baseUnits.yml
   /common/base-units/{unitId}:
     $ref: ./paths/Common/baseUnit.yml
+  /common/standards:
+    $ref: ./paths/Common/standards.yml
+  /common/standards/{standardId}:
+    $ref: ./paths/Common/standard.yml
+  /common/standards/{standardId}/types:
+    $ref: ./paths/Common/standardTypes.yml
+  /common/standards/{standardId}/types/{standardTypeId}:
+    $ref: ./paths/Common/standardType.yml
   /organisations/{orgId}/supply-chains:
     $ref: ./paths/supplyChains.yml
   /organisations/{orgId}/supply-chains/{scId}:

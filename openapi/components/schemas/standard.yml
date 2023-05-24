@@ -1,0 +1,16 @@
+type: object
+description: This is a definition of a standard
+required:
+  - name
+  - hasTypes
+  - active
+properties:
+  name:
+    description: This is the name for the standard.
+    type: string
+  hasTypes:
+    description: Determines whether the standard has types.
+    type: boolean
+  active:
+    description: Specifies whether the standard is currently active.
+    type: boolean

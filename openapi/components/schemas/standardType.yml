@@ -1,0 +1,11 @@
+type: object
+description: This is a definition of a standard type
+required:
+  - fullName
+properties:
+  fullName:
+    description: Full name of the standard type.
+    type: string
+  shortName:
+    description: Short version of the standard type's full name.
+    type: string

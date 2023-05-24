@@ -1,0 +1,57 @@
+get:
+  tags:
+    - Common
+  summary: List Standards
+  operationId: listStandards
+  description: Endpoint to retrieve all the standards defined in the system.
+  responses:
+    "200":
+      description: Array of Standards
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: "../../components/schemas/id.yml"
+                - $ref: "../../components/schemas/standard.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"
+post:
+  tags:
+    - Common
+  summary: Add Standard
+  operationId: addStandard
+  description: This endpoint can be used to add a new standard to the system. It is only available for System Administrators.
+  requestBody:
+    description: Standard information
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: "../../components/schemas/standard.yml"
+  responses:
+    "201":
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/id.yml"
+              - $ref: "../../components/schemas/standard.yml"
+    "400":
+      $ref: "../../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"
