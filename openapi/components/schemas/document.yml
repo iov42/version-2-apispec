@@ -1,17 +1,30 @@
 type: object
+description: This is a definition of a document.
+required:
+  - name
+  - typeUri
 properties:
-  id:
-    description: System provided identity field.
-    type: string
   name:
-    description: Document name
+    description: Document name.
     type: string
-  type:
-    description: Document type
+  typeUri:
+    description: URI of the document type.
     type: string
-  providedBy:
-    description: Who created/issued the document.
+  providedByUri:
+    description: Entity that provided/issued the document. Can be either organisation or location.
     type: string
-  providedFor:
-    description: Who the document was created for.
+  providedToUri:
+    description: Entity that received the document. Can be either organisation or location.
     type: string
+  issuanceTime:
+    description: The timestamp of when the document has been issued. Can be either just the date or, in cases where better precision is required, - the date and exact time.
+    type: string
+    format: date-time
+  validityStartTime:
+    description: The validity start timestamp of the document. Can be either just the date or, in cases where better precision is required, - the date and exact time.
+    type: string
+    format: date-time
+  validityEndTime:
+    description: The validity end timestamp of the document. Can be either just the date or, in cases where better precision is required, - the date and exact time.
+    type: string
+    format: date-time
