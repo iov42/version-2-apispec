@@ -8,9 +8,13 @@ post:
   parameters:
     - $ref: '../../components/parameters/path/registrationId.yml'
   responses:
-    '201':
+    '200':
       description: Successful operation
     '404':
       $ref: '../../components/responses/404-notFound.yml'
+    '409':
+      $ref: '../../components/responses/409-conflict.yml'
+    '425':
+      $ref: '../../components/responses/425-tooEarly.yml'
     default:
       $ref: '../../components/responses/500-internalError.yml'

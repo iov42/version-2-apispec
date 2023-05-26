@@ -43,7 +43,7 @@ put:
           $ref: '../components/schemas/apiAccessTokenRequest.yml'
     required: true
   responses:
-    '200':
+    '201':
       description: User API Access Token
       content:
         application/json:
@@ -57,6 +57,8 @@ put:
       $ref: '../components/responses/403-forbidden.yml'
     '404':
       $ref: '../components/responses/404-notFound.yml'
+    '422':
+      $ref: '../components/responses/422-unprocessable.yml'  
     '429':
       $ref: '../components/responses/429-tooManyRequests.yml'
     default:

@@ -1,0 +1,5 @@
+description: The requested resource already exists or the request conflicts with current state of the server.
+content:
+  application/json:
+    schema:
+      $ref: './error.yml'
