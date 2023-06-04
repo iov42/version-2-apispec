@@ -191,10 +191,18 @@ paths:
     $ref: ./paths/Common/standards.yml
   /common/standards/{standardId}:
     $ref: ./paths/Common/standard.yml
+  /common/standards/{standardId}/activate:
+    $ref: ./paths/Common/standardActivate.yml
+  /common/standards/{standardId}/deactivate:
+    $ref: ./paths/Common/standardDeactivate.yml
   /common/standards/{standardId}/types:
     $ref: ./paths/Common/standardTypes.yml
   /common/standards/{standardId}/types/{standardTypeId}:
     $ref: ./paths/Common/standardType.yml
+  /common/standards/{standardId}/types/{standardTypeId}/activate:
+    $ref: ./paths/Common/standardTypeActivate.yml
+  /common/standards/{standardId}/types/{standardTypeId}/deactivate:
+    $ref: ./paths/Common/standardTypeDeactivate.yml
   /organisations/{orgId}/supply-chains:
     $ref: ./paths/supplyChains.yml
   /organisations/{orgId}/supply-chains/{scId}:

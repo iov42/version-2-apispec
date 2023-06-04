@@ -24,6 +24,7 @@ put:
             allOf:
               - $ref: "../../components/schemas/id.yml"
               - $ref: "../../components/schemas/standardType.yml"
+              - $ref: "../../components/schemas/standardTypeState.yml"
     "400":
       $ref: "../../components/responses/400-badRequest.yml"
     "401":
@@ -54,6 +55,7 @@ get:
             allOf:
               - $ref: "../../components/schemas/id.yml"
               - $ref: "../../components/schemas/standardType.yml"
+              - $ref: "../../components/schemas/standardTypeState.yml"
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"
     "404":

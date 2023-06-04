@@ -3,14 +3,14 @@ required:
   - standardUri
   - number
 properties:
-  standardUri:
-    description: The standard that the certificate falls under.
+  standard:
+    description: The URI of standard that the certificate falls under.
     type: string
-  standardTypeUri:
-    description: The type of certificate under the standard (if applicable).
+  standardType:
+    description: The URI of type of certificate under the standard (if applicable).
     type: string
   number:
-    description: The official certificate number
+    description: The official certificate number.
     type: string
   issuanceDate:
     description: The date on which the certificate has been issued.
@@ -25,5 +25,5 @@ properties:
     type: string
     format: date
   url:
-    description: The official URL where the certificate can be found (if available)
+    description: The official URL where the certificate can be found (if available).
     type: string

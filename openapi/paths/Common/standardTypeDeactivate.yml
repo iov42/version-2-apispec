@@ -1,0 +1,31 @@
+put:
+  tags:
+    - Common
+  summary: Deactivate Standard Type
+  operationId: deactivateStandardType
+  description: This endpoint can be used to deactivate an existing standard type. Only a standard type with state "ACTIVE" can be deactivated. It is only available for System Administrators.
+  parameters:
+    - $ref: "../../components/parameters/path/standardId.yml"
+    - $ref: "../../components/parameters/path/standardTypeId.yml"
+  responses:
+    "200":
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/id.yml"
+              - $ref: "../../components/schemas/standardType.yml"
+              - $ref: "../../components/schemas/standardTypeState.yml"
+    "400":
+      $ref: "../../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"
