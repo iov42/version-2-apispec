@@ -13,6 +13,7 @@ put:
         schema:
           allOf:
             - $ref: "../../components/schemas/standard.yml"
+            - $ref: "../../components/schemas/state.yml"
     required: true
   responses:
     "200":
@@ -23,7 +24,7 @@ put:
             allOf:
               - $ref: "../../components/schemas/id.yml"
               - $ref: "../../components/schemas/standard.yml"
-              - $ref: "../../components/schemas/standardState.yml"
+              - $ref: "../../components/schemas/state.yml"
     "400":
       $ref: "../../components/responses/400-badRequest.yml"
     "401":
@@ -53,7 +54,7 @@ get:
             allOf:
               - $ref: "../../components/schemas/id.yml"
               - $ref: "../../components/schemas/standard.yml"
-              - $ref: "../../components/schemas/standardState.yml"
+              - $ref: "../../components/schemas/state.yml"
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"
     "404":

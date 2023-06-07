@@ -1,5 +1,0 @@
-type: object
-description: This is a definition of a standard type's state.
-properties:
-  state:
-    $ref: "../schemas/enums/standardTypeState.yml"
