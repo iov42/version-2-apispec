@@ -1,0 +1,6 @@
+name: standardId
+in: path
+required: true
+description: The id of the standard
+schema:
+  type: string

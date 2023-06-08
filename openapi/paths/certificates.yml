@@ -5,31 +5,33 @@ get:
   operationId: listCertificates
   description: List all the certificates
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
   responses:
-    '200':
+    "200":
       description: Array of certificates
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/pagination.yml'
+              - $ref: "../components/schemas/pagination.yml"
               - type: object
                 properties:
-                  results: 
+                  results:
                     type: array
-                    items: 
-                      $ref: '../components/schemas/certificate.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+                    items:
+                      allOf:
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/certificate.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
     - Certificates
@@ -37,27 +39,29 @@ post:
   operationId: addCertificate
   description: Add a new certificate
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
     description: Certificate information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/certificate.yml'
+          $ref: "../components/schemas/certificate.yml"
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/certificate.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            allOf:
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/certificate.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
