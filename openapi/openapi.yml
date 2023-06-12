@@ -83,6 +83,10 @@ paths:
     $ref: ./paths/accessRequest.yml
   /auth/token/refresh:
     $ref: ./paths/accessRefresh.yml
+  /auth/forgot-password:
+    $ref: ./paths/forgotPassword.yml
+  /auth/reset-password:
+    $ref: ./paths/resetPassword.yml
   /organisations:
     $ref: ./paths/organisations.yml
   /organisations/{orgId}:
