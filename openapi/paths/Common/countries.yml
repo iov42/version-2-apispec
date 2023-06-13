@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Common
+  summary: List Countries
+  operationId: listCountries
+  description: List all system supported countries in supported languages.
+  responses:
+    "200":
+      description: Array of Standards
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: "../../components/schemas/country.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

@@ -1,0 +1,11 @@
+type: object
+properties:
+  alpha2Code:
+    description: The alpha 2 country code.
+    type: string
+  shortName:
+    description: The short name of the country.
+    type: string
+  fullName:
+    description: The full name of the country.
+    type: string
