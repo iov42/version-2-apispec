@@ -5,38 +5,38 @@ get:
   operationId: listProducts
   description: This endpoint returns all the products that have either been defined by the organisation or have been provided by other organisations.
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
-    - $ref: '../components/parameters/query/name.yml'
-    - $ref: '../components/parameters/query/material.yml'
-    - $ref: '../components/parameters/query/material-category.yml'
-    - $ref: '../components/parameters/query/base-unit.yml'
-    - $ref: '../components/parameters/query/unit-type.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
+    - $ref: "../components/parameters/query/name.yml"
+    - $ref: "../components/parameters/query/material.yml"
+    - $ref: "../components/parameters/query/material-category.yml"
+    - $ref: "../components/parameters/query/base-unit.yml"
+    - $ref: "../components/parameters/query/unit-type.yml"
   responses:
-    '200':
+    "200":
       description: Array of Products
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/pagination.yml'
+              - $ref: "../components/schemas/pagination.yml"
               - type: object
                 properties:
-                  results: 
+                  results:
                     type: array
-                    items: 
+                    items:
                       allOf:
-                        - $ref: '../components/schemas/id.yml'
-                        - $ref: '../components/schemas/product.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/product.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
     - Products
@@ -44,29 +44,33 @@ post:
   operationId: addProduct
   description: Add a new Product
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
     description: Product information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/product.yml'
+          $ref: "../components/schemas/product.yml"
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/product.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/product.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "409":
+      $ref: "../components/responses/409-conflict.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"

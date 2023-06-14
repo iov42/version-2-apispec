@@ -5,38 +5,42 @@ put:
   operationId: updateProduct
   description: This endpoint allows a product to be updated.
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/prodId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/prodId.yml"
   requestBody:
     description: Update product information
     content:
       application/json:
         schema:
           allOf:
-            - $ref: '../components/schemas/id.yml'
-            - $ref: '../components/schemas/product.yml'
+            - $ref: "../components/schemas/id.yml"
+            - $ref: "../components/schemas/product.yml"
     required: true
   responses:
-    '200':
+    "200":
       description: Successful operation
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/product.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/product.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "409":
+      $ref: "../components/responses/409-conflict.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
     - Products
@@ -44,24 +48,24 @@ get:
   operationId: getProduct
   description: This endpoint returns the specific details for a given product.
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/prodId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/prodId.yml"
   responses:
-    '200':
+    "200":
       description: Product info
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/product.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/product.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
