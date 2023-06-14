@@ -4,6 +4,8 @@ get:
   summary: List Standards
   operationId: listStandards
   description: Endpoint to retrieve all the standards defined in the system.
+  parameters:
+    - $ref: "../../components/parameters/query/state.yml"
   responses:
     "200":
       description: Array of Standards
@@ -51,8 +53,10 @@ post:
       $ref: "../../components/responses/401-unauthorised.yml"
     "403":
       $ref: "../../components/responses/403-forbidden.yml"
-    "404":
-      $ref: "../../components/responses/404-notFound.yml"
+    "409":
+      $ref: "../../components/responses/409-conflict.yml"
+    "422":
+      $ref: "../../components/responses/422-unprocessable.yml"
     "429":
       $ref: "../../components/responses/429-tooManyRequests.yml"
     default:

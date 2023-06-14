@@ -1,0 +1,6 @@
+name: state
+in: query
+required: false
+description: The state of an entity.
+schema:
+  $ref: "../../schemas/enums/state.yml"
