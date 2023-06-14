@@ -3,7 +3,7 @@ get:
     - Common
   summary: List Countries
   operationId: listCountries
-  description: List all system supported countries.
+  description: List all system supported alpha-2 country codes.
   responses:
     "200":
       description: Array of countries
@@ -11,9 +11,6 @@ get:
         application/json:
           schema:
             type: array
-            items:
-              allOf:
-                - $ref: "../../components/schemas/country.yml"
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"
     "429":
