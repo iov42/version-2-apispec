@@ -3,10 +3,10 @@ get:
     - Common
   summary: List Countries
   operationId: listCountries
-  description: List all system supported countries in supported languages.
+  description: List all system supported countries.
   responses:
     "200":
-      description: Array of Standards
+      description: Array of countries
       content:
         application/json:
           schema:
