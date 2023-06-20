@@ -5,26 +5,38 @@ required:
   - typeUri
 properties:
   name:
-    description: Document name.
+    description: Document name
     type: string
-  typeUri:
-    description: URI of the document type.
+  type:
+    description: Document type
     type: string
-  providedByUri:
-    description: Entity that provided/issued the document. Can be either organisation or location.
+  providedBy:
+    description: Who created/issued the document.
     type: string
-  providedToUri:
-    description: Entity that received the document. Can be either organisation or location.
+  providedFor:
+    description: Who the document was created for.
     type: string
-  issuanceTime:
-    description: The timestamp of when the document has been issued. Can be either just the date or, in cases where better precision is required, - the date and exact time.
-    type: string
-    format: date-time
-  validityStartTime:
-    description: The validity start timestamp of the document. Can be either just the date or, in cases where better precision is required, - the date and exact time.
+  issuance: 
+    description: The date and time when this document was issued.
     type: string
     format: date-time
-  validityEndTime:
-    description: The validity end timestamp of the document. Can be either just the date or, in cases where better precision is required, - the date and exact time.
+  validityStart: 
+    description: If the document has a validity period, this is when it starts.
     type: string
     format: date-time
+  validityEnd: 
+    description: If the document has a validity period, this is when it ends.
+    type: string
+    format: date-time
+  contentType:
+    description: The type of the content based on rfc4288 (https://www.rfc-editor.org/rfc/rfc4288)
+    type: string
+  contentHash:
+    description: Sha256 32-byte, base64 encoded contentHash
+    type: string
+  content:
+    description: URI to the content.
+    type: string
+  originalHash:
+    description: Sha256 32-byte, base64 encoded contentHash. For original documents this will match contentHash. It will be different for redacted documents derived from an original document.
+    type: string
