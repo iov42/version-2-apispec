@@ -203,6 +203,8 @@ paths:
     $ref: ./paths/supplyChains.yml
   /organisations/{orgId}/supply-chains/{scId}:
     $ref: ./paths/supplyChain.yml
+  /common/countries:
+    $ref: ./paths/Common/countries.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml

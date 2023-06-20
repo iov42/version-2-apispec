@@ -1,0 +1,19 @@
+get:
+  tags:
+    - Common
+  summary: List Countries
+  operationId: listCountries
+  description: List all system supported alpha-2 country codes.
+  responses:
+    "200":
+      description: Array of countries
+      content:
+        application/json:
+          schema:
+            type: array
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"
