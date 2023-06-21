@@ -18,6 +18,12 @@ paths:
     $ref: ./paths/admin/baseUnits.yml
   /common/base-units/{unitId}:
     $ref: ./paths/admin/baseUnit.yml
+  /users:
+    $ref: ./paths/admin/users.yml
+  /organisations:
+    $ref: ./paths/admin/organisations.yml
+  /locations:
+    $ref: ./paths/admin/locations.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml
