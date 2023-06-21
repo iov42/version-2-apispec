@@ -4,3 +4,6 @@ properties:
   organisation:
     type: string
     description: URI of the organisation to which the user belongs to.
+  createdTime:
+    type: string
+    format: date-time

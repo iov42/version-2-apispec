@@ -1,0 +1,8 @@
+type: object
+description: This is a definition of extra information about an organisation available only to the system administrator.
+properties:
+  createdTime:
+    type: string
+    format: date-time
+  registrationStatus:
+    $ref: "../enums/registrationStatus.yml"

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Locations
+  summary: Get Location
+  operationId: getLocation
+  description: Get the Location details
+  parameters:
+    - $ref: "../components/parameters/path/locId.yml"
+  responses:
+    "200":
+      description: Location info
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/location.yml"
+              - $ref: "../../components/schemas/admin/locationExtraInfo.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"
