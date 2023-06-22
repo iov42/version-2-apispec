@@ -6,11 +6,19 @@ get:
   description: List all system supported alpha-2 country codes.
   responses:
     "200":
-      description: Array of countries
+      description: Array of alpha-2 country codes
       content:
         application/json:
           schema:
             type: array
+            items:
+              type: string
+            example:
+              - AF
+              - AL
+              - DZ
+              - AS
+              - AD
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"
     "429":
