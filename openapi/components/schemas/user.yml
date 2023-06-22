@@ -5,9 +5,6 @@ required:
   - lastName
   - emailAddress
 properties:
-  id:
-    description: System provided identity field.
-    type: string
   firstName:
     type: string
   lastName:

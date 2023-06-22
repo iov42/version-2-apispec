@@ -1,0 +1,33 @@
+get:
+  tags:
+    - Locations
+  summary: List Locations
+  operationId: listLocations
+  description: List all the Locations
+  parameters:
+    - $ref: "../../components/parameters/query/orgId.yml"
+  responses:
+    "200":
+      description: Array of Locations
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/pagination.yml"
+              - type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: "../../components/schemas/id.yml"
+                        - $ref: "../../components/schemas/location.yml"
+                        - $ref: "../../components/schemas/admin/locationExtraInfo.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"

@@ -1,0 +1,9 @@
+name: orgId
+in: query
+required: false
+description: Filter on the organisation ID of a resource.
+schema:
+  type: array
+  items:
+    type: string
+style: pipeDelimited
