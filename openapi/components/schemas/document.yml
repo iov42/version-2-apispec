@@ -28,9 +28,6 @@ properties:
   contentHash:
     description: Sha256 32-byte, base64 encoded contentHash. This will be empty if the document content has not yet been provided.
     type: string
-  content:
-    description: URI to the content.
-    type: string
   originalHash:
     description: Sha256 32-byte, base64 encoded contentHash. For original documents this will match contentHash. It will be different for redacted documents derived from an original document. This will be empty if the document content has not yet been provided.
     type: string
