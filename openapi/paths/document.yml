@@ -12,9 +12,7 @@ put:
     content:
       application/json:
         schema:
-          allOf:
-            - $ref: "../components/schemas/document.yml"
-            - $ref: "../components/schemas/files/content.yml"
+          $ref: "../components/schemas/documentMetadata.yml"
     required: true
   responses:
     "200":

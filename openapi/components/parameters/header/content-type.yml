@@ -1,0 +1,6 @@
+name: Content-Type
+in: header
+required: true
+description: Content type that is being used.
+schema:
+  type: string

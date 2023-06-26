@@ -8,6 +8,10 @@ get:
     - $ref: "../components/parameters/path/orgId.yml"
     - $ref: "../components/parameters/query/page.yml"
     - $ref: "../components/parameters/query/size.yml"
+    - $ref: "../components/parameters/query/hasContent.yml"
+    - $ref: "../components/parameters/query/name.yml"
+    - $ref: "../components/parameters/query/type.yml"
+    - $ref: "../components/parameters/query/contentHash.yml"
   responses:
     "200":
       description: Array of Documents
@@ -24,7 +28,6 @@ get:
                       allOf:
                         - $ref: "../components/schemas/id.yml"
                         - $ref: "../components/schemas/document.yml"
-                        - $ref: "../components/schemas/files/contentUri.yml"
                         - $ref: "../components/schemas/common/createdBy.yml"
                         - $ref: "../components/schemas/common/createdTime.yml"
     "401":
@@ -48,19 +51,21 @@ post:
     content:
       application/json:
         schema:
-          allOf:
-            - $ref: "../components/schemas/document.yml"
-            - $ref: "../components/schemas/files/content.yml"
+          $ref: "../components/schemas/documentMetadata.yml"
   responses:
     "201":
       description: Successful operation
+      headers:
+        Content-Location:
+          schema:
+            type: string
+          description: Location to upload the content to.
       content:
         application/json:
           schema:
             allOf:
               - $ref: "../components/schemas/id.yml"
               - $ref: "../components/schemas/document.yml"
-              - $ref: "../components/schemas/files/contentUri.yml"
               - $ref: "../components/schemas/common/createdBy.yml"
               - $ref: "../components/schemas/common/createdTime.yml"
     "400":

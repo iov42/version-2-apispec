@@ -1,0 +1,6 @@
+name: type
+in: query
+required: false
+description: Filter on the 'type' field of a resource.
+schema:
+  type: string

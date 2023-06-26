@@ -123,6 +123,8 @@ paths:
     $ref: ./paths/documents.yml
   /organisations/{orgId}/documents/{docId}:
     $ref: ./paths/document.yml
+  /organisations/{orgId}/documents/{docId}/content:
+    $ref: ./paths/documentContent.yml
   /organisations/{orgId}/document-types:
     $ref: ./paths/documentTypes.yml
   /organisations/{orgId}/document-types/{docTypeId}:
