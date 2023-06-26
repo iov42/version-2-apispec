@@ -1,5 +1,5 @@
 type: object
 properties:
-  contentUri:
+  content:
     description: The URI to the document binary content.
     type: string

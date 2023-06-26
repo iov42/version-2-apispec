@@ -22,7 +22,6 @@ put:
           schema:
             allOf:
               - $ref: "../components/schemas/document.yml"
-              - $ref: "../components/schemas/files/contentUri.yml"
               - $ref: "../components/schemas/common/createdBy.yml"
               - $ref: "../components/schemas/common/createdTime.yml"
     "400":
@@ -54,7 +53,6 @@ get:
           schema:
             allOf:
               - $ref: "../components/schemas/document.yml"
-              - $ref: "../components/schemas/files/contentUri.yml"
               - $ref: "../components/schemas/common/createdBy.yml"
               - $ref: "../components/schemas/common/createdTime.yml"
     "401":
