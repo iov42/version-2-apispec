@@ -1,0 +1,6 @@
+name: docTypeId
+in: path
+required: true
+description: The system provided id of a Document Type
+schema:
+  type: string

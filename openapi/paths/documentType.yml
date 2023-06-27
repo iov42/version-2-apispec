@@ -1,18 +1,18 @@
 put:
   tags:
     - Documents
-  summary: Update document
-  operationId: updateDocument
-  description: Update document by id
+  summary: Update document type
+  operationId: updateDocumentType
+  description: Update document type by id
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
-    - $ref: "../components/parameters/path/docId.yml"
+    - $ref: "../components/parameters/path/docTypeId.yml"
   requestBody:
-    description: Update document information
+    description: Update document type information
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/documentMetadata.yml"
+          $ref: "../components/schemas/documentType.yml"
     required: true
   responses:
     "200":
@@ -21,7 +21,8 @@ put:
         application/json:
           schema:
             allOf:
-              - $ref: "../components/schemas/document.yml"
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/documentType.yml"
               - $ref: "../components/schemas/common/createdBy.yml"
               - $ref: "../components/schemas/common/createdTime.yml"
     "400":
@@ -33,7 +34,7 @@ put:
     "404":
       $ref: "../components/responses/404-notFound.yml"
     "409":
-      $ref: "../components/responses/409-alreadyExists.yml"      
+      $ref: "../components/responses/409-alreadyExists.yml"       
     "429":
       $ref: "../components/responses/429-tooManyRequests.yml"
     default:
@@ -41,20 +42,20 @@ put:
 get:
   tags:
     - Documents
-  summary: Get Document
-  operationId: getDocument
-  description: Get the document details
+  summary: Get Document Type
+  operationId: getDocumentType
+  description: Get the document type details
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
-    - $ref: "../components/parameters/path/docId.yml"
+    - $ref: "../components/parameters/path/docTypeId.yml"
   responses:
     "200":
-      description: Document info
+      description: Document type info
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "../components/schemas/document.yml"
+              - $ref: "../components/schemas/documentType.yml"
               - $ref: "../components/schemas/common/createdBy.yml"
               - $ref: "../components/schemas/common/createdTime.yml"
     "401":

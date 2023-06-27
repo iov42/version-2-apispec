@@ -1,20 +1,16 @@
 get:
   tags:
     - Documents
-  summary: List Documents
-  operationId: listDocuments
-  description: List all the Documents
+  summary: List Document Types
+  operationId: listDocumentTypes
+  description: List all the Documents Types
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
     - $ref: "../components/parameters/query/page.yml"
     - $ref: "../components/parameters/query/size.yml"
-    - $ref: "../components/parameters/query/hasContent.yml"
-    - $ref: "../components/parameters/query/name.yml"
-    - $ref: "../components/parameters/query/type.yml"
-    - $ref: "../components/parameters/query/contentHash.yml"
   responses:
     "200":
-      description: Array of Documents
+      description: Array of Document Types
       content:
         application/json:
           schema:
@@ -27,7 +23,7 @@ get:
                     items:
                       allOf:
                         - $ref: "../components/schemas/id.yml"
-                        - $ref: "../components/schemas/document.yml"
+                        - $ref: "../components/schemas/documentType.yml"
                         - $ref: "../components/schemas/common/createdBy.yml"
                         - $ref: "../components/schemas/common/createdTime.yml"
     "401":
@@ -41,31 +37,26 @@ get:
 post:
   tags:
     - Documents
-  summary: Add document
-  operationId: addDocument
-  description: Add a new Document
+  summary: Add document type
+  operationId: addDocumentType
+  description: Add a new Document Type
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
-    description: Document information
+    description: Document type information
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/documentMetadata.yml"
+          $ref: "../components/schemas/documentType.yml"
   responses:
     "201":
       description: Successful operation
-      headers:
-        Content-Location:
-          schema:
-            type: string
-          description: Location to upload the content to.
       content:
         application/json:
           schema:
             allOf:
               - $ref: "../components/schemas/id.yml"
-              - $ref: "../components/schemas/document.yml"
+              - $ref: "../components/schemas/documentType.yml"
               - $ref: "../components/schemas/common/createdBy.yml"
               - $ref: "../components/schemas/common/createdTime.yml"
     "400":
@@ -74,6 +65,8 @@ post:
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
       $ref: "../components/responses/403-forbidden.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"       
     "429":
       $ref: "../components/responses/429-tooManyRequests.yml"
     default:

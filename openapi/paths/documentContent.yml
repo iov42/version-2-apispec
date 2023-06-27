@@ -1,0 +1,116 @@
+put:
+  tags:
+    - Documents
+  summary: Add Document Content
+  operationId: uploadContent
+  description: Upload document content
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/docId.yml"
+    - $ref: "../components/parameters/header/content-type.yml"
+  requestBody:
+    description: Document content
+    content:
+      application/msword:
+        schema:
+          type: string
+          format: binary
+      application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+        schema:
+          type: string
+          format: binary
+      application/vnd.ms-excel:
+        schema:
+          type: string
+          format: binary
+      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+        schema:
+          type: string
+          format: binary
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+      text/csv:
+        schema:
+          type: string
+      image/*:
+        schema:
+          type: string
+          format: binary
+      application/pdf:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    "200":
+      description: Successful operation
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"       
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"
+get:
+  tags:
+    - Documents
+  summary: Get Document Content
+  operationId: getDocumentContent
+  description: Get the document content
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/docId.yml"
+  responses:
+    "200":
+      description: Document Content
+      content:
+        application/msword:
+          schema:
+            type: string
+            format: binary
+        application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+          schema:
+            type: string
+            format: binary
+        application/vnd.ms-excel:
+          schema:
+            type: string
+            format: binary
+        application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+          schema:
+            type: string
+            format: binary
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+        text/csv:
+          schema:
+            type: string
+        image/*:
+          schema:
+            type: string
+            format: binary
+        application/pdf:
+          schema:
+            type: string
+            format: binary
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"

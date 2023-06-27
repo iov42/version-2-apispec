@@ -1,0 +1,6 @@
+name: hasContent
+in: query
+required: false
+description: Filter out if a document has content or not.
+schema:
+  type: boolean

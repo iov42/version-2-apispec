@@ -1,0 +1,6 @@
+name: contentHash
+in: query
+required: false
+description: Filter on the 'contentHash' field of a resource.
+schema:
+  type: string

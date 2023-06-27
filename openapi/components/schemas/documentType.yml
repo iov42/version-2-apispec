@@ -1,0 +1,8 @@
+type: object
+description: This is a definition of a document type.
+required:
+  - name
+properties:
+  name:
+    description: Document type name.
+    type: string
