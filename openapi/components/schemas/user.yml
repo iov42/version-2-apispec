@@ -11,3 +11,6 @@ properties:
     type: string
   emailAddress:
     type: string
+  lastActive:
+    type: string
+    format: date-time
