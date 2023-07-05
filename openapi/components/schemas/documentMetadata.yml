@@ -22,6 +22,3 @@ properties:
     description: If the document has a validity period, this is when it ends.
     type: string
     format: date-time
-  contentType:
-    description: The type of the content based on rfc4288 (https://www.rfc-editor.org/rfc/rfc4288)
-    type: string
