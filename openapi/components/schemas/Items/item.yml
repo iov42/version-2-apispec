@@ -18,8 +18,8 @@ properties:
     type: array
     items:
       type: string
-  createdAtLocation:
-    description: The URI of the location where the item has been created.
+  currentLocation:
+    description: The URI of the location where the item is currently at.
     type: string
   createdTime:
     oneOf:
