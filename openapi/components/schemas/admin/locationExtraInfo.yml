@@ -4,6 +4,3 @@ properties:
   organisation:
     type: string
     description: URI of the organisation that owns the location (recorded it).
-  createdTime:
-    type: string
-    format: date-time

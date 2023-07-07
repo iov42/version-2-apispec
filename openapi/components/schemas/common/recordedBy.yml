@@ -1,5 +1,5 @@
 type: object
 properties:
-  createdBy:
+  recordedBy:
     description: URI of the user that created the record.
     type: string

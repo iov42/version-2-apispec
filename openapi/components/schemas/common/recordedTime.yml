@@ -1,5 +1,5 @@
 type: object
 properties:
-  createdTime:
+  recordedTime:
     description: Timestamp of when the record was created.
     type: string

@@ -13,5 +13,4 @@ properties:
   items:
     type: array
     items:
-      $ref: './item.yml'
-  
+      $ref: "./Items/item.yml"

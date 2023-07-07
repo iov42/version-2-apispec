@@ -23,8 +23,8 @@ put:
             allOf:
               - $ref: "../components/schemas/id.yml"
               - $ref: "../components/schemas/documentType.yml"
-              - $ref: "../components/schemas/common/createdBy.yml"
-              - $ref: "../components/schemas/common/createdTime.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
     "400":
       $ref: "../components/responses/400-badRequest.yml"
     "401":
@@ -34,7 +34,7 @@ put:
     "404":
       $ref: "../components/responses/404-notFound.yml"
     "409":
-      $ref: "../components/responses/409-alreadyExists.yml"       
+      $ref: "../components/responses/409-alreadyExists.yml"
     "429":
       $ref: "../components/responses/429-tooManyRequests.yml"
     default:
@@ -56,8 +56,8 @@ get:
           schema:
             allOf:
               - $ref: "../components/schemas/documentType.yml"
-              - $ref: "../components/schemas/common/createdBy.yml"
-              - $ref: "../components/schemas/common/createdTime.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
