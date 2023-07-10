@@ -1,5 +1,5 @@
 type: object
-description: Defines when an item has been created.
+description: Defines when an item has been created if it is a range of possible dates and times.
 required:
   - type
   - startTime
@@ -9,11 +9,11 @@ properties:
     type: string
     enum:
       - RANGE
-  startTime:
-    description: The beginning of the date and time range of when the item might have been created.
+  start:
+    description: The beginning of the date (and time) range of when the item might have been created.
     type: string
     format: date-time
-  endTime:
-    description: The end of the date and time range of when the item might have been created.
+  end:
+    description: The end of the date (and time) range of when the item might have been created.
     type: string
     format: date-time

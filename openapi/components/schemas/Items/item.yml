@@ -21,7 +21,7 @@ properties:
   currentLocation:
     description: The URI of the location where the item is currently at.
     type: string
-  createdTime:
+  created:
     oneOf:
       - $ref: "./createdTimeExact.yml"
       - $ref: "./createdTimeRange.yml"

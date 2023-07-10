@@ -1,5 +1,5 @@
 type: object
-description: Defines when an item has been created if it is a range of possible dates and times.
+description: Defines when an item has been created.
 required:
   - type
   - time
@@ -8,7 +8,7 @@ properties:
     type: string
     enum:
       - EXACT
-  time:
-    description: The exact time when the item has been created.
+  on:
+    description: The exact date (and time) when the item has been created.
     type: string
     format: date-time
