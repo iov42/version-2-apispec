@@ -11,10 +11,26 @@ properties:
     description: A description for the supply chain.
     type: string
   locations:
-    description: A list of location URIs that are part of this supply chain.
+    description: A list of locations that are part of this supply chain, their certificates and documents.
     type: array
     items:
-      type: string
+      type: object
+      required:
+        - location
+      properties:
+        location:
+          description: Location URI.
+          type: string
+        certificates:
+          description: A list of certificate URIs that are associated with this location for this supply chain.
+          type: array
+          items:
+            type: string
+        documents:
+          description: A list of document URIs that are associated with this location for this supply chain.
+          type: array
+          items:
+            type: string
   links:
     description: A list of links between locations that are specific to this supply chain.
     type: array
