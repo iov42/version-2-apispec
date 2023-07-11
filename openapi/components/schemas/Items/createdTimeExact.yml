@@ -1,0 +1,14 @@
+type: object
+description: Defines when an item has been created.
+required:
+  - type
+  - time
+properties:
+  type:
+    type: string
+    enum:
+      - EXACT
+  on:
+    description: The exact date (and time) when the item has been created.
+    type: string
+    format: date-time

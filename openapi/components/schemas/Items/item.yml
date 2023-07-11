@@ -1,0 +1,33 @@
+type: object
+description: This is a definition of an item
+required:
+  - itemId
+  - product
+  - createdAtLocation
+  - createdTime
+  - initialQuantity
+properties:
+  itemId:
+    description: User-defined identifier for the item. Must be unique.
+    type: string
+  product:
+    description: The URI of the product that this item is an instance of.
+    type: string
+  materials:
+    description: The URIs of materials included in the item. The possible choices depend on the selected product.
+    type: array
+    items:
+      type: string
+  currentLocation:
+    description: The URI of the location where the item is currently at.
+    type: string
+  created:
+    oneOf:
+      - $ref: "./createdTimeExact.yml"
+      - $ref: "./createdTimeRange.yml"
+  initialQuantity:
+    description: The quantity of product that the item had when it was first created. The unit of measurement and precision are based on the product selected for the item.
+    type: number
+  availableQuantity:
+    description: The quantity of product that the item currently has. The unit of measurement and precision are based on the product selected for the item.
+    type: number

@@ -23,6 +23,8 @@ get:
                         - $ref: "../../components/schemas/id.yml"
                         - $ref: "../../components/schemas/location.yml"
                         - $ref: "../../components/schemas/admin/locationExtraInfo.yml"
+                        - $ref: "../../components/schemas/common/recordedTime.yml"
+                        - $ref: "../../components/schemas/common/recordedBy.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":

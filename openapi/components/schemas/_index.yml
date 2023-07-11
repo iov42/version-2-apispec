@@ -19,7 +19,7 @@ CustomFieldTemplate:
 Document:
   $ref: "./document.yml"
 Item:
-  $ref: "./item.yml"
+  $ref: "./Items/item.yml"
 Location:
   $ref: "./location.yml"
 Link:
