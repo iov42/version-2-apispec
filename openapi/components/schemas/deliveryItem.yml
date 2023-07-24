@@ -1,0 +1,8 @@
+type: object
+properties:
+  item:
+    description: Item URI.
+    type: string
+  quantity:
+    description: The quantity of the item included in the delivery.
+    type: number

@@ -1,0 +1,9 @@
+name: currentLocation
+in: query
+required: false
+description: Filter based on what the current location of the item is.
+schema:
+  type: array
+  items:
+    type: string
+style: pipeDelimited

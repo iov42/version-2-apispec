@@ -1,16 +1,22 @@
 type: object
 properties:
-  id:
+  deliveryId:
     description: System provided identity field.
     type: string
-  fromFacility:
+  from:
     type: string
-  toFacility:
+  to:
     type: string
-  date:
+  status:
+    description: The current status of the delivery.
+    $ref: "./enums/deliveryStatus.yml"
+  sent:
+    type: string
+    format: date-time
+  delivered:
     type: string
     format: date-time
   items:
     type: array
     items:
-      $ref: "./Items/item.yml"
+      $ref: "./deliveryItem.yml"
