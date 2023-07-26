@@ -1,22 +1,35 @@
 type: object
+required:
+  - deliveryId
+  - from
+  - to
+  - status
+  - sent
+  - delivered
+  - items
 properties:
   deliveryId:
-    description: System provided identity field.
+    description: User-assigned unique identifier for the delivery.
     type: string
   from:
+    description: The URI of the location from which the delivery is being delivered from.
     type: string
   to:
+    description: The URI of the location to which the delivery is being delivered to.
     type: string
   status:
     description: The current status of the delivery.
     $ref: "./enums/deliveryStatus.yml"
   sent:
+    description: The date and time of when the delivery has been sent.
     type: string
     format: date-time
   delivered:
+    description: The date and time of when the delivery has been delivered.
     type: string
     format: date-time
   items:
+    description: List of items included in the delivery.
     type: array
     items:
       $ref: "./deliveryItem.yml"
