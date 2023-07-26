@@ -5,31 +5,35 @@ get:
   operationId: listLocations
   description: List all the Locations
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
   responses:
-    '200':
+    "200":
       description: Array of Locations
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/pagination.yml'
+              - $ref: "../components/schemas/pagination.yml"
               - type: object
                 properties:
-                  results: 
+                  results:
                     type: array
-                    items: 
-                      $ref: '../components/schemas/location.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+                    items:
+                      allOf:
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/location.yml"
+                        - $ref: "../components/schemas/common/recordedBy.yml"
+                        - $ref: "../components/schemas/common/recordedTime.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
     - Locations
@@ -37,27 +41,35 @@ post:
   operationId: addLocation
   description: Add a new Location
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
     description: Location information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/location.yml'
+          $ref: "../components/schemas/location.yml"
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/location.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            allOf:
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/location.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"

@@ -1,20 +1,20 @@
 get:
   tags:
     - Locations
-  summary: Get Link
-  operationId: getLink
-  description: Get the link details
+  summary: Get Location Type
+  operationId: getLocationType
+  description: Get the location type details
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
-    - $ref: "../components/parameters/path/linkId.yml"
+    - $ref: "../components/parameters/path/locTypeId.yml"
   responses:
     "200":
-      description: Link info
+      description: Location type info
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "../components/schemas/locationLink.yml"
+              - $ref: "../components/schemas/locationType.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
     "401":
@@ -34,12 +34,12 @@ get:
 delete:
   tags:
     - Locations
-  summary: Delete a Location Link
-  operationId: deleteLocationLink
-  description: This endpoint allows the deletion of a Location Link
+  summary: Delete a Location Type
+  operationId: deleteLocationType
+  description: This endpoint allows the deletion of a Location Type
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
-    - $ref: "../components/parameters/path/linkId.yml"
+    - $ref: "../components/parameters/path/locTypeId.yml"
   responses:
     "204":
       $ref: "../components/responses/204-noContent.yml"

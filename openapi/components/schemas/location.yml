@@ -5,10 +5,16 @@ required:
   - type
 properties:
   name:
+    description: The name of the location.
     type: string
   type:
-    type: string
+    description: The URI of the type(s) of the location.
+    type: array
+    items:
+      type: string
   address:
-    $ref: './address.yml'
+    description: The location address.
+    $ref: "./address.yml"
   geoLocation:
-    $ref: './geoJson/geometry.yml'
+    description: The location geo data.
+    $ref: "./geoJson/geometry.yml"

@@ -137,6 +137,10 @@ paths:
     $ref: ./paths/locations.yml
   /organisations/{orgId}/locations/{locId}:
     $ref: ./paths/location.yml
+  /organisations/{orgId}/location-types:
+    $ref: ./paths/locationTypes.yml
+  /organisations/{orgId}/location-types/{locTypeId}:
+    $ref: ./paths/locationType.yml
   /organisations/{orgId}/location-links:
     $ref: ./paths/locationLinks.yml
   /organisations/{orgId}/location-links/{linkId}:
