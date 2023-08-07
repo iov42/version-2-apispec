@@ -1,0 +1,6 @@
+name: locTypeId
+in: path
+required: true
+description: The system provided id of a location type
+schema:
+  type: string

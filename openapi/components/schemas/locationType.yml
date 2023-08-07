@@ -1,0 +1,8 @@
+type: object
+description: Determines the type of a location.
+required:
+  - type
+properties:
+  type:
+    description: The type of a location.
+    type: string
