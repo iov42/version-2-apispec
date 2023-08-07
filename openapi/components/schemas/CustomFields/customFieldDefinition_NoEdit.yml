@@ -1,0 +1,11 @@
+type: object
+required:
+  - internalName
+  - type
+properties:
+  internalName:
+    description: A unique identifier for the field for system use. Cannot be the same as other fields' internal names. Must begin with prefix "cf_" (to avoid conflict with system-defined fields).
+    type: string
+  type:
+    description: The type of the field.
+    $ref: "../enums/fieldType.yml"
