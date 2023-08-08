@@ -1,0 +1,23 @@
+type: object
+description: This is a definition of a template.
+required:
+  - name
+properties:
+  name:
+    description: Name of the template.
+    type: string
+  # includedTemplates:
+  #   description: List of templates that are part of this template. The templates mentioned must not include any of the custom field definitions or document types mentioned in this template. Additionally, the included templates cannot include this template.
+  #   type: array
+  #   items:
+  #     $ref: "./templateInlcudedTemplates.yml"
+  customFields:
+    description: URIs of custom fields that are part of this template. The order of the items in the array determines the display order.
+    type: array
+    items:
+      $ref: "./templateCustomField.yml"
+  documentTypes:
+    description: List of document types that are part of this template. The order of the items in the array determines the display order.
+    type: array
+    items:
+      $ref: "./templateDocumentType.yml"

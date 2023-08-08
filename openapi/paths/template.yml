@@ -1,0 +1,73 @@
+put:
+  tags:
+    - Templates
+  summary: Update template
+  operationId: updateTemplate
+  description: Update template by id
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/tmplId.yml"
+  requestBody:
+    description: Update template information
+    content:
+      application/json:
+        schema:
+          $ref: "../components/schemas/Templates/template.yml"
+    required: true
+  responses:
+    "200":
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/Templates/template_NoEdit.yml"
+              - $ref: "../components/schemas/Templates/template.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"
+    "422":
+      $ref: "../components/responses/409-alreadyExists.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"
+get:
+  tags:
+    - Templates
+  summary: Get Template
+  operationId: getTemplate
+  description: Get the template details
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/tmplId.yml"
+  responses:
+    "200":
+      description: Template info
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/Templates/template_NoEdit.yml"
+              - $ref: "../components/schemas/Templates/template.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"

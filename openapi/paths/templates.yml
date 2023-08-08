@@ -1,0 +1,79 @@
+get:
+  tags:
+    - Templates
+  summary: List Templates
+  operationId: listTemplates
+  description: List all the templates
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
+  responses:
+    "200":
+      description: Array of Templates
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/pagination.yml"
+              - type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/Templates/template_NoEdit.yml"
+                        - $ref: "../components/schemas/Templates/template.yml"
+                        - $ref: "../components/schemas/common/recordedBy.yml"
+                        - $ref: "../components/schemas/common/recordedTime.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"
+post:
+  tags:
+    - Templates
+  summary: Add Template
+  operationId: addTemplate
+  description: Add a new template
+  parameters:
+    - $ref: "../components/parameters/path/orgId.yml"
+  requestBody:
+    description: Template information
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: "../components/schemas/Templates/template_NoEdit.yml"
+            - $ref: "../components/schemas/Templates/template.yml"
+  responses:
+    "201":
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/Templates/template_NoEdit.yml"
+              - $ref: "../components/schemas/Templates/template.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"

@@ -1,0 +1,12 @@
+type: object
+description: This is a definition of a custom field in a template
+required:
+  - customFieldDefinition
+  - required
+properties:
+  customFieldDefinition:
+    description: URI of the custom field definition.
+    type: string
+  required:
+    description: Determines whether the field is required or optional for this template.
+    type: boolean

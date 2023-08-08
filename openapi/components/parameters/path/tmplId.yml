@@ -1,0 +1,6 @@
+name: tmplId
+in: path
+required: true
+description: The id of a template
+schema:
+  type: string

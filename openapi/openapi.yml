@@ -69,6 +69,8 @@ tags:
     x-tag-expanded: false
   - name: Tags
     description: Apis for the creation and retrieval of tags.
+  - name: Templates
+    description: Apis for the creation and retrieval of templates.
   - name: Shared
     description: Apis with information shared across all organisations.
     x-tag-expanded: false
@@ -207,6 +209,10 @@ paths:
     $ref: ./paths/supplyChain.yml
   /common/countries:
     $ref: ./paths/Common/countries.yml
+  /organisations/{orgId}/templates:
+    $ref: ./paths/templates.yml
+  /organisations/{orgId}/templates/{tmplId}:
+    $ref: ./paths/template.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml

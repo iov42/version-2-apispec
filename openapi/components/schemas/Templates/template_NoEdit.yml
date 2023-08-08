@@ -1,0 +1,8 @@
+type: object
+description: This is a definition of a template
+required:
+  - resourceType
+properties:
+  resourceType:
+    description: The type of resource the template applies to.
+    $ref: "../enums/resourceType.yml"
