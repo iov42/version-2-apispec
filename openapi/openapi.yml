@@ -207,6 +207,8 @@ paths:
     $ref: ./paths/supplyChain.yml
   /common/countries:
     $ref: ./paths/Common/countries.yml
+  /common/resource-types:
+    $ref: ./paths/Common/resourceTypes.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml
