@@ -6,6 +6,7 @@ get:
   description: List all the Custom Field Definitions
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/resourceType.yml"
   responses:
     "200":
       description: Array of Custom Field Definitions

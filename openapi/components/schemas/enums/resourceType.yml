@@ -8,3 +8,4 @@ enum:
   - ORGANISATION
   - PRODUCT
   - MATERIAL
+  - SUPPLY_CHAIN
