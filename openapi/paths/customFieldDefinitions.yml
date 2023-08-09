@@ -7,6 +7,8 @@ get:
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
     - $ref: "../components/parameters/query/resourceType.yml"
+    - $ref: "../components/parameters/query/customFieldInternalName.yml"
+    - $ref: "../components/parameters/query/customFieldLabel.yml"
   responses:
     "200":
       description: Array of Custom Field Definitions
@@ -40,7 +42,9 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/CustomFields/customFieldDefinition.yml"
+          allOf:
+            - $ref: "../components/schemas/CustomFields/customFieldDefinition_NoEdit.yml"
+            - $ref: "../components/schemas/CustomFields/customFieldDefinition.yml"
   responses:
     "201":
       description: Successful operation
