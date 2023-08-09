@@ -6,6 +6,9 @@ properties:
   label:
     description: The display label of the field.
     type: string
+  description:
+    description: A brief description of what information the field captures.
+    type: string
   resourceTypes:
     description: Defines which resources the field is applicable to.
     type: array
