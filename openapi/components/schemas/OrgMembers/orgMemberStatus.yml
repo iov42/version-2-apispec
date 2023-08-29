@@ -1,0 +1,6 @@
+type: object
+description: This is a definition of an org member status
+properties:
+  status:
+    description: The current status of the member
+    $ref: "../enums/orgMemberStatus.yml"

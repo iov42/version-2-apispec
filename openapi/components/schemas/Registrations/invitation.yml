@@ -1,0 +1,21 @@
+type: object
+description: This is the definition of an invitation.
+properties:
+  type:
+    description: This is the type of invitation. If it is for a User then it is inviting a user to join the organisation. If it is for an organisation then you are inviting an organisation to join the plaform.
+    $ref: "../enums/invitationType.yml"
+  userType:
+    description: Determines the type of the user that is being invited.
+    $ref: "../enums/invitedUserType.yml"
+  invitingOrg:
+    description: The organisation that is inviting.
+    type: string
+  invitingOrgName:
+    description: The name of the organisation that is inviting.
+    type: string
+  recipient:
+    description: The email of the user receiving the invitation.
+    type: string
+  status:
+    description: The status of the invitation.
+    $ref: "../enums/invitationStatus.yml"

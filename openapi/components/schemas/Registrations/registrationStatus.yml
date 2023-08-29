@@ -1,0 +1,10 @@
+type: object
+description: This is the definition for a registration status.
+properties:
+  when:
+    description: When the registration was created.
+    type: string
+    format: date-time
+  status:
+    description: Status of registration.
+    $ref: "../enums/registrationStatus.yml"

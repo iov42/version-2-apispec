@@ -1,0 +1,6 @@
+name: recipient
+in: query
+required: false
+description: The email address of the invitation recipient.
+schema:
+  type: string

@@ -5,17 +5,36 @@ get:
   operationId: getInvitation
   description: Get Invitation
   parameters:
-    - $ref: '../../components/parameters/path/invitationId.yml'
+    - $ref: "../../components/parameters/path/invitationId.yml"
   responses:
-    '200':
+    "200":
       description: Invitation Details
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../../components/schemas/id.yml'
-              - $ref: '../../components/schemas/invitation.yml'
-    '404':
-      $ref: '../../components/responses/404-notFound.yml'
+              - $ref: "../../components/schemas/Registrations/invitation.yml"
+          examples:
+            AuthorizedUser:
+              $ref: "../../components/examples/invitationUserFull.yml"
+            UnauthorizedUser:
+              $ref: "../../components/examples/invitationUserPartial.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
     default:
-      $ref: '../../components/responses/500-internalError.yml'
+      $ref: "../../components/responses/500-internalError.yml"
+delete:
+  tags:
+    - Registrations
+  summary: Delete Invitation
+  operationId: deleteInvitation
+  description: Delete Invitation. Can only be preformed by an authorized user that is an Admin of an organisation mentioned in the invitation.
+  parameters:
+    - $ref: "../../components/parameters/path/invitationId.yml"
+  responses:
+    "200":
+      $ref: "../../components/responses/200-nullResponse.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

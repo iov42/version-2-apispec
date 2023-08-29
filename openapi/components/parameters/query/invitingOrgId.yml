@@ -1,0 +1,9 @@
+name: invitingOrgId
+in: query
+required: false
+description: Filter based on the inviting organisation.
+schema:
+  type: array
+  items:
+    type: string
+style: pipeDelimited

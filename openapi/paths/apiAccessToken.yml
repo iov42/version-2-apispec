@@ -5,26 +5,25 @@ get:
   operationId: getUserAPIAccessToken
   description: This endpoint retrieves details of a specific API access token.
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/userId.yml'
-    - $ref: '../components/parameters/path/apiTokenId.yml'
+    - $ref: "../components/parameters/path/userId.yml"
+    - $ref: "../components/parameters/path/apiTokenId.yml"
   responses:
-    '200':
+    "200":
       description: User API Access Token
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessToken.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            $ref: "../components/schemas/apiAccessToken.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 put:
   tags:
     - Users
@@ -32,37 +31,36 @@ put:
   operationId: updateUserAPIAccessToken
   description: This endpoint allows for the update of certain information for an API access token.
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/userId.yml'
-    - $ref: '../components/parameters/path/apiTokenId.yml'
+    - $ref: "../components/parameters/path/userId.yml"
+    - $ref: "../components/parameters/path/apiTokenId.yml"
   requestBody:
     description: Updated API Access Token Information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/apiAccessTokenRequest.yml'
+          $ref: "../components/schemas/apiAccessTokenUpdateRequest.yml"
     required: true
   responses:
-    '201':
+    "201":
       description: User API Access Token
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessToken.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '422':
-      $ref: '../components/responses/422-unprocessable.yml'  
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            $ref: "../components/schemas/apiAccessToken.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 delete:
   tags:
     - Users
@@ -70,19 +68,18 @@ delete:
   operationId: deleteUserAPIAccessToken
   description: This endpoint allows the deletion of a specific API Access Token
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/userId.yml'
-    - $ref: '../components/parameters/path/apiTokenId.yml'
+    - $ref: "../components/parameters/path/userId.yml"
+    - $ref: "../components/parameters/path/apiTokenId.yml"
   responses:
-    '204':
-      $ref: '../components/responses/204-noContent.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+    "204":
+      $ref: "../components/responses/204-noContent.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"

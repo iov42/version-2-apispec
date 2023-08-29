@@ -1,0 +1,15 @@
+type: object
+description: This is a definition of an org member shown if the member has status "ACTIVE" or "DEACTIVATED"
+properties:
+  uri:
+    description: The URI of the user
+    type: string
+  firstName:
+    type: string
+  lastName:
+    type: string
+  emailAddress:
+    type: string
+  status:
+    description: The current status of the member
+    $ref: "../enums/orgMemberStatus.yml"

@@ -1,0 +1,6 @@
+name: inviteId
+in: query
+required: false
+description: Token for registering a user on the V2 platform when invited by another org.
+schema:
+  type: string

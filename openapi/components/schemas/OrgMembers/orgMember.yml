@@ -1,0 +1,9 @@
+type: object
+description: This is a definition of an org member shown if the member has status "ARCHIVED"
+properties:
+  uri:
+    description: The URI of the user
+    type: string
+  status:
+    description: The current status of the member
+    $ref: "../enums/orgMemberStatus.yml"

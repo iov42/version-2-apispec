@@ -1,0 +1,6 @@
+name: changeEmailToken
+in: path
+required: true
+description: Change email approval token
+schema:
+  type: string
