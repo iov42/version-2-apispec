@@ -1,17 +1,15 @@
 post:
   tags:
     - Registrations
-  summary: Accept Invitation
-  operationId: acceptInvitation
-  description: Accept Invitation
+  summary: Resend Invitation
+  operationId: resendInvitation
+  description: Resend Invitation
   security: []
   parameters:
     - $ref: "../../components/parameters/path/invitationId.yml"
   responses:
     "200":
       $ref: "../../components/responses/200-nullResponse.yml"
-    "400":
-      $ref: "../../components/responses/400-badRequest.yml"
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"
     "403":
