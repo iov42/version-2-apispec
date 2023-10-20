@@ -7,8 +7,8 @@ properties:
   name:
     description: The name of the location.
     type: string
-  type:
-    description: The URI of the type(s) of the location.
+  types:
+    description: The URI(s) of the type(s) of the location.
     type: array
     items:
       type: string
