@@ -8,6 +8,7 @@ get:
     - $ref: "../components/parameters/path/orgId.yml"
     - $ref: "../components/parameters/query/page.yml"
     - $ref: "../components/parameters/query/size.yml"
+    - $ref: "../components/parameters/query/items/currentLocation.yml"
   responses:
     "200":
       description: Array of Items

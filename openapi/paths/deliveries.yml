@@ -5,31 +5,35 @@ get:
   operationId: listDeliveries
   description: List all the Deliveries
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
   responses:
-    '200':
+    "200":
       description: Array of Deliveries
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/pagination.yml'
+              - $ref: "../components/schemas/pagination.yml"
               - type: object
                 properties:
-                  results: 
+                  results:
                     type: array
-                    items: 
-                      $ref: '../components/schemas/delivery.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+                    items:
+                      allOf:
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/delivery.yml"
+                        - $ref: "../components/schemas/common/recordedBy.yml"
+                        - $ref: "../components/schemas/common/recordedTime.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
     - Deliveries
@@ -37,27 +41,31 @@ post:
   operationId: addDelivery
   description: Add a new Delivery
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
     description: Delivery information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/delivery.yml'
+          $ref: "../components/schemas/delivery.yml"
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/delivery.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            $ref: "../components/schemas/delivery.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
