@@ -1,0 +1,12 @@
+type: object
+description: This is a definition of an included template in a template.
+required:
+  - template
+  - order
+properties:
+  template:
+    description: Template URI.
+    type: string
+  order:
+    description: Determines the order of included template. E.g. if there are 2 included templates, the possible order numbers would be 0, 1 and 2 (sum of included templates). One of the numbers has to be skipped - this will be the position of this template.
+    type: number

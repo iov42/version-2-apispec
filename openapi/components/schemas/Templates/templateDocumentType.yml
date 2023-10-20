@@ -1,0 +1,12 @@
+type: object
+description: This is a definition of a document type in a template.
+required:
+  - documentType
+  - required
+properties:
+  documentType:
+    description: URI of the document type.
+    type: string
+  required:
+    description: Determines whether the document type is required or optional for this template.
+    type: boolean
