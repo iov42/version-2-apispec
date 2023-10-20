@@ -1,6 +1,7 @@
 type: string
 enum:
-  - String
-  - Number
-  - Date
-  - Datetime
+  - TEXT
+  - NUMBER
+  - DATE
+  - LIST
+  - BOOLEAN

@@ -1,0 +1,31 @@
+type: object
+required:
+  - label
+  - resourceTypes
+properties:
+  label:
+    description: The display label of the field.
+    type: string
+  description:
+    description: A brief description of what information the field captures.
+    type: string
+  resourceTypes:
+    description: Defines which resources the field is applicable to.
+    type: array
+    items:
+      $ref: "../enums/resourceType.yml"
+  values:
+    oneOf:
+      - properties:
+          options:
+            description: An array of values that the user can choose from for the field value. The dropdown order will be the order in which the items are positioned in the array.
+            type: array
+            items:
+              type: string
+      - properties:
+          min:
+            description: A minimal value for the entered number.
+            type: number
+          max:
+            description: A maximum value for the entered number.
+            type: number

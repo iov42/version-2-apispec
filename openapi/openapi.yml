@@ -107,18 +107,14 @@ paths:
     $ref: ./paths/connections.yml
   /organisations/{orgId}/connections/{conId}:
     $ref: ./paths/connection.yml
-  /organisations/{orgId}/custom-fields:
-    $ref: ./paths/customFields.yml
-  /organisations/{orgId}/custom-fields/{cfId}:
-    $ref: ./paths/customField.yml
+  # /organisations/{orgId}/custom-fields:
+  #   $ref: ./paths/customFields.yml
+  # /organisations/{orgId}/custom-fields/{cfId}:
+  #   $ref: ./paths/customField.yml
   /organisations/{orgId}/custom-field-definitions:
     $ref: ./paths/customFieldDefinitions.yml
   /organisations/{orgId}/custom-field-definitions/{cfdId}:
     $ref: ./paths/customFieldDefinition.yml
-  /organisations/{orgId}/custom-field-templates:
-    $ref: ./paths/customFieldTemplates.yml
-  /organisations/{orgId}/custom-field-templates/{cftId}:
-    $ref: ./paths/customFieldTemplate.yml
   /organisations/{orgId}/deliveries:
     $ref: ./paths/deliveries.yml
   /organisations/{orgId}/deliveries/{deliveryId}:
@@ -215,6 +211,8 @@ paths:
     $ref: ./paths/supplyChain.yml
   /common/countries:
     $ref: ./paths/Common/countries.yml
+  /common/resource-types:
+    $ref: ./paths/Common/resourceTypes.yml
 components:
   schemas:
     $ref: ./components/schemas/_index.yml

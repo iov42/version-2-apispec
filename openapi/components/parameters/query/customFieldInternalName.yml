@@ -1,0 +1,10 @@
+name: internalName
+in: query
+required: false
+description: Filter custom field definitions based on the internalName parameter value.
+schema:
+  type: array
+  items:
+    type: string
+  minItems: 1
+style: pipeDelimited
