@@ -17,6 +17,7 @@ get:
               - $ref: "../components/schemas/locationType.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
@@ -31,25 +32,70 @@ get:
       $ref: "../components/responses/429-tooManyRequests.yml"
     default:
       $ref: "../components/responses/500-internalError.yml"
-delete:
+put:
   tags:
     - Locations
-  summary: Delete a Location Type
-  operationId: deleteLocationType
-  description: This endpoint allows the deletion of a Location Type
+  summary: Update Location Type
+  operationId: updateLocationType
+  description: Update location type
   parameters:
     - $ref: "../components/parameters/path/orgId.yml"
     - $ref: "../components/parameters/path/locTypeId.yml"
+  requestBody:
+    description: Update location type
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: "../components/schemas/locationType.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
+    required: true
   responses:
-    "204":
-      $ref: "../components/responses/204-noContent.yml"
+    "200":
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../components/schemas/locationType.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
       $ref: "../components/responses/403-forbidden.yml"
     "404":
       $ref: "../components/responses/404-notFound.yml"
+    "409":
+      $ref: "../components/responses/409-alreadyExists.yml"
+    "422":
+      $ref: "../components/responses/422-unprocessable.yml"
     "429":
       $ref: "../components/responses/429-tooManyRequests.yml"
     default:
       $ref: "../components/responses/500-internalError.yml"
+# delete:
+#   tags:
+#     - Locations
+#   summary: Delete a Location Type
+#   operationId: deleteLocationType
+#   description: This endpoint allows the deletion of a Location Type
+#   parameters:
+#     - $ref: "../components/parameters/path/orgId.yml"
+#     - $ref: "../components/parameters/path/locTypeId.yml"
+#   responses:
+#     "204":
+#       $ref: "../components/responses/204-noContent.yml"
+#     "401":
+#       $ref: "../components/responses/401-unauthorised.yml"
+#     "403":
+#       $ref: "../components/responses/403-forbidden.yml"
+#     "404":
+#       $ref: "../components/responses/404-notFound.yml"
+#     "429":
+#       $ref: "../components/responses/429-tooManyRequests.yml"
+#     default:
+#       $ref: "../components/responses/500-internalError.yml"

@@ -5,34 +5,40 @@ put:
   operationId: updateCertificate
   description: Update certificate by id
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/certId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/certId.yml"
   requestBody:
     description: Update certificate information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/certificate.yml'
+          allOf:
+            - $ref: "../components/schemas/certificate.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
     required: true
   responses:
-    '200':
+    "200":
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/certificate.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            allOf:
+              - $ref: "../components/schemas/certificate.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
     - Certificates
@@ -40,22 +46,26 @@ get:
   operationId: getCertificate
   description: Get the certificate details
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/certId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/path/certId.yml"
   responses:
-    '200':
+    "200":
       description: Certificate info
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/certificate.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            allOf:
+              - $ref: "../components/schemas/certificate.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"

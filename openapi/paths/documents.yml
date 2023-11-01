@@ -12,6 +12,7 @@ get:
     - $ref: "../components/parameters/query/name.yml"
     - $ref: "../components/parameters/query/type.yml"
     - $ref: "../components/parameters/query/contentHash.yml"
+    - $ref: "../components/parameters/query/recordState.yml"
   responses:
     "200":
       description: Array of Documents
@@ -30,6 +31,7 @@ get:
                         - $ref: "../components/schemas/document.yml"
                         - $ref: "../components/schemas/common/recordedBy.yml"
                         - $ref: "../components/schemas/common/recordedTime.yml"
+                        - $ref: "../components/schemas/common/recordState.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
@@ -51,7 +53,9 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/documentMetadata.yml"
+          allOf:
+            - $ref: "../components/schemas/documentMetadata.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
   responses:
     "201":
       description: Successful operation
@@ -68,6 +72,7 @@ post:
               - $ref: "../components/schemas/document.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "400":
       $ref: "../components/responses/400-badRequest.yml"
     "401":

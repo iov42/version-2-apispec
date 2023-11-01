@@ -8,6 +8,7 @@ get:
     - $ref: "../components/parameters/path/orgId.yml"
     - $ref: "../components/parameters/query/page.yml"
     - $ref: "../components/parameters/query/size.yml"
+    - $ref: "../components/parameters/query/recordState.yml"
   responses:
     "200":
       description: Array of Document Types
@@ -26,6 +27,7 @@ get:
                         - $ref: "../components/schemas/documentType.yml"
                         - $ref: "../components/schemas/common/recordedBy.yml"
                         - $ref: "../components/schemas/common/recordedTime.yml"
+                        - $ref: "../components/schemas/common/recordState.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
@@ -59,6 +61,7 @@ post:
               - $ref: "../components/schemas/documentType.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "400":
       $ref: "../components/responses/400-badRequest.yml"
     "401":
