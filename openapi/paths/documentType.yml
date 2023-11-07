@@ -12,7 +12,9 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/documentType.yml"
+          allOf:
+            - $ref: "../components/schemas/documentType.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
     required: true
   responses:
     "200":
@@ -25,6 +27,7 @@ put:
               - $ref: "../components/schemas/documentType.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "400":
       $ref: "../components/responses/400-badRequest.yml"
     "401":
@@ -58,6 +61,7 @@ get:
               - $ref: "../components/schemas/documentType.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":

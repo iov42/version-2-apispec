@@ -5,35 +5,39 @@ get:
   operationId: listMaterials
   description: List all the Materials
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/query/page.yml'
-    - $ref: '../components/parameters/query/size.yml'
-    - $ref: '../components/parameters/query/name.yml'
-    - $ref: '../components/parameters/query/category.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
+    - $ref: "../components/parameters/query/page.yml"
+    - $ref: "../components/parameters/query/size.yml"
+    - $ref: "../components/parameters/query/name.yml"
+    - $ref: "../components/parameters/query/category.yml"
+    - $ref: "../components/parameters/query/recordState.yml"
   responses:
-    '200':
+    "200":
       description: Array of Materials
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/pagination.yml'
+              - $ref: "../components/schemas/pagination.yml"
               - type: object
                 properties:
-                  results: 
+                  results:
                     type: array
-                    items: 
+                    items:
                       allOf:
-                        - $ref: '../components/schemas/id.yml'
-                        - $ref: '../components/schemas/material.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+                        - $ref: "../components/schemas/id.yml"
+                        - $ref: "../components/schemas/material.yml"
+                        - $ref: "../components/schemas/common/recordedBy.yml"
+                        - $ref: "../components/schemas/common/recordedTime.yml"
+                        - $ref: "../components/schemas/common/recordState.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
     - Products
@@ -41,29 +45,34 @@ post:
   operationId: addMaterial
   description: Add a new Material
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
+    - $ref: "../components/parameters/path/orgId.yml"
   requestBody:
     description: Material information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/material.yml'
+          allOf:
+            - $ref: "../components/schemas/material.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../components/schemas/id.yml'
-              - $ref: '../components/schemas/material.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+              - $ref: "../components/schemas/id.yml"
+              - $ref: "../components/schemas/material.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"

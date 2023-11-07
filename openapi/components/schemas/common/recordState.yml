@@ -1,0 +1,5 @@
+type: object
+properties:
+  recordState:
+    description: The current state of the record on the platform.
+    $ref: "../enums/recordState.yml"

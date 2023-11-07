@@ -1,7 +1,7 @@
-name: materialCategory
+name: recordState
 in: query
 required: false
-description: Filter based on the Material Categories a resource uses.
+description: Filter based on the current state of the record.
 schema:
   type: array
   items:

@@ -26,6 +26,7 @@ get:
                         - $ref: "../components/schemas/locationType.yml"
                         - $ref: "../components/schemas/common/recordedBy.yml"
                         - $ref: "../components/schemas/common/recordedTime.yml"
+                        - $ref: "../components/schemas/common/recordState.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
@@ -47,7 +48,9 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/locationType.yml"
+          allOf:
+            - $ref: "../components/schemas/locationType.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
   responses:
     "201":
       description: Successful operation
@@ -59,6 +62,7 @@ post:
               - $ref: "../components/schemas/locationType.yml"
               - $ref: "../components/schemas/common/recordedBy.yml"
               - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "400":
       $ref: "../components/responses/400-badRequest.yml"
     "401":

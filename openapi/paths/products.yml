@@ -13,6 +13,7 @@ get:
     - $ref: "../components/parameters/query/material-category.yml"
     - $ref: "../components/parameters/query/base-unit.yml"
     - $ref: "../components/parameters/query/unit-type.yml"
+    - $ref: "../components/parameters/query/recordState.yml"
   responses:
     "200":
       description: Array of Products
@@ -29,6 +30,9 @@ get:
                       allOf:
                         - $ref: "../components/schemas/id.yml"
                         - $ref: "../components/schemas/product.yml"
+                        - $ref: "../components/schemas/common/recordedBy.yml"
+                        - $ref: "../components/schemas/common/recordedTime.yml"
+                        - $ref: "../components/schemas/common/recordState.yml"
     "401":
       $ref: "../components/responses/401-unauthorised.yml"
     "403":
@@ -50,7 +54,9 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../components/schemas/product.yml"
+          allOf:
+            - $ref: "../components/schemas/product.yml"
+            - $ref: "../components/schemas/common/recordState.yml"
   responses:
     "201":
       description: Successful operation
@@ -60,6 +66,9 @@ post:
             allOf:
               - $ref: "../components/schemas/id.yml"
               - $ref: "../components/schemas/product.yml"
+              - $ref: "../components/schemas/common/recordedBy.yml"
+              - $ref: "../components/schemas/common/recordedTime.yml"
+              - $ref: "../components/schemas/common/recordState.yml"
     "400":
       $ref: "../components/responses/400-badRequest.yml"
     "401":

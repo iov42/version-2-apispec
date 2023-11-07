@@ -6,7 +6,7 @@ get:
   description: Endpoint to retrieve all the types of a standard defined in the system.
   parameters:
     - $ref: "../../components/parameters/path/standardId.yml"
-    - $ref: "../../components/parameters/query/state.yml"
+    - $ref: "../../components/parameters/query/recordState.yml"
   responses:
     "200":
       description: Array of Standard Types
@@ -18,7 +18,6 @@ get:
               allOf:
                 - $ref: "../../components/schemas/id.yml"
                 - $ref: "../../components/schemas/standardType.yml"
-                - $ref: "../../components/schemas/state.yml"
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"
     "429":
@@ -40,6 +39,7 @@ post:
         schema:
           allOf:
             - $ref: "../../components/schemas/standardType.yml"
+            - $ref: "../../components/schemas/common/recordState.yml"
   responses:
     "201":
       description: Successful operation
@@ -49,7 +49,9 @@ post:
             allOf:
               - $ref: "../../components/schemas/id.yml"
               - $ref: "../../components/schemas/standardType.yml"
-              - $ref: "../../components/schemas/state.yml"
+              - $ref: "../../components/schemas/common/recordedBy.yml"
+              - $ref: "../../components/schemas/common/recordedTime.yml"
+              - $ref: "../../components/schemas/common/recordState.yml"
     "400":
       $ref: "../../components/responses/400-badRequest.yml"
     "401":
