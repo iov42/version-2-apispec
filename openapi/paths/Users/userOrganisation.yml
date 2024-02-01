@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Users
+  summary: Get User Organisation Membership Info
+  operationId: getUserOrgMembership
+  description: Get the User organisation membership details
+  parameters:
+    - $ref: "../../components/parameters/path/orgId.yml"
+    - $ref: "../../components/parameters/path/userId.yml"
+  responses:
+    "200":
+      description: User organisation membership info
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/Users/userOrganisation.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

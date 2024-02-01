@@ -1,0 +1,6 @@
+name: t
+in: query
+required: true
+description: Token for confirming organisation registration.
+schema:
+  type: string

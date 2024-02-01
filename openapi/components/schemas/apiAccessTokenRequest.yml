@@ -3,6 +3,9 @@ description: This is a definition of a API access token
 required:
   - name
 properties:
+  organisation:
+    description: The URI of the organisation for which this token grants access.
+    type: string
   name:
     description: The name provided for the API access token.
     type: string

@@ -1,0 +1,11 @@
+type: object
+description: This is a definition of a user
+required:
+  - firstName
+  - lastName
+  - emailAddress
+properties:
+  firstName:
+    type: string
+  lastName:
+    type: string

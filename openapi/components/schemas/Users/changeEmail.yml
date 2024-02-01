@@ -1,0 +1,7 @@
+type: object
+description: This is a definition of changing a user's email
+required:
+  - newEmailAddress
+properties:
+  newEmailAddress:
+    type: string

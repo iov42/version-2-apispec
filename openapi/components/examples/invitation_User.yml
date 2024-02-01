@@ -1,5 +1,4 @@
-value: 
-    type: "User"
-    recipient: "joe.bloggs@anotherorg.com"
-    invitingOrganisationName: "Some Org"
-    invitingOrganisation: "/organisations/1234"
+value:
+  type: "USER"
+  recipient: "joe.bloggs@anotherorg.com"
+  invitingOrg: "/organisations/1234"

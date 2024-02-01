@@ -1,0 +1,41 @@
+type: object
+description: This is the definition for an Organisation Registration.
+required:
+  - regType
+  - firstName
+  - lastName
+  - email
+  - password
+  - organisation
+  - country
+  - orgRoles
+properties:
+  regType:
+    description: Type of Registration
+    type: string
+    enum:
+      - ORG
+  firstName:
+    description: User first name.
+    type: string
+  lastName:
+    description: User last name.
+    type: string
+  email:
+    description: User email. You will be sent a verification link to this email address
+    type: string
+  password:
+    description: User password.
+    type: string
+    format: password
+  organisation:
+    description: The name of the organisation you are registering.
+    type: string
+  country:
+    description: Alpha-2 code of the ISO 3166 Country Codes specification.
+    $ref: "../enums/countries.yml"
+  orgRoles:
+    description: Determines the roles of the organisation you are registering.
+    type: array
+    items:
+      $ref: "../enums/orgRole.yml"

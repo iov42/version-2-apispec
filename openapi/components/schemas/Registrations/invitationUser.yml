@@ -1,0 +1,5 @@
+type: object
+description: This is the definition of an invitation of a user.
+properties:
+  email:
+    description: The user's email.

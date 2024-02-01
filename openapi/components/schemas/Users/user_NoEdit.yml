@@ -1,0 +1,14 @@
+type: object
+description: This is a definition of a user (parameters that cannot be edited)
+properties:
+  emailAddress:
+    type: string
+  status:
+    description: The current status of the user.
+    $ref: "../enums/userStatus.yml"
+  registeredTime:
+    type: string
+    format: date-time
+  lastActive:
+    type: string
+    format: date-time

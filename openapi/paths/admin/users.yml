@@ -5,7 +5,9 @@ get:
   operationId: listUsers
   description: List all the Users
   parameters:
+    - $ref: "../../components/parameters/query/userSearch.yml"
     - $ref: "../../components/parameters/query/orgId.yml"
+    - $ref: "../../components/parameters/query/userStatus.yml"
   responses:
     "200":
       description: Array of Users

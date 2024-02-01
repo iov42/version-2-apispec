@@ -4,6 +4,9 @@ properties:
   id:
     description: System provided identity field.
     type: string
+  organisation:
+    description: The URI of the organisation for which this token grants access.
+    type: string
   name:
     description: The name provided for the API access token.
     type: string
