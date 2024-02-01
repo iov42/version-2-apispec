@@ -10,12 +10,23 @@ properties:
   invitingOrg:
     description: The organisation that is inviting.
     type: string
-  invitingOrgName:
+  orgName:
     description: The name of the organisation that is inviting.
     type: string
-  recipient:
+  email:
     description: The email of the user receiving the invitation.
     type: string
   status:
     description: The status of the invitation.
     $ref: "../enums/invitationStatus.yml"
+  role:
+    description: The role of the user.
+    $ref: "../enums/orgMemberRole.yml"
+  recordedBy:
+    description: The URI of the user that created the invitation.
+    type: string
+  recordedTime:
+    description: The time the invitation was created.
+    type: string
+    format: date-time
+
