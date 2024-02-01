@@ -1,4 +1,4 @@
 type: string
 enum:
-  - ORG
+  - ORGANISATION
   - USER

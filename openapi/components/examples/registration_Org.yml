@@ -1,5 +1,5 @@
 value:
-  regType: "ORG"
+  regType: "ORGANISATION"
   firstName: "First"
   lastName: "Name"
   email: "first.name@someorg.com"
