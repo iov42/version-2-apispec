@@ -1,6 +1,0 @@
-name: inviteId
-in: query
-required: false
-description: Token provided for invitation response.
-schema:
-  type: string

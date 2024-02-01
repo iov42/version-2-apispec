@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Users
+  summary: Change User Email
+  operationId: changeUserEmail
+  description: Change User Email
+  parameters:
+    - $ref: "../../components/parameters/path/userId.yml"
+  requestBody:
+    description: Change user email
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/schemas/Users/changeEmail.yml"
+    required: true
+  responses:
+    "200":
+      description: Successful operation
+    "400":
+      $ref: "../../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

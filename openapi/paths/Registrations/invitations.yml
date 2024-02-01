@@ -12,27 +12,74 @@ post:
         schema:
           $ref: '../../components/schemas/invitationRequest.yml'
         examples:
+          OrgInvitation:
+              $ref: '../../components/examples/invitation_Org.yml'
           UserInvitation:
             $ref: '../../components/examples/invitation_User.yml'
           OrgInvitation:
               $ref: '../../components/examples/invitation_Org.yml'
     required: true
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../../components/schemas/id.yml'
-              - $ref: '../../components/schemas/invitation.yml'
-    '400':
-      $ref: '../../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../../components/responses/403-forbidden.yml'
-    '429':
-      $ref: '../../components/responses/429-tooManyRequests.yml'
+              - $ref: "../../components/schemas/id.yml"
+              - $ref: "../../components/schemas/Registrations/invitation.yml"
+          examples:
+            UserInvitation:
+              $ref: "../../components/examples/invitationUserFull.yml"
+    "400":
+      $ref: "../../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "409":
+      $ref: "../../components/responses/409-alreadyExists.yml"
+    "422":
+      $ref: "../../components/responses/422-unprocessable.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../../components/responses/500-internalError.yml'
+      $ref: "../../components/responses/500-internalError.yml"
+get:
+  tags:
+    - Registrations
+  summary: List Invitations
+  operationId: listInvitations
+  description: List all the Invitations
+  parameters:
+    - $ref: "../../components/parameters/query/page.yml"
+    - $ref: "../../components/parameters/query/size.yml"
+    - $ref: "../../components/parameters/query/invitationRecipient.yml"
+    - $ref: "../../components/parameters/query/invitingOrgId.yml"
+  responses:
+    "200":
+      description: Array of Invitations
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/pagination.yml"
+              - type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: "../../components/schemas/Registrations/invitation.yml"
+          examples:
+            UserInvitation:
+              $ref: "../../components/examples/invitationUserFull.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

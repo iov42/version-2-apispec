@@ -5,32 +5,31 @@ post:
   operationId: regenerateUserAPIAccessToken
   description: This endpoint a request to regenerate a given API Access Token. The details of the token are maintained, the token itself is changed.
   parameters:
-    - $ref: '../components/parameters/path/orgId.yml'
-    - $ref: '../components/parameters/path/userId.yml'
-    - $ref: '../components/parameters/path/apiTokenId.yml'
+    - $ref: "../components/parameters/path/userId.yml"
+    - $ref: "../components/parameters/path/apiTokenId.yml"
   requestBody:
     description: API Access Token Information
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/apiAccessTokenRequest.yml'
+          $ref: "../components/schemas/apiAccessTokenRequest.yml"
     required: true
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/apiAccessTokenRequestResult.yml'
-    '400':
-      $ref: '../components/responses/400-badRequest.yml'
-    '401':
-      $ref: '../components/responses/401-unauthorised.yml'
-    '403':
-      $ref: '../components/responses/403-forbidden.yml'
-    '404':
-      $ref: '../components/responses/404-notFound.yml'
-    '429':
-      $ref: '../components/responses/429-tooManyRequests.yml'
+            $ref: "../components/schemas/apiAccessTokenRequestResult.yml"
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "401":
+      $ref: "../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
     default:
-      $ref: '../components/responses/500-internalError.yml'
+      $ref: "../components/responses/500-internalError.yml"

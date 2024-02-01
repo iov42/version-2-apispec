@@ -1,0 +1,32 @@
+get:
+  tags:
+    - Org Members
+  summary: List Org Members
+  operationId: listOrgMember
+  description: Get the list of all org members
+  parameters:
+    - $ref: "../../components/parameters/path/orgId.yml"
+    - $ref: "../../components/parameters/query/orgMemberSearch.yml"
+    - $ref: "../../components/parameters/query/orgMemberStatus.yml"
+  responses:
+    "200":
+      description: Org members list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: "../../components/schemas/id.yml"
+                - $ref: "../../components/schemas/OrgMembers/orgMember.yml"
+                - $ref: "../../components/schemas/OrgMembers/orgMember_ExtraInfo.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

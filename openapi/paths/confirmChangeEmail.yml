@@ -1,0 +1,17 @@
+post:
+  tags:
+    - Authentication
+  summary: Confirm change email
+  operationId: confirmChangeEmail
+  description: Confirm changing of your email.
+  parameters:
+    - $ref: "../components/parameters/path/changeEmailToken.yml"
+  responses:
+    "200":
+      description: Successful operation
+    "400":
+      $ref: "../components/responses/400-badRequest.yml"
+    "429":
+      $ref: "../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../components/responses/500-internalError.yml"

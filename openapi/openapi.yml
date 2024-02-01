@@ -171,17 +171,29 @@ paths:
     $ref: ./paths/userDefinedUnits.yml
   /organisations/{orgId}/units/{unitId}:
     $ref: ./paths/userDefinedUnit.yml
-  /organisations/{orgId}/users:
-    $ref: ./paths/users.yml
-  /organisations/{orgId}/users/{userId}:
-    $ref: ./paths/user.yml
-  /organisations/{orgId}/members/{memberId}/role:
-    $ref: ./paths/updateUserRole.yml
-  /organisations/{orgId}/users/{userId}/api-tokens:
+  /users/{userId}:
+    $ref: ./paths/Users/user.yml
+  /users/{userId}/organisations:
+    $ref: ./paths/Users/userOrganisations.yml
+  /users/{userId}/organisations/{orgId}:
+    $ref: ./paths/Users/userOrganisation.yml
+  /users/{userId}/organisations/{orgId}/leave:
+    $ref: ./paths/Users/leaveOrganisation.yml
+  /users/{userId}/change-email:
+    $ref: ./paths/Users/changeEmail.yml
+  /users/{userId}/change-password:
+    $ref: ./paths/Users/changePassword.yml
+  /organisations/{orgId}/members:
+    $ref: ./paths/OrgMembers/orgMembers.yml
+  /organisations/{orgId}/members/{memberId}:
+    $ref: ./paths/OrgMembers/orgMember.yml
+  /organisations/{orgId}/members/{memberId}/status:
+    $ref: ./paths/OrgMembers/orgMemberStatus.yml
+  /users/{userId}/api-tokens:
     $ref: ./paths/apiAccessTokens.yml
-  /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}:
+  /users/{userId}/api-tokens/{apiTokenId}:
     $ref: ./paths/apiAccessToken.yml
-  /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}/regenerate:
+  /users/{userId}/api-tokens/{apiTokenId}/regenerate:
     $ref: ./paths/apiAccessTokenRegenerate.yml
   /registrations:
     $ref: ./paths/Registrations/registrations.yml
@@ -195,6 +207,10 @@ paths:
     $ref: ./paths/Registrations/invitations.yml
   /invitations/{invitationId}:
     $ref: ./paths/Registrations/invitation.yml
+  /invitations/{invitationId}/accept:
+    $ref: ./paths/Registrations/invitationAccept.yml
+  /invitations/{invitationId}/reject:
+    $ref: ./paths/Registrations/invitationReject.yml
   /common/base-unit-types:
     $ref: ./paths/Common/baseUnitTypes.yml
   /common/base-units:

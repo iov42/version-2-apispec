@@ -1,6 +1,0 @@
-name: t
-in: query
-required: true
-description: Token provided for registration verification.
-schema:
-  type: string

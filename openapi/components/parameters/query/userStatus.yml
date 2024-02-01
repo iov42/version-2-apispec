@@ -1,0 +1,9 @@
+name: status
+in: query
+required: false
+description: Filter users based on their status.
+schema:
+  type: array
+  items:
+    $ref: "../../schemas/enums/userStatus.yml"
+style: pipeDelimited

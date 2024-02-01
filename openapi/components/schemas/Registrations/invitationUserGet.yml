@@ -1,0 +1,5 @@
+type: object
+description: This is the definition of an invitation of a user for a GET invitation request.
+properties:
+  orgName:
+    description: The name of the organisation inviting the user.

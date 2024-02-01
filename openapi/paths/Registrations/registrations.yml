@@ -6,37 +6,37 @@ post:
   description: Add Registration
   security: []
   parameters:
-    - $ref: '../../components/parameters/query/t.yml'
+    - $ref: "../../components/parameters/query/invitationId.yml"
   requestBody:
     description: Registration Information
     content:
       application/json:
         schema:
           oneOf:
-            - $ref: '../../components/schemas/registrationOrg.yml'
-            - $ref: '../../components/schemas/registrationUser.yml'
+            - $ref: "../../components/schemas/registrationOrg.yml"
+            - $ref: "../../components/schemas/registrationUser.yml"
           discriminator:
-              propertyName: regType
+            propertyName: regType
         examples:
           OrgRegistration:
-              $ref: '../../components/examples/registration_Org.yml'
+            $ref: "../../components/examples/registration_Org.yml"
           UserRegistration:
-              $ref: '../../components/examples/registration_User.yml'
+            $ref: "../../components/examples/registration_User.yml"
     required: true
   responses:
-    '201':
+    "201":
       description: Successful operation
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '../../components/schemas/id.yml'
-              - $ref: '../../components/schemas/registrationStatus.yml'
-    '400':
-      $ref: '../../components/responses/400-badRequest.yml'
-    '409':
-      $ref: '../../components/responses/409-conflict.yml'
-    '422':
-      $ref: '../../components/responses/422-unprocessable.yml'
+              - $ref: "../../components/schemas/id.yml"
+              - $ref: "../../components/schemas/registrationStatus.yml"
+    "400":
+      $ref: "../../components/responses/400-badRequest.yml"
+    "409":
+      $ref: "../../components/responses/409-conflict.yml"
+    "422":
+      $ref: "../../components/responses/422-unprocessable.yml"
     default:
-      $ref: '../../components/responses/500-internalError.yml'
+      $ref: "../../components/responses/500-internalError.yml"

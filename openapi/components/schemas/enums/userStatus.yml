@@ -1,0 +1,4 @@
+type: string
+enum:
+  - AWAITING_VERIFICATION
+  - ACTIVE

@@ -1,0 +1,61 @@
+put:
+  tags:
+    - Org Members
+  summary: Change Org Member Status
+  operationId: changeOrgMemberStatus
+  description: Change org member status
+  parameters:
+    - $ref: "../../components/parameters/path/orgId.yml"
+    - $ref: "../../components/parameters/path/orgMemberId.yml"
+  requestBody:
+    description: Updates org member status
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/schemas/OrgMembers/orgMemberStatus.yml"
+    required: true
+  responses:
+    "200":
+      description: Org member status
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/OrgMembers/orgMemberStatus.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"
+get:
+  tags:
+    - Org Members
+  summary: Get Org Member Status
+  operationId: getOrgMemberStatus
+  description: Get org member status
+  parameters:
+    - $ref: "../../components/parameters/path/orgId.yml"
+    - $ref: "../../components/parameters/path/orgMemberId.yml"
+  responses:
+    "200":
+      description: Org member status
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "../../components/schemas/OrgMembers/orgMemberStatus.yml"
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

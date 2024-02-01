@@ -1,5 +1,5 @@
-value: 
-  regType: "User"
+value:
+  regType: "USER"
   firstName: "First"
   lastName: "Name"
   email: "first.name@someorg.com"

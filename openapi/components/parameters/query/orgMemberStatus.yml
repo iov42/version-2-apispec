@@ -1,0 +1,9 @@
+name: status
+in: query
+required: false
+description: Filter members based on their status.
+schema:
+  type: array
+  items:
+    $ref: "../../schemas/enums/orgMemberStatus.yml"
+style: pipeDelimited

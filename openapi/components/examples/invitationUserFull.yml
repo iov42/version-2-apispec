@@ -1,0 +1,8 @@
+value:
+  id: "123"
+  type: "USER"
+  userType: "NEW"
+  invitingOrg: "/organisations/1234"
+  invitingOrgName: "Sample Org."
+  recipient: "joe.bloggs@anotherorg.com"
+  status: "PENDING"

@@ -1,0 +1,6 @@
+type: object
+description: This is a definition of an organisation that the user is part of.
+properties:
+  membership:
+    description: The URI of user's membership in the organisation.
+    type: string

@@ -1,0 +1,6 @@
+name: search
+in: query
+required: false
+description: Allows to search though list of users based on any matches in firstName, lastName and email.
+schema:
+  type: string
