@@ -9,7 +9,7 @@ properties:
     $ref: './enums/userType.yml'
   role:
     description: The user role for this user.
-    $ref: './enums/userRole.yml'
+    $ref: './enums/orgMemberRole.yml'
   orgName:
     description: The name of the inviting organisation.
     type: string

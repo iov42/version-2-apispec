@@ -1,0 +1,29 @@
+put:
+  tags:
+    - Org Members
+  summary: Update Org Member Role
+  operationId: updateUserRole
+  description: Update Org Member by id
+  parameters:
+    - $ref: '../../components/parameters/path/orgId.yml'
+    - $ref: "../../components/parameters/path/orgMemberId.yml"
+  requestBody:
+    description: Updates Org Member Role
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/OrgMembers/orgMemberRole.yml'
+    required: true
+  responses:
+    "200":
+      description: Successful operation
+    "401":
+      $ref: "../../components/responses/401-unauthorised.yml"
+    "403":
+      $ref: "../../components/responses/403-forbidden.yml"
+    "404":
+      $ref: "../../components/responses/404-notFound.yml"
+    "429":
+      $ref: "../../components/responses/429-tooManyRequests.yml"
+    default:
+      $ref: "../../components/responses/500-internalError.yml"

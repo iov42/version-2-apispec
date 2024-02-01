@@ -8,7 +8,7 @@ required:
 properties:
   type:
     description: This is the type of invitation. If it is for a User then it is inviting a user to join the organisation. If it is for an organisation then you are inviting an organisation to join the platform.
-    $ref: './enums/invitationType.yml'
+    $ref: '../enums/invitationType.yml'
   email:
     description: The recipient email address.
     type: string
@@ -17,4 +17,4 @@ properties:
     type: string
   role:
     description: The user role for the invited user
-    $ref: './enums/userRole.yml'
+    $ref: '../enums/orgMemberRole.yml'
