@@ -13,9 +13,9 @@ post:
           $ref: '../../components/schemas/Registrations/invitationRequest.yml'
         examples:
           UserInvitation:
-            $ref: '../../components/examples/invitation_User.yml'
+            $ref: '../../components/examples/invitationUser.yml'
           OrgInvitation:
-              $ref: '../../components/examples/invitation_Org.yml'
+              $ref: '../../components/examples/invitationOrg.yml'
     required: true
   responses:
     "201":
@@ -26,6 +26,8 @@ post:
             allOf:
               - $ref: "../../components/schemas/id.yml"
               - $ref: "../../components/schemas/Registrations/invitation.yml"
+              - $ref: "../../components/schemas/common/recordedBy.yml"
+              - $ref: "../../components/schemas/common/recordedTime.yml"
           examples:
             UserInvitation:
               $ref: "../../components/examples/invitationUserFull.yml"
@@ -67,7 +69,10 @@ get:
                   results:
                     type: array
                     items:
-                      $ref: "../../components/schemas/Registrations/invitation.yml"
+                      - $ref: "../../components/schemas/id.yml"
+                      - $ref: "../../components/schemas/Registrations/invitation.yml"
+                      - $ref: "../../components/schemas/common/recordedBy.yml"
+                      - $ref: "../../components/schemas/common/recordedTime.yml"
           examples:
             UserInvitation:
               $ref: "../../components/examples/invitationUserFull.yml"

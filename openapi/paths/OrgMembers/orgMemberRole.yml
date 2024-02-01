@@ -2,7 +2,7 @@ put:
   tags:
     - Org Members
   summary: Update Org Member Role
-  operationId: updateUserRole
+  operationId: updateOrgMemberRole
   description: Update Org Member by id
   parameters:
     - $ref: '../../components/parameters/path/orgId.yml'

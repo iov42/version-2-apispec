@@ -3,3 +3,4 @@ properties:
   recordedTime:
     description: Timestamp of when the record was created.
     type: string
+    format: date-time

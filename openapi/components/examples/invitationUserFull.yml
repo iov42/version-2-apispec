@@ -7,5 +7,5 @@ value:
   email: "joe.bloggs@anotherorg.com"
   status: "PENDING"
   role: "ACCOUNT_OWNER"
-  recordedTime: "2022-12-12T12:00:00"
+  recordedTime: "2024-01-01T00:00:00.000Z"
   recordedBy: "/user/1234"
