@@ -10,12 +10,12 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/Registrations/invitationRequest.yml'
+          $ref: "../../components/schemas/Registrations/invitationRequest.yml"
         examples:
           UserInvitation:
-            $ref: '../../components/examples/invitationUser.yml'
+            $ref: "../../components/examples/invitationUser.yml"
           OrgInvitation:
-              $ref: '../../components/examples/invitationOrg.yml'
+              $ref: "../../components/examples/invitationOrg.yml"
     required: true
   responses:
     "201":

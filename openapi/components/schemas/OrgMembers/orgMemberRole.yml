@@ -2,4 +2,4 @@ type: object
 properties:
   role:
     description: The org member role.
-    $ref: '../enums/orgMemberRole.yml'
+    $ref: "../enums/orgMemberRole.yml"

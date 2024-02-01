@@ -5,14 +5,14 @@ put:
   operationId: updateOrgMemberRole
   description: Update Org Member by id
   parameters:
-    - $ref: '../../components/parameters/path/orgId.yml'
+    - $ref: "../../components/parameters/path/orgId.yml"
     - $ref: "../../components/parameters/path/orgMemberId.yml"
   requestBody:
     description: Updates Org Member Role
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/OrgMembers/orgMemberRole.yml'
+          $ref: "../../components/schemas/OrgMembers/orgMemberRole.yml"
     required: true
   responses:
     "200":
