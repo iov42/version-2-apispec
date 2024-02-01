@@ -1,6 +1,0 @@
-name: memberId
-in: path
-required: true
-description: The id of an organisation member.
-schema:
-  type: string

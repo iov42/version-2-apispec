@@ -1,5 +1,5 @@
 type: object
-description: This is the definition for a registration status.
+description: This is the definition for an invitation request
 required:
   - type
   - email
