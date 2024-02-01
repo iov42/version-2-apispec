@@ -1,6 +1,6 @@
 name: orgId
 in: path
 required: true
-description: The id of organisation
+description: The id of an organisation.
 schema:
   type: string

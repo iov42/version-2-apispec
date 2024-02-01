@@ -175,6 +175,8 @@ paths:
     $ref: ./paths/users.yml
   /organisations/{orgId}/users/{userId}:
     $ref: ./paths/user.yml
+  /organisations/{orgId}/members/{memberId}/role:
+    $ref: ./paths/updateUserRole.yml
   /organisations/{orgId}/users/{userId}/api-tokens:
     $ref: ./paths/apiAccessTokens.yml
   /organisations/{orgId}/users/{userId}/api-tokens/{apiTokenId}:

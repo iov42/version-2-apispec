@@ -2,18 +2,30 @@ type: object
 description: This is the definition of an invitation.
 properties:
   type:
-    description: This is the type of invitation. If it is for a User then it is inviting a user to join the organisation. If it is for an organisation then you are inviting an organisation to join the plaform.
+    description: This is the type of invitation. If it is for a User then it is inviting a user to join the organisation. If it is for an organisation then you are inviting an organisation to join the platform.
     $ref: './enums/invitationType.yml'
-  invitingOrganisationName:
+  userType:
+    description: Indicating whether the invited user is new on the platform.
+    $ref: './enums/userType.yml'
+  role:
+    description: The user role for this user.
+    $ref: './enums/userRole.yml'
+  orgName:
     description: The name of the inviting organisation.
     type: string
-  invitingOrganisation:
+  invitingOrg:
     description: The URI of the inviting organisation.
     type: string
-  when:
-    description: When this invitiation was sent.
+  email:
+    description: The email of the user.
+    type: string
+  recordedTime:
+    description: When this invitation was sent.
     type: string
     format: date-time
   status:
     description: The status for this invitation.
     $ref: './enums/invitationStatus.yml'
+  recordedBy:
+    description: The URI of the user who created the invitation.
+    type: string

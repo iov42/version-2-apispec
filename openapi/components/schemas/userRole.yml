@@ -1,0 +1,5 @@
+type: object
+properties:
+  role:
+    description: The user role.
+    $ref: './enums/userRole.yml'
