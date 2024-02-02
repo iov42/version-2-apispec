@@ -1,0 +1,6 @@
+type: string
+enum:
+  - ACCOUNT_OWNER
+  - ADMIN
+  - REVIEWER
+  - CONTRIBUTOR

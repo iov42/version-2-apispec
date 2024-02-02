@@ -1,0 +1,5 @@
+value: 
+    type: "ORGANISATION"
+    email: "joe.bloggs@anotherorg.com"
+    role: "ADMIN"
+    organisation: "/organisations/1234"

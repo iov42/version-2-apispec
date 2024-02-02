@@ -19,6 +19,7 @@ get:
               allOf:
                 - $ref: "../../components/schemas/id.yml"
                 - $ref: "../../components/schemas/OrgMembers/orgMember.yml"
+                - $ref: "../../components/schemas/OrgMembers/orgMemberRole.yml"
                 - $ref: "../../components/schemas/OrgMembers/orgMember_ExtraInfo.yml"
     "401":
       $ref: "../../components/responses/401-unauthorised.yml"

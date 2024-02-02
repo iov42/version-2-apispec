@@ -189,6 +189,8 @@ paths:
     $ref: ./paths/OrgMembers/orgMember.yml
   /organisations/{orgId}/members/{memberId}/status:
     $ref: ./paths/OrgMembers/orgMemberStatus.yml
+  /organisations/{orgId}/members/{memberId}/role:
+    $ref: ./paths/OrgMembers/orgMemberRole.yml
   /users/{userId}/api-tokens:
     $ref: ./paths/apiAccessTokens.yml
   /users/{userId}/api-tokens/{apiTokenId}:

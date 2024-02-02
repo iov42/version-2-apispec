@@ -11,7 +11,7 @@ properties:
     description: Type of Registration
     type: string
     enum:
-      - User
+      - USER
   firstName:
     type: string
   lastName:

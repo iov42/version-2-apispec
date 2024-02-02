@@ -14,7 +14,7 @@ properties:
     description: Type of Registration
     type: string
     enum:
-      - Org
+      - ORGANISATION
   firstName:
     description: User first name.
     type: string

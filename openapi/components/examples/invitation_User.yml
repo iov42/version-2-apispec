@@ -1,4 +1,0 @@
-value:
-  type: "USER"
-  recipient: "joe.bloggs@anotherorg.com"
-  invitingOrg: "/organisations/1234"
