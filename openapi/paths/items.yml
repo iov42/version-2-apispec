@@ -1,6 +1,6 @@
 get:
   tags:
-    - Items
+    - Supply
   summary: List Items
   operationId: listItems
   description: List all the Items
@@ -38,7 +38,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Items
+    - Supply
   summary: Add Item
   operationId: addItem
   description: Add a new Item

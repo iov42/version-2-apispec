@@ -1,6 +1,6 @@
 get:
   tags:
-    - Products
+    - Config
   summary: List Materials
   operationId: listMaterials
   description: List all the Materials
@@ -40,7 +40,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Products
+    - Config
   summary: Add Material
   operationId: addMaterial
   description: Add a new Material

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Users
+    - Profile
   summary: List Users
   operationId: listUsers
   description: List all the Users
@@ -32,7 +32,7 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
-    - Users
+    - Profile
   summary: Add User
   operationId: addUser
   description: Add a new User

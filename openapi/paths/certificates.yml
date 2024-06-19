@@ -1,6 +1,6 @@
 get:
   tags:
-    - Certificates
+    - Evidence
   summary: List Certificates
   operationId: listCertificates
   description: List all the certificates
@@ -38,7 +38,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Certificates
+    - Evidence
   summary: Add a new certificate
   operationId: addCertificate
   description: Add a new certificate

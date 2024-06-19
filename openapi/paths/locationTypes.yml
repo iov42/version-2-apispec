@@ -1,6 +1,6 @@
 get:
   tags:
-    - Locations
+    - Config
   summary: List Location Types
   operationId: listLocationTypes
   description: List all the Location Types
@@ -37,7 +37,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Locations
+    - Config
   summary: Add Location Type
   operationId: addLocationType
   description: Add a new Location Type

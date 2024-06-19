@@ -1,6 +1,6 @@
 put:
   tags:
-    - Products
+    - Config
   summary: Update material
   operationId: updateMaterial
   description: Update material by id
@@ -42,7 +42,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Products
+    - Config
   summary: Get Material
   operationId: getMaterial
   description: Get the material details

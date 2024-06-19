@@ -1,6 +1,6 @@
 get:
   tags:
-    - CustomFields
+    - Metadata
   summary: List Custom Fields
   operationId: listCustomFields
   description: List all the Custom Fields
@@ -38,7 +38,7 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
-    - CustomFields
+    - Metadata
   summary: Add Custom Field
   operationId: addCustomField
   description: Add a new Custom Field

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Registrations
+    - Signup
   summary: Get Registration Status
   operationId: getRegistrationStatus
   description: Get Registration Status

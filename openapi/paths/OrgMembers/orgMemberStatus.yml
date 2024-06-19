@@ -1,6 +1,6 @@
 put:
   tags:
-    - Org Members
+    - Organisation
   summary: Change Org Member Status
   operationId: changeOrgMemberStatus
   description: Change org member status
@@ -34,7 +34,7 @@ put:
       $ref: "../../components/responses/500-internalError.yml"
 get:
   tags:
-    - Org Members
+    - Organisation
   summary: Get Org Member Status
   operationId: getOrgMemberStatus
   description: Get org member status

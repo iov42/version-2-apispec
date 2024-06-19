@@ -1,6 +1,6 @@
 put:
   tags:
-    - Connections
+    - Supply Setup
   summary: Update connection
   operationId: updateConnection
   description: Update connection by id
@@ -41,7 +41,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Connections
+    - Supply Setup
   summary: Get Connection
   operationId: getConnection
   description: Get the Connection details

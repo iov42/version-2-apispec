@@ -1,6 +1,6 @@
 get:
   tags:
-    - Attachments
+    - Metadata
   summary: List Attachments
   operationId: listAttachments
   description: List all Attachments. Either targetUri or attachmentUri are required, if both are missing then this a 400 error will be returned.
@@ -30,7 +30,7 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
-    - Attachments
+    - Metadata
   summary: Add Attachment
   operationId: addAttachment
   description: Add a new link between resources.

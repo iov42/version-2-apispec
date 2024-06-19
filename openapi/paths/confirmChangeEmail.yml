@@ -1,6 +1,6 @@
 post:
   tags:
-    - Authentication
+    - Profile
   summary: Confirm change email
   operationId: confirmChangeEmail
   description: Confirm changing of your email.

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Connections
+    - Supply Setup
   summary: List Connections
   operationId: listConnections
   description: List all the Connections
@@ -37,7 +37,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Connections
+    - Supply Setup
   summary: Add a new Connection
   operationId: addConnection
   description: Add a new Connection

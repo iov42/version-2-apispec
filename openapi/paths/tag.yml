@@ -1,6 +1,6 @@
 put:
   tags:
-    - Config
+    - Metadata
   summary: Update tag
   operationId: updateTag
   description: |
@@ -39,7 +39,7 @@ put:
       $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - Config
+    - Metadata
   summary: Get Tag
   operationId: getTag
   description: Get the Tag details

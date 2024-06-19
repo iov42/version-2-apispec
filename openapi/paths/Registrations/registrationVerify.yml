@@ -1,6 +1,6 @@
 put:
   tags:
-    - Registrations
+    - Signup
   summary: Verify a Registration
   operationId: verifyRegistration
   description: Verify Registration by way of an email link.

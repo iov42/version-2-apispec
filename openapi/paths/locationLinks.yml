@@ -1,6 +1,6 @@
 get:
   tags:
-    - Locations
+    - Supply Setup
   summary: List Links
   operationId: listLinks
   description: List all the Links
@@ -38,8 +38,8 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Locations
-  summary: Add Link
+    - Supply Setup
+  summary: Add Link between two locations.
   operationId: addLink
   description: Add a new Link
   parameters:

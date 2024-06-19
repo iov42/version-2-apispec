@@ -1,6 +1,6 @@
 get:
   tags:
-    - Documents
+    - Config
   summary: List Document Types
   operationId: listDocumentTypes
   description: List all the Documents Types
@@ -38,7 +38,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Documents
+    - Config
   summary: Add document type
   operationId: addDocumentType
   description: Add a new Document Type

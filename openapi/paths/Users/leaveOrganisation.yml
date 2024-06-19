@@ -1,6 +1,6 @@
 post:
   tags:
-    - Users
+    - Profile
   summary: Leave Organisation
   operationId: leaveOrg
   description: Leave an organisation that the user is part of

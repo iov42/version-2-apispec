@@ -35,7 +35,7 @@
 #      $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - Attachments
+    - Metadata
   summary: Get Attachment
   operationId: getAttachment
   description: Get the Attachment details
@@ -63,7 +63,7 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 delete:
   tags:
-    - Attachments
+    - Metadata
   summary: Delete an Attachment
   operationId: deleteAttachment
   description: This endpoint allows the deletion of a specified attachment.
