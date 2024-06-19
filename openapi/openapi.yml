@@ -40,8 +40,11 @@ tags:
     x-tag-expanded: false
     description: Set of APIs used to manage the data that is captured as evidence to support the Supply Chain and Supply captured in the system.
   - name: Metadata
-    x-tag-expanded: false
-    description: Set of APIs used to manage metadata that is attached to records to capture extra information.
+    x-tag-expanded: true
+    #description: Set of APIs used to manage metadata that is attached to records to capture extra information.
+  - name: Attachments
+    x-tag-expanded: true
+    #description: Set of APIs used to manage metadata that is attached to records to capture extra information.
 
 
 
@@ -112,10 +115,10 @@ paths:
     $ref: ./paths/items.yml
   /organisations/{orgId}/items/{itemId}:
     $ref: ./paths/item.yml
-  /organisations/{orgId}/mappings:
-    $ref: ./paths/mappings.yml
-  /organisations/{orgId}/mappings/{mapId}:
-    $ref: ./paths/mapping.yml
+  #/organisations/{orgId}/mappings:
+  #  $ref: ./paths/mappings.yml
+  #/organisations/{orgId}/mappings/{mapId}:
+  #  $ref: ./paths/mapping.yml
   /organisations/{orgId}/materials:
     $ref: ./paths/materials.yml
   /organisations/{orgId}/materials/{matId}:

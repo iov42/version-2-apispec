@@ -33,39 +33,45 @@
         <!--render-style="read"-->
 
         <!--Attachments-->
-        <div slot="tag--Attachments" data-include="tags/attachments"></div>
-        <div slot="get-/organisations/-orgId-/attachments" data-include="badge/speculative"></div>
+        <!--div slot="tag--Attachments">
+          <p>The concept of attachments is all about creating a link between two resources without there being any need to change either resource. It is effectively creating an edge on a graph that establishes a relationship between the two resources.
+
+            In theory any resource can be 'attached' to another resource. In practice this only makes sense in certain contexts, for example attaching a document to a delivery.</p>
+            
+            <p>This set of endpoints can be used to create, retrieve, update or delete an attachment.</p>
+        </div-->
+        <!--div slot="get-/organisations/-orgId-/attachments" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/attachments" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/attachments/-attachId-" data-include="badge/speculative"></div>
         <div slot="put-/organisations/-orgId-/attachments/-attachId-" data-include="badge/speculative"></div>
-        <div slot="delete-/organisations/-orgId-/attachments/-attachId-" data-include="badge/speculative"></div>
+        <div slot="delete-/organisations/-orgId-/attachments/-attachId-" data-include="badge/speculative"></div-->
 
         <!--Authentication-->
-        <div slot="post-/auth/token" data-include="badge/needsReview"></div>
-        <div slot="post-/auth/token/refresh" data-include="badge/needsReview"></div>
+        <!--div slot="post-/auth/token" data-include="badge/needsReview"></div>
+        <div slot="post-/auth/token/refresh" data-include="badge/needsReview"></div-->
 
         <!--Certificates-->
-        <div slot="get-/organisations/-orgId-/certificates" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/certificates" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/certificates" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/certificates/-certId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/certificates/-certId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/certificates/-certId-" data-include="badge/speculative"></div-->
 
         <!--Checks-->
-        <div slot="get-/organisations/-orgId-/checks" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/checks" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/checks" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/checks/-checkId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/checks/-checkId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/checks/-checkId-" data-include="badge/speculative"></div-->
 
         <!--Common-->
-        <div slot="get-/common/base-unit-types" data-include="badge/needsReview"></div>
+        <!--div slot="get-/common/base-unit-types" data-include="badge/needsReview"></div>
         <div slot="get-/common/base-units" data-include="badge/needsReview"></div>
         <div slot="post-/common/base-units" data-include="badge/needsReview"></div>
         <div slot="get-/common/base-units/-unitId-" data-include="badge/needsReview"></div>
         <div slot="put-/common/base-units/-unitId-" data-include="badge/needsReview"></div>
-        <div slot="delete-/common/base-units/-unitId-" data-include="badge/needsReview"></div>
+        <div slot="delete-/common/base-units/-unitId-" data-include="badge/needsReview"></div-->
 
         <!--Config-->
-        <div slot="get-/organisations/-orgId-/mappings" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/mappings" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/mappings" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/mappings/-mapId-" data-include="badge/speculative"></div>
         <div slot="put-/organisations/-orgId-/mappings/-mapId-" data-include="badge/speculative"></div>
@@ -76,16 +82,16 @@
         <div slot="get-/organisations/-orgId-/units" data-include="badge/needsReview"></div>
         <div slot="post-/organisations/-orgId-/units" data-include="badge/needsReview"></div>
         <div slot="get-/organisations/-orgId-/units/-unitId-" data-include="badge/needsReview"></div>
-        <div slot="put-/organisations/-orgId-/units/-unitId-" data-include="badge/needsReview"></div>
+        <div slot="put-/organisations/-orgId-/units/-unitId-" data-include="badge/needsReview"></div-->
 
         <!--Checks-->
-        <div slot="get-/organisations/-orgId-/connections" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/connections" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/connections" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/connections/-conId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/connections/-conId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/connections/-conId-" data-include="badge/speculative"></div-->
 
         <!--CustomFields-->
-        <div slot="get-/organisations/-orgId-/custom-fields" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/custom-fields" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/custom-fields" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/custom-fields/-cfId-" data-include="badge/speculative"></div>
         <div slot="put-/organisations/-orgId-/custom-fields/-cfId-" data-include="badge/speculative"></div>
@@ -96,44 +102,44 @@
         <div slot="get-/organisations/-orgId-/custom-field-templates" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/custom-field-templates" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/custom-field-templates/-cftId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/custom-field-templates/-cftId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/custom-field-templates/-cftId-" data-include="badge/speculative"></div-->
 
         <!--Deliveries-->
-        <div slot="get-/organisations/-orgId-/deliveries" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/deliveries" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/deliveries" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/deliveries/-deliveryId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/deliveries/-deliveryId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/deliveries/-deliveryId-" data-include="badge/speculative"></div-->
 
         <!--Deliveries-->
-        <div slot="get-/organisations/-orgId-/documents" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/documents" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/documents" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/documents/-docId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/documents/-docId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/documents/-docId-" data-include="badge/speculative"></div-->
 
         <!--Items-->
-        <div slot="get-/organisations/-orgId-/items" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/items" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/items" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/items/-itemId-" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/items/-itemId-" data-include="badge/speculative"></div>
+        <div slot="put-/organisations/-orgId-/items/-itemId-" data-include="badge/speculative"></div-->
 
         <!--Locations-->
-        <div slot="get-/organisations/-orgId-/locations" data-include="badge/needsReview"></div>
+        <!--div slot="get-/organisations/-orgId-/locations" data-include="badge/needsReview"></div>
         <div slot="post-/organisations/-orgId-/locations" data-include="badge/needsReview"></div>
         <div slot="get-/organisations/-orgId-/locations/-locId-" data-include="badge/needsReview"></div>
         <div slot="put-/organisations/-orgId-/locations/-locId-" data-include="badge/needsReview"></div>
         <div slot="get-/organisations/-orgId-/location-links" data-include="badge/needsReview"></div>
         <div slot="post-/organisations/-orgId-/locations-links" data-include="badge/needsReview"></div>
         <div slot="get-/organisations/-orgId-/location-links/-linkId-" data-include="badge/needsReview"></div>
-        <div slot="put-/organisations/-orgId-/location-links/-linkId-" data-include="badge/needsReview"></div>
+        <div slot="put-/organisations/-orgId-/location-links/-linkId-" data-include="badge/needsReview"></div-->
 
         <!--Organisation-->
-        <div slot="get-/organisations" data-include="badge/inProgress"></div>
+        <!--div slot="get-/organisations" data-include="badge/inProgress"></div>
         <div slot="post-/organisations" data-include="badge/inProgress"></div>
         <div slot="get-/organisations/-orgId-" data-include="badge/inProgress"></div>
-        <div slot="put-/organisations/-orgId-" data-include="badge/inProgress"></div>
+        <div slot="put-/organisations/-orgId-" data-include="badge/inProgress"></div-->
 
         <!--Products--> 
-        <div slot="get-/organisations/-orgId-/materials" data-include="badge/needsReview"></div>
+        <!--div slot="get-/organisations/-orgId-/materials" data-include="badge/needsReview"></div>
         <div slot="post-/organisations/-orgId-/materials" data-include="badge/needsReview"></div>
         <div slot="get-/organisations/-orgId-/materials/-matId-" data-include="badge/needsReview"></div>
         <div slot="put-/organisations/-orgId-/materials/-matId-" data-include="badge/needsReview"></div>
@@ -141,16 +147,16 @@
         <div slot="get-/organisations/-orgId-/products" data-include="badge/needsReview"></div>
         <div slot="post-/organisations/-orgId-/products" data-include="badge/needsReview"></div>
         <div slot="get-/organisations/-orgId-/products/-prodId-" data-include="badge/needsReview"></div>
-        <div slot="put-/organisations/-orgId-/products/-prodId-" data-include="badge/needsReview"></div>
+        <div slot="put-/organisations/-orgId-/products/-prodId-" data-include="badge/needsReview"></div-->
 
         <!--Public--> 
-        <div slot="tag--Public" data-include="tags/public"></div>
+        <!--div slot="tag--Public" data-include="tags/public"></div>
         <div slot="get-/organisations/-orgId-/public" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/public" data-include="badge/speculative"></div>
-        <div slot="put-/organisations/-orgId-/public" data-include="badge/speculative"></div>    
+        <div slot="put-/organisations/-orgId-/public" data-include="badge/speculative"></div-->    
 
         <!--Users-->
-        <div slot="get-/organisations/-orgId-/users" data-include="badge/speculative"></div>
+        <!--div slot="get-/organisations/-orgId-/users" data-include="badge/speculative"></div>
         <div slot="post-/organisations/-orgId-/users" data-include="badge/speculative"></div>
         <div slot="get-/organisations/-orgId-/users/-userId-" data-include="badge/speculative"></div>
         <div slot="put-/organisations/-orgId-/users/-userId-" data-include="badge/speculative"></div>
@@ -159,7 +165,7 @@
         <div slot="get-/organisations/-orgId-/users/-userId-/api-tokens/-apiTokenId-" data-include="badge/needsReview"></div>
         <div slot="put-/organisations/-orgId-/users/-userId-/api-tokens/-apiTokenId-" data-include="badge/needsReview"></div>
         <div slot="delete-/organisations/-orgId-/users/-userId-/api-tokens/-apiTokenId-" data-include="badge/needsReview"></div>
-        <div slot="post-/organisations/-orgId-/users/-userId-/api-tokens/-apiTokenId-/regenerate" data-include="badge/needsReview"></div>
+        <div slot="post-/organisations/-orgId-/users/-userId-/api-tokens/-apiTokenId-/regenerate" data-include="badge/needsReview"></div-->
     
     </rapi-doc>
   </body>
