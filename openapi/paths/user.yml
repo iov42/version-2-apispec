@@ -1,6 +1,6 @@
 put:
   tags:
-    - Users
+    - Profile
   summary: Update User
   operationId: updateUser
   description: Update User by id
@@ -35,7 +35,7 @@ put:
       $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - Users
+    - Profile
   summary: Get User
   operationId: getUser
   description: Get the User details

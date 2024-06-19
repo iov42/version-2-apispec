@@ -1,6 +1,6 @@
 get:
   tags:
-    - Users
+    - Session
   summary: Get Specific API Access Token
   operationId: getUserAPIAccessToken
   description: This endpoint retrieves details of a specific API access token.
@@ -26,7 +26,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 put:
   tags:
-    - Users
+    - Session
   summary: Update Specific API Access Token
   operationId: updateUserAPIAccessToken
   description: This endpoint allows for the update of certain information for an API access token.
@@ -63,7 +63,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 delete:
   tags:
-    - Users
+    - Session
   summary: Delete a Specific API Access Token
   operationId: deleteUserAPIAccessToken
   description: This endpoint allows the deletion of a specific API Access Token

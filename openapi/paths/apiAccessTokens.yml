@@ -1,6 +1,6 @@
 post:
   tags:
-    - Users
+    - Session
 
   summary: Create a new User API Access Token
   operationId: addUserAPIAccessToken
@@ -37,7 +37,7 @@ post:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Users
+    - Session
   summary: List User API Access Tokens
   operationId: getUserAPIAccessTokens
   description: This endpoint supports the retrieval of a list of API Access Tokens. Note that

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Org Members
+    - Organisation
   summary: List Org Members
   operationId: listOrgMember
   description: Get the list of all org members

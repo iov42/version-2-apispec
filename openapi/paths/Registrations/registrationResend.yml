@@ -1,6 +1,6 @@
 post:
   tags:
-    - Registrations
+    - Signup
   summary: Resend Registration Email
   operationId: resendRegistrationEmail
   description: Resend email for verification of a registration.

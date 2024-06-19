@@ -1,6 +1,6 @@
 put:
   tags:
-    - Deliveries
+    - Supply
   summary: Update Delivery
   operationId: updateDelivery
   description: Update Delivery by id
@@ -41,7 +41,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Deliveries
+    - Supply
   summary: Get Delivery
   operationId: getDelivery
   description: Get the delivery details

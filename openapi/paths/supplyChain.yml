@@ -1,6 +1,6 @@
 put:
   tags:
-    - Supply Chains
+    - Supply Setup
   summary: Update supply chain
   operationId: updateSupplyChain
   description: Update supply chain by id
@@ -42,7 +42,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Supply Chains
+    - Supply Setup
   summary: Get Supply Chain
   operationId: getSupplyChain
   description: Get the Supply Chain details

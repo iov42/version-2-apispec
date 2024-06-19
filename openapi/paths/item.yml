@@ -1,6 +1,6 @@
 put:
   tags:
-    - Items
+    - Supply
   summary: Update item
   operationId: updateItem
   description: Update item by id
@@ -45,7 +45,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Items
+    - Supply
   summary: Get Item
   operationId: getItem
   description: Get the item details

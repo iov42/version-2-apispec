@@ -1,6 +1,6 @@
 put:
   tags:
-    - Locations
+    - Supply Setup
   summary: Update location
   operationId: updateLocation
   description: Update location by id
@@ -45,7 +45,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Locations
+    - Supply Setup
   summary: Get Location
   operationId: getLocation
   description: Get the Location details

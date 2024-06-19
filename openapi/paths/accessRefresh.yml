@@ -1,6 +1,6 @@
 post:
   tags:
-    - Authentication
+    - Session
   summary: Refreshes an Access Token
   operationId: refreshAccessToken
   description: This endpoint conforms with OAuth for refreshing an access token.

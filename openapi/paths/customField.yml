@@ -1,6 +1,6 @@
 put:
   tags:
-    - CustomFields
+    - Metadata
   summary: Update customField
   operationId: updateCustomField
   description: Update Custom Field by id
@@ -61,7 +61,7 @@ put:
       $ref: '../components/responses/500-internalError.yml'
 get:
   tags:
-    - CustomFields
+    - Metadata
   summary: Get CustomField
   operationId: getCustomField
   description: Get the CustomField details

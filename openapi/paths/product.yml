@@ -1,6 +1,6 @@
 put:
   tags:
-    - Products
+    - Config
   summary: Update product
   operationId: updateProduct
   description: This endpoint allows a product to be updated.
@@ -46,7 +46,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Products
+    - Config
   summary: Get Product
   operationId: getProduct
   description: This endpoint returns the specific details for a given product.

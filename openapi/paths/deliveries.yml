@@ -1,6 +1,6 @@
 get:
   tags:
-    - Deliveries
+    - Supply
   summary: List Deliveries
   operationId: listDeliveries
   description: List all the Deliveries
@@ -38,7 +38,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Deliveries
+    - Supply
   summary: Add Delivery
   operationId: addDelivery
   description: Add a new Delivery

@@ -1,6 +1,6 @@
 put:
   tags:
-    - Documents
+    - Config
   summary: Update document type
   operationId: updateDocumentType
   description: Update document type by id
@@ -44,7 +44,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Documents
+    - Config
   summary: Get Document Type
   operationId: getDocumentType
   description: Get the document type details

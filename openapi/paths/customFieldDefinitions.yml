@@ -1,6 +1,6 @@
 get:
   tags:
-    - CustomFields
+    - Config
   summary: List Custom Field Definitions
   operationId: listCustomFieldDefinitions
   description: List all the Custom Field Definitions
@@ -32,7 +32,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - CustomFields
+    - Config
   summary: Add Custom Field Definition
   operationId: addCustomFieldDefinition
   description: Add a new Custom Field Definition

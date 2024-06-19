@@ -1,6 +1,6 @@
 get:
   tags:
-    - Products
+    - Config
   summary: List Products
   operationId: listProducts
   description: This endpoint returns all the products that have either been defined by the organisation or have been provided by other organisations.
@@ -43,7 +43,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Products
+    - Config
   summary: Add Product
   operationId: addProduct
   description: Add a new Product

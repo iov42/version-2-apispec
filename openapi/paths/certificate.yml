@@ -1,6 +1,6 @@
 put:
   tags:
-    - Certificates
+    - Evidence
   summary: Update certificate
   operationId: updateCertificate
   description: Update certificate by id
@@ -41,7 +41,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Certificates
+    - Evidence
   summary: Get certificate
   operationId: getCertificate
   description: Get the certificate details

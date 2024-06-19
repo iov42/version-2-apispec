@@ -1,6 +1,6 @@
 put:
   tags:
-    - CustomFields
+    - Config
   summary: Update Custom Field Definition
   operationId: updateCustomFieldDefinition
   description: Update Custom Field Definition by id
@@ -41,7 +41,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - CustomFields
+    - Config
   summary: Get Custom Field Definition
   operationId: getCustomFieldDefinition
   description: Get the Custom Field Definition details

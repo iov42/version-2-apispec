@@ -1,6 +1,6 @@
 get:
   tags:
-    - Registrations
+    - Signup
   summary: Get Invitation
   operationId: getInvitation
   description: Get Invitation
@@ -34,7 +34,7 @@ get:
       $ref: "../../components/responses/500-internalError.yml"
 delete:
   tags:
-    - Registrations
+    - Signup
   summary: Delete Invitation
   operationId: deleteInvitation
   description: Delete Invitation. Can only be preformed by an authorized user that is an Admin of an organisation mentioned in the invitation.

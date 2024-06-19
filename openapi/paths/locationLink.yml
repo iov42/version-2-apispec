@@ -1,7 +1,7 @@
 get:
   tags:
-    - Locations
-  summary: Get Link
+    - Supply Setup
+  summary: Gets Link that represents two locations connected together.
   operationId: getLink
   description: Get the link details
   parameters:
@@ -33,7 +33,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 delete:
   tags:
-    - Locations
+    - Supply Setup
   summary: Delete a Location Link
   operationId: deleteLocationLink
   description: This endpoint allows the deletion of a Location Link

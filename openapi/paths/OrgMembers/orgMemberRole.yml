@@ -1,6 +1,6 @@
 put:
   tags:
-    - Org Members
+    - Organisation
   summary: Update Org Member Role
   operationId: updateOrgMemberRole
   description: Update Org Member by id

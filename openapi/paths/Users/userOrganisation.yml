@@ -1,6 +1,6 @@
 get:
   tags:
-    - Users
+    - Profile
   summary: Get User Organisation Membership Info
   operationId: getUserOrgMembership
   description: Get the User organisation membership details

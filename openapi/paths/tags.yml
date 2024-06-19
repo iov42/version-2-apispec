@@ -1,6 +1,6 @@
 get:
   tags:
-    - Config
+    - Metadata
   summary: List Tags
   operationId: listTags
   description: List all the Tags
@@ -32,7 +32,7 @@ get:
       $ref: '../components/responses/500-internalError.yml'
 post:
   tags:
-    - Config
+    - Metadata
   summary: Add Tag
   operationId: addTag
   description: Add a new Tag

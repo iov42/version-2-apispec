@@ -1,6 +1,6 @@
 put:
   tags:
-    - Documents
+    - Evidence
   summary: Add Document Content
   operationId: uploadContent
   description: Upload document content
@@ -62,7 +62,7 @@ put:
       $ref: "../components/responses/500-internalError.yml"
 get:
   tags:
-    - Documents
+    - Evidence
   summary: Get Document Content
   operationId: getDocumentContent
   description: Get the document content

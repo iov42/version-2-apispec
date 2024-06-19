@@ -4,7 +4,7 @@ info:
   description: >-
     This API spec defines how you can interact with the iov42 traceability
     system.
-  version: 0.0.13
+  version: 0.9.13
 servers:
   - url: https://reqres.in/api
     description: Mock API Service.
@@ -12,74 +12,42 @@ security:
   - ApiKeyAuth: []
   - JWTBearer: []
 tags:
-  - name: Attachments
+  - name: Signup 
     x-tag-expanded: false
-  - name: Authentication
-    description: Apis for client authentication.
+    description: Set of APIs used to deal with user registration and invitations to other users.
+  - name: Session
     x-tag-expanded: false
-  - name: Certificates
-    description: Apis for the creation and retrieval of Certificates
-    x-tag-expanded: false
-  - name: Checks
-    description: Apis for the creation and retrieval of Checks
-    x-tag-expanded: false
+    description: Set of APIs used for Session handling.
   - name: Common
-    description: Apis with information common across all organisations.
     x-tag-expanded: false
-  - name: Config
-    description: Apis for configuration of an organisations environment.
+    description: Set of APIs providing data that is common across all organisations.
+  - name: Profile
     x-tag-expanded: false
-  - name: Connections
-    description: Apis for the creation and retrieval of Connections
-    x-tag-expanded: false
-  - name: CustomFields
-    description: Apis for the creation and retrieval of CustomFields
-    x-tag-expanded: false
-  - name: Deliveries
-    description: Apis for the creation and retrieval of Deliveries
-    x-tag-expanded: false
-  - name: Documents
-    description: Apis for the creation and retrieval of Documents
-    x-tag-expanded: false
-  - name: Items
-    description: Apis for the creation and retrieval of Items
-    x-tag-expanded: false
-  - name: Locations
-    description: Apis for the creation and retrieval of Locations
-    x-tag-expanded: false
-  - name: Mappings
-    description: Apis for the creation and retrieval of Mapping
-    x-tag-expanded: false
-  - name: Materials
-    description: Apis for the creation and retrieval of Materials
-    x-tag-expanded: false
+    description: Set of APIs used for various user profile operations.
   - name: Organisation
-    description: Apis for the creation and retrieval of Organisation
     x-tag-expanded: false
-  - name: Products
-    description: Apis for the creation and retrieval of Products
+    description: Set of APIs used to manage information about an organisation itself.
+  - name: Config
     x-tag-expanded: false
-  - name: Public
-    description: >-
-      Apis for organisational information that is 'public'. By public this
-      information is available to any registered user.
+    description: Set of APIs used for defining key configuration information used in other areas of the system.
+  - name: Supply Setup
     x-tag-expanded: false
-  - name: Registrations
-    description: Apis for the creation and retrieval of registrations.
+    description: Set of APIs used for defining an organisations supply chain.
+  - name: Supply
     x-tag-expanded: false
-  - name: Tags
-    description: Apis for the creation and retrieval of tags.
-  - name: Templates
-    description: Apis for the creation and retrieval of templates.
-  - name: Shared
-    description: Apis with information shared across all organisations.
+    description: Set of APIs used for tracking supply of items through the supply chain.
+  - name: Evidence
     x-tag-expanded: false
-  - name: Users
-    description: Apis for user related information.
-    x-tag-expanded: false
-  - name: Supply Chains
-    description: APIs for creation and retrieval of supply chains.
-    x-tag-expanded: false
+    description: Set of APIs used to manage the data that is captured as evidence to support the Supply Chain and Supply captured in the system.
+  - name: Metadata
+    x-tag-expanded: true
+    #description: Set of APIs used to manage metadata that is attached to records to capture extra information.
+  - name: Attachments
+    x-tag-expanded: true
+    #description: Set of APIs used to manage metadata that is attached to records to capture extra information.
+
+
+
 paths:
   /auth/token:
     $ref: ./paths/accessRequest.yml
@@ -101,10 +69,10 @@ paths:
     $ref: ./paths/certificates.yml
   /organisations/{orgId}/certificates/{certId}:
     $ref: ./paths/certificate.yml
-  /organisations/{orgId}/checks:
-    $ref: ./paths/checks.yml
-  /organisations/{orgId}/checks/{checkId}:
-    $ref: ./paths/check.yml
+  #/organisations/{orgId}/checks:
+  #  $ref: ./paths/checks.yml
+  #/organisations/{orgId}/checks/{checkId}:
+  #  $ref: ./paths/check.yml
   /organisations/{orgId}/connections:
     $ref: ./paths/connections.yml
   /organisations/{orgId}/connections/{conId}:
@@ -113,10 +81,10 @@ paths:
   #   $ref: ./paths/customFields.yml
   # /organisations/{orgId}/custom-fields/{cfId}:
   #   $ref: ./paths/customField.yml
-  /organisations/{orgId}/custom-field-definitions:
-    $ref: ./paths/customFieldDefinitions.yml
-  /organisations/{orgId}/custom-field-definitions/{cfdId}:
-    $ref: ./paths/customFieldDefinition.yml
+  #/organisations/{orgId}/custom-field-definitions:
+  #  $ref: ./paths/customFieldDefinitions.yml
+  #/organisations/{orgId}/custom-field-definitions/{cfdId}:
+  #  $ref: ./paths/customFieldDefinition.yml
   /organisations/{orgId}/deliveries:
     $ref: ./paths/deliveries.yml
   /organisations/{orgId}/deliveries/{deliveryId}:
@@ -147,10 +115,10 @@ paths:
     $ref: ./paths/items.yml
   /organisations/{orgId}/items/{itemId}:
     $ref: ./paths/item.yml
-  /organisations/{orgId}/mappings:
-    $ref: ./paths/mappings.yml
-  /organisations/{orgId}/mappings/{mapId}:
-    $ref: ./paths/mapping.yml
+  #/organisations/{orgId}/mappings:
+  #  $ref: ./paths/mappings.yml
+  #/organisations/{orgId}/mappings/{mapId}:
+  #  $ref: ./paths/mapping.yml
   /organisations/{orgId}/materials:
     $ref: ./paths/materials.yml
   /organisations/{orgId}/materials/{matId}:
@@ -161,8 +129,8 @@ paths:
     $ref: ./paths/products.yml
   /organisations/{orgId}/products/{prodId}:
     $ref: ./paths/product.yml
-  /organisations/{orgId}/public:
-    $ref: ./paths/public.yml
+  #/organisations/{orgId}/public:
+  #  $ref: ./paths/public.yml
   /organisations/{orgId}/tags:
     $ref: ./paths/tags.yml
   /organisations/{orgId}/tags/{tagId}:
@@ -233,10 +201,10 @@ paths:
     $ref: ./paths/supplyChain.yml
   /common/countries:
     $ref: ./paths/Common/countries.yml
-  /organisations/{orgId}/templates:
-    $ref: ./paths/templates.yml
-  /organisations/{orgId}/templates/{tmplId}:
-    $ref: ./paths/template.yml
+  #/organisations/{orgId}/templates:
+  #  $ref: ./paths/templates.yml
+  #/organisations/{orgId}/templates/{tmplId}:
+  #  $ref: ./paths/template.yml
   /common/resource-types:
     $ref: ./paths/Common/resourceTypes.yml
 components:

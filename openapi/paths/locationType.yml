@@ -1,6 +1,6 @@
 get:
   tags:
-    - Locations
+    - Config
   summary: Get Location Type
   operationId: getLocationType
   description: Get the location type details
@@ -34,7 +34,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 put:
   tags:
-    - Locations
+    - Config
   summary: Update Location Type
   operationId: updateLocationType
   description: Update location type

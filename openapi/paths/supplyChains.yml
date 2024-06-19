@@ -1,6 +1,6 @@
 get:
   tags:
-    - Supply Chains
+    - Supply Setup
   summary: List Supply Chains
   operationId: listSupplyChains
   description: List all the Supply Chains
@@ -38,7 +38,7 @@ get:
       $ref: "../components/responses/500-internalError.yml"
 post:
   tags:
-    - Supply Chains
+    - Supply Setup
   summary: Add Supply Chain
   operationId: addSupplyChain
   description: Add a new Supply Chain
