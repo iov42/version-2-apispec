@@ -1,4 +1,4 @@
-description: The server cannot find the requested resource. 
+description: The resource already exists
 content:
   application/json:
     schema:
