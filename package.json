@@ -1,6 +1,6 @@
 {
   "name": "traceability-api-spec",
-  "version": "0.0.13",
+  "version": "0.9.0",
   "dependencies": {
     "@redocly/cli": "^1.0.0-beta.124",
     "js-yaml": "^4.1.0"
