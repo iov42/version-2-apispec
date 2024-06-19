@@ -1,9 +1,9 @@
 openapi: 3.1.0
 info:
-  title: Traceability API
+  title: Interu API
   description: >-
-    This API spec defines how you can interact with the iov42 traceability
-    system.
+    This is the API spec for Interu. This is not a finalised version and everything still has the potential to change. It should however given you 
+    enough of a general understanding on how the API will work and the data it will provide/ingest.
   version: 0.9.13
 servers:
   - url: https://reqres.in/api
